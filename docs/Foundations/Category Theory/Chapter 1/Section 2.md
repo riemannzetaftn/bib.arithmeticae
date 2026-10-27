@@ -35,6 +35,8 @@ A category is a structure where we relate objects by arrows between them. Why no
             \Hom_{\sfC}(A,B) \arrow[rr,"\caF"{description}] & &\Hom_\sfD(\caF(A),\caF(B)) \arrow[rr,"\caG"{description}] & &\Hom_\sfE(\caG(\caF(A)),\caG(\caF(B))).
         \end{tikzcd}
     ```
+
+    Given functors \(\caF:\sfC\to\sfD\) and \(\caG:\sfD\to\sfC\), if \(\caG\circ\caF = \id_\sfC\) and \(\caF\circ\caG = \id_\sfD\), we say that \(\caG\) is the *inverse* of \(\caF\), and \(\caF\) is an *isomorphism of categories*.
     
     A (covariant or contravariant) functor \(\caF:\sfC\to\sfD\) is said to be 
 
@@ -47,7 +49,8 @@ As you can see, a functor is an arrow between categories: it consists of functio
 
 !!! example "Functor"
 
-    1. If \(\sfD\) is a subcategory of \(\sfC\), then the inclusions \(\Ob(\sfD)\hookrightarrow\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\hookrightarrow\Hom_\sfC(A,B)\) form a functor since the identities and compositions were inherited, called an *inclusion functor*, which is always faithful. \(\sfD\) is a full subcategory of \(\sfC\) if and only if the inclusion functor is fully faithful. The specific examples follow from [](<Section 1.md#ex-1st-const-categories>) 1.
+    1. If \(\sfD\) is a subcategory of \(\sfC\), then the inclusions \(\Ob(\sfD)\hookrightarrow\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\hookrightarrow\Hom_\sfC(A,B)\) form a functor since the identities and compositions were inherited, called an *inclusion functor*, which is always faithful. \(\sfD\) is a full subcategory of \(\sfC\) if and only if the inclusion functor is fully faithful, and \(\sfD = \sfC\) if and only if the inclusion functor is an isomorphism of categories. The specific examples follow from [](<Section 1.md#ex-1st-const-categories>) 1.
+    2. If \(\sim\) is a congruence on a category \(\sfC\), then the identity map on \(\Ob(\sfC)\) and the quotient maps \(\Hom_{\sfC}(A,B)\to\Hom_{\sfC/\sim}(A,B)\) form a functor since the identities and compositions were inherited, called a *quotient functor*, which is always full and essentially surjective (moreover, it is bijective on objects).
 
 <!-- 2. For every concrete category \(\sfC\) where objects are sets with structures, and morphisms are functions preserving the structure, there is a functor into \(\Set\), which sends each object into its underlying set and map each morphism into the underlying function (so that the identity and compositions are preserved). More generally, if a category \(\sfC\) is obtained by assigning more structure and (possibly) more assumption on the morphism, we have a functor \(\sfC\to\sfD\) that forgets the structure and the assumptions, informally called a *forgetful functor*. Hence it is clear that composition of forgetful functors is again a forgetful functor. Specifically, we have the following examples. (Warning: as the term is informal and varies among people, some may disagree with some of these functors. However, the next examples are only for giving plenty of examples of functors, so this is not really important.)
 
