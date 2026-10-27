@@ -25,6 +25,8 @@ A category is a structure where we relate objects by arrows between them. Why no
         - For any object \(A\) of \(\sfC\), \(\caF(\id_A) = \id_{\caF(A)}\). In words, the functor preserves identities.
         - For any composable pair of morphisms \((\phi:B\to C,\psi:A\to B)\) in \(\sfC\), \(\caF(\phi\circ\psi) = \caF(\psi)\circ\caF(\phi)\). In words, the functor preserves compositions, but reverses the order.
 
+    The set of functors from \(\sfC\) to \(\sfD\) is denoted by \(\Fun(\sfC,\sfD)\).
+    
     For any category \(\sfC\), there is a covariant functor \(\id_\sfC\), called the *identity functor* of \(\sfC\), which consists of identity functions on the sets \(\Ob(\sfC)\), \(\Hom_\sfC(A,B)\).
 
     Given a pair of covariant functors \(\caG:\sfD\to\sfE\) and \(\caF:\sfC\to\sfD\), we define their *composition* by the covariant functor \(\caG\circ\caF:\sfC\to\sfE\), which consists of compositions 
@@ -45,7 +47,7 @@ A category is a structure where we relate objects by arrows between them. Why no
     - *fully faithful*, if it is bijective on morphisms; i.e. it is both full and faithful.
     - *essentially surjective*, if any object \(B\) of \(\sfD\) is isomorphic to \(\caF(A)\) for some object \(A\) of \(\sfC\).
 
-As you can see, a functor is an arrow between categories: it consists of functions which preserve the structure of categories. Throughout this blog, unless otherwise specified, a functor will denote a covariant one. From the definition of identity, composition and inverse of functors we see that the categories themselves form a category; more precisely, there is a category \(\Cat\) of all small categories.
+Throughout this blog, unless otherwise specified, a functor will denote a covariant one. We observe the followings. The composition of functors is associative, and the identity functors acts as identites of the composition (i.e. for all functor \(\caF:\sfC\to\sfD\), \(\caF\circ\id_\sfC = \caF\) and \(\id_\sfD\circ\caF = \caF\)). Thus the categories and functors form a category, and for the size matter we have a category \(\Cat\) consists of all small categories and functors between them. Of course, even for non-small categories, the observations in the previous section (uniqueness of inverse, \((\caG\circ\caF)^{-1} = \caF^{-1}\circ\caG^{-1}\), etc) hold true.
 
 !!! example "Functor"
 
