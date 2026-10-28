@@ -165,6 +165,7 @@ window.MathJax = {
       id: "{\\rm id}",
       Hom: "{\\rm Hom}",
       Ob: "{\\rm Ob}",
+      Fun: "{\\rm Fun}",
       End: "{\\rm End}",
       Aut: "{\\rm Aut}",
       Set: "{\\sf Set}",
