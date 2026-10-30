@@ -63,7 +63,8 @@ We now introduce the most typical examples of categories, from various fields of
     3. Partially ordered sets and order-preserving maps between them form a category, whose isomorphisms are order-isomorphisms (i.e. a bijective order-preserving maps).
     4. In algebra, we have bunch of algebraic structures, and each with structure-preserving functions form categories. In the below examples, isomorphisms are exactly the bijective morphisms (since inverse function is also a morphism).
 
-        - \(\Mnd\): monoids and monoid homomorphisms. There is also a category of commutative monoids and monoid homomorphisms between them.
+        - \(\Mnd\): monoids and monoid homomorphisms.
+        - \(\CMnd\): commutative monoids and monoid homomorphisms between them.
         - \(\Grp\): groups and group homomorphisms.
         - \(\Ab\): abelian groups and group homomorphisms between them.
         - \(\Ring\): (unital) rings and (unital) ring homomorphisms between them. (Throughout this blog, 'ring' and 'ring homomorphism' will always denote unital ones.)

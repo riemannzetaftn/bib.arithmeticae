@@ -52,7 +52,7 @@ Throughout this blog, unless otherwise specified, a functor will denote a covari
 
 !!! example "Functor"
 
-    1. If \(\sfD\) is a subcategory of \(\sfC\), then the inclusions \(\Ob(\sfD)\hookrightarrow\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\hookrightarrow\Hom_\sfC(A,B)\) form a functor \(\sfD\to\sfC\) since the identities and compositions were inherited, called an *inclusion functor*. The specific examples follow from [](<Section 1.md#ex-1st-const-categories>) 1.
+    1. If \(\sfD\) is a subcategory of \(\sfC\), then the inclusions \(\Ob(\sfD)\hookrightarrow\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\hookrightarrow\Hom_\sfC(A,B)\) form a functor \(\sfD\to\sfC\) since the identities and compositions were inherited, called an *inclusion functor*. The specific examples follow from [](<Section 1.md#ex-1st-const-categories>), 1.
     2. If \(\sim\) is a congruence on a category \(\sfC\), then the identity map on \(\Ob(\sfC)\) and the quotient maps \(\Hom_{\sfC}(A,B)\to\Hom_{\sfC/\sim}(A,B)\) form a functor \(\sfC\to\sfC/\sim\) since the identities and compositions were inherited, called a *quotient functor*.
     3. In [](<Section 1.md#ex-category>), we have seen many examples of concrete categories. If \(\sfC\) is a concrete category, then there is a natural functor \(\caU:\sfC\to\Set\), which sends objects to their underlying sets, and morphisms to their underlying functions. This can be seen as forgetting the additional structure assigned. More generally, if a category \(\sfD\) is obtained by assigning more structure to given category \(\sfC\), then there is a natural functor \(\sfD\to\sfC\) forgetting the structures, and these are **informally** called the *forgetful functors*.
         
@@ -61,10 +61,20 @@ Throughout this blog, unless otherwise specified, a functor will denote a covari
         - From every category in [](Section 1.md#ex-category) except for \(\hTop, \hTop_\ast\) to \(\Set\).
         - From \(\Alg_R\) to \(\Ring\) and \(\Mod_R\), and from these to \(\Ab\), where compositions are the same. \(\CAlg_R\to\CRing\to\Ab\). More generally, if \(S\) is a commutative \(R\)-algebra, we have forgetful functors \(\Mod_S\to\Mod_R\), \(\Alg_S\to\Alg_R\), \(\CAlg_S\to\CAlg_R\). \(\LieAlg_k\to\Vec_k\), and from the category of \(\ast\)-algebras over \(R\) to \(\Alg_R\).
         - The above forgetful functor \(\CAlg_R\to\CRing\) has the following generalization: we have forgetful functors \(\sfC/A, A/\sfC\to\sfC\), which forgets the morphism into / from the object \(A\).
-        - If we forget addition, we have forgetful functors \(\Ring\to\Mnd\) and from \(\CRing\) to the category of commutative monoids.
+        - If we forget addition, we have forgetful functors \(\Ring\to\Mnd\) and \(\CRing\to\CMnd\).
         - \(\hTop_\ast\to\hTop\), \(\CMfd\to\SMfd\to\Mfd\), from \(\Var_k, \LRS, \Sch\) to \(\Top\).
         - From every category in [](Section 1.md#ex-category), 6 to \(\Top\). Metric spaces with \(1\)-Lipschitz / Lipschitz / uniformly continuous functions to uniform spaces with uniformly continuous functions.
         - From measure-preserving systems with their homomorphisms to measure spaces with measure-preserving maps, to measurable spaces with measurable maps.
         - From the category Hilbert spaces with unitary / bounded linear maps to Banach spaces with unitary / bounded linear maps, to metric spaces with \(1\)-Lipschitz / Lipschitz functions.
         - From \(\TGrp\) to both \(\Top\) and \(\Grp\), \(\TRing,\TVec_k\to\TGrp\) by considering only additive structure, from \(\LieGrp\) to both \(\SMfd\) and \(\Grp\).
         - From the category of C\({}^\ast\)-algebras to the category of Banach \({}^\ast\)-algebras, to the category of Banach algebras to the category of Banach spaces and \(\Alg_\bbC\) (the last one only exists if we restrict to the category of unital Banach algebras, or extend \(\Alg_\bbC\) to possibly non-unital \(\bbC\)-algebras).
+    3. 
+<!--Functors betweeen monoid / group / poset... categories induced from monoid / group hom, or order-preserving maps -->
+    4. 
+<!--Free functors -->
+    5. 
+<!--Fundamental groups and homology groups -->
+    6. 
+<!--Representations as functors -->
+    7. 
+<!--det and unit group functors -->
