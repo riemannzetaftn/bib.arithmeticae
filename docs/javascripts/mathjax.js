@@ -170,6 +170,7 @@ window.MathJax = {
       Aut: "{\\rm Aut}",
       Set: "{\\sf Set}",
       Mnd: "{\\sf Mnd}",
+      CMnd: "{\\sf CMnd}",
       Grp: "{\\sf Grp}",
       Ab: "{\\sf Ab}",
       Ring: "{\\sf Ring}",
