@@ -87,6 +87,7 @@ We now introduce the most typical examples of categories, from various fields of
         - \(\SMfd\): smooth manifolds and smooth maps.
         - \(\CMfd\): complex manifolds and holomorphic maps.
         - \(\Var_k\): abstract varieties over an algebraically closed field \(k\) and morphisms between them.
+        - \(\LRS\): locally ringed spaces and their morphisms.
         - \(\Sch\): schemes and morphisms of schemes.
     
     6. We now look at examples in analysis / probability or ergodic theory.
@@ -166,6 +167,7 @@ We now look at some elementary constructions on the categories.
         - Metrizable topological spaces with continuous functions form a subcategory of \(\Top\).
         - Locally compact groups with continuous maps form a subcategory of \(\TGrp\).
         - Given a category \(\sfC\), the discrete category with underlying set \(\Ob(\sfC)\) is a subcategory of \(\sfC\).
+        - \(\Sch\) is a subcategory of \(\LRS\).
         - Given a category \(\sfC\) and its object \(A\), the monoid \(\End_\sfC(A)\) induces a category with one object, which is a subcategory of \(\sfC\).
         - If \(Q\) is a subset of a partially ordered set \(P\), then \(Q\) is itself a partially ordered set under inherited order, and the induces poset categories form a full subcategory \(\sfQ\subset\sfP\). In particular, if \(U\) is an open subset of \(X\), then \(\Op(U)\) is a subcategory of \(\Op(X)\), and inclusion of subsets induce inclusion of full subcategory of associated discrete categories.
         - If \(M'\) is a submonoid of \(M\), then the induced categories form a subcategory \(\sfM'\subset\sfM\). It is a full subcategory if and only if \(M' = M\). In particular, this includes the concept of subgroups.
