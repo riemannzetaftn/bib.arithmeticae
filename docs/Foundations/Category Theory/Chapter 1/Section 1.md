@@ -63,7 +63,7 @@ We now introduce the most typical examples of categories, from various fields of
     3. Partially ordered sets and order-preserving maps between them form a category, whose isomorphisms are order-isomorphisms (i.e. a bijective order-preserving maps).
     4. In algebra, we have bunch of algebraic structures, and each with structure-preserving functions form categories. In the below examples, isomorphisms are exactly the bijective morphisms (since inverse function is also a morphism).
 
-        - \(\Mnd\): monoids and monoid homomorphisms.
+        - \(\Mnd\): monoids and monoid homomorphisms. There is also a category of commutative monoids and monoid homomorphisms between them.
         - \(\Grp\): groups and group homomorphisms.
         - \(\Ab\): abelian groups and group homomorphisms between them.
         - \(\Ring\): (unital) rings and (unital) ring homomorphisms between them. (Throughout this blog, 'ring' and 'ring homomorphism' will always denote unital ones.)
@@ -161,7 +161,7 @@ We now look at some elementary constructions on the categories.
 
         - By the observation right after the definition of categories, for any category \(\sfC\), the collection of all objects of \(\sfC\) and the collection of all isomorphisms of \(\sfC\) form a subcategory of \(\sfC\), which is a groupoid.
         - \(\Set\) is a subcategory of \(\Rel\).
-        - \(\Ab\subset\Grp\subset\Mnd\). Both inclusions define full subcategories.
+        - \(\Ab\subset\Grp\subset\Mnd\). Both inclusions define full subcategories. Also, one may replace \(\Grp\) by the category of commutative monoids without changing the conclusion.
         - \(\Field\subset\Dom\subset\CRing\subset\Ring\), and \(\CAlg_R\subset\Alg_R\) for \(R\in\Ob(\CRing)\). All inclusions except for the second one define full subcategories.
         - \(\CHaus,\Mfd\) are full subcategories of \(\Top\).
         - Metrizable topological spaces with continuous functions form a subcategory of \(\Top\).
