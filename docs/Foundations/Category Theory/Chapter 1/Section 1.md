@@ -81,6 +81,7 @@ We now introduce the most typical examples of categories, from various fields of
 
         - \(\Top\): topological spaces and continuous functions.
         - \(\CHaus\): compact Hausdorff spaces and continuous functions (which are necessarily closed maps).
+        - \(\LCH\): locally compact Hausdorff spaces and continuous functions.
         - \(\Top_\ast\): pointed topological spaces (i.e. a pair \((X,x)\) of a topological space \(X\) and a point \(x\in X\)) and pointed continuous maps between them (i.e. a pointed continuous map from \((X,x)\) to \((Y,y)\) is a continuous map \(f:X\to Y\) with \(f(x) = y\)).
         - \(\hTop\): topological spaces and homotopy classes of continuous functions between them, where isomorphisms are homotopy equivalences.
         - \(\hTop_\ast\): pointed topological spaces and basepoint-preserving-homotopy classes of pointed continuous maps between them.
