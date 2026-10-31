@@ -211,6 +211,7 @@ window.MathJax = {
       Sym: "{\\rm Sym}",
       Nat: "{\\rm Nat}",
       GL: "{\\rm GL}",
+      Frac: "{\\rm Frac}",
       op: "{\\rm op}",
       bline: "{\\rm -}",
       eq: "{\\rm eq}",
