@@ -153,7 +153,27 @@ We now look at some elementary constructions on the categories.
         
         and the composition being defined componentwisely. Of course, one can extend this construction to arbitrary family of categories, as long as the product of object classes exists as a class.
     4. The *opposite category* of a category \(\sfC\), denoted by \(\sfC^\op\), is given by \(\Ob(\sfC^\op) = \Ob(\sfC)\) and \(\Hom_{\sfC^\op}(B,A) = \Hom_{\sfC}(A,B)\). To avoid confusion, the morphism \(\phi:A\to B\) in \(\sfC\), when considered as a morphism in \(\sfC^\op\), will be denoted by \(\phi^\op:B\to A\). The composition is defined as follows: given morphisms \(\phi^\op:B\to A\) and \(\psi^\op:C\to B\), \(\phi^\op\circ\psi^\op := (\psi\circ\phi)^\op:C\to A\). The identity is ketp the same.
-    4. Let \(A\) be an object of a category \(\sfC\). The *overcategory* or *slice category* \(\sfC/A\) is defined as follows: an object is a morphism \(\varphi:B\to A\) in \(\sfC\) with target \(A\), and a morphism from \(\varphi:B\to A\) to \(\psi:C\to A\) is a morphism \(\phi:B\to C\) such that \(\varphi = \psi\circ\phi\). The objects are also called the *objects of \(\sfC\) over \(A\)*. Similarly, the *undercategory* or *coslice category* \(A/\sfC\) is defined as follows: an object is a morphism \(\varphi:A\to B\) in \(\sfC\) with source \(A\), and a morphism from \(\varphi:A\to B\) to \(\psi:A\to C\) is a morphism \(\phi:B\to C\) such that \(\psi = \phi\circ\varphi\). Its objects are also called the *objects of \(\sfC\) under \(A\)*.
+    5. Let \(A\) be an object of a category \(\sfC\). The *overcategory* or *slice category* \(\sfC/A\) is defined as follows: an object is a morphism \(\varphi:B\to A\) in \(\sfC\) with target \(A\), and a morphism from \(\varphi:B\to A\) to \(\psi:C\to A\) is a morphism \(\phi:B\to C\) such that \(\varphi = \psi\circ\phi\). In diagram, we have the following.
+
+        ```tikzcd
+            \begin{tikzcd}
+                B \arrow[drr,"\varphi"{description}]\arrow[dd,"\phi"{description}]\\
+                & &A\\
+                C \arrow[urr,"\psi"{description}]
+            \end{tikzcd}
+        ```
+
+        The objects are also called the *objects of \(\sfC\) over \(A\)*. Similarly, the *undercategory* or *coslice category* \(A/\sfC\) is defined as follows: an object is a morphism \(\phi:A\to B\) in \(\sfC\) with source \(A\), and a morphism from \(\phi:A\to B\) to \(\psi:A\to C\) is a morphism \(\varphi:B\to C\) such that \(\psi = \varphi\circ\phi\). In diagram, we have the following.
+        
+        ```tikzcd
+            \begin{tikzcd}
+                & &B\arrow[dd, "\varphi"{description}]\\
+                A \arrow[urr, "\phi"{description}]\arrow[drr, "\psi"{description}]\\
+                & &C
+            \end{tikzcd}
+        ```
+
+        Its objects are also called the *objects of \(\sfC\) under \(A\)*.
 
 !!! example "First Constructions on Categories"
 
