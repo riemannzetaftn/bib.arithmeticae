@@ -68,9 +68,13 @@ Throughout this blog, unless otherwise specified, a functor will denote a covari
         - From the category Hilbert spaces with unitary / bounded linear maps to Banach spaces with unitary / bounded linear maps, to metric spaces with \(1\)-Lipschitz / Lipschitz functions.
         - From \(\TGrp\) to both \(\Top\) and \(\Grp\), \(\TRing,\TVec_k\to\TGrp\) by considering only additive structure, from \(\LieGrp\) to both \(\SMfd\) and \(\Grp\).
         - From the category of C\({}^\ast\)-algebras to the category of Banach \({}^\ast\)-algebras, to the category of Banach algebras to the category of Banach spaces and \(\Alg_\bbC\) (the last one only exists if we restrict to the category of unital Banach algebras, or extend \(\Alg_\bbC\) to possibly non-unital \(\bbC\)-algebras).
-    3. 
-<!--Functors betweeen monoid / group / poset... categories induced from monoid / group hom, or order-preserving maps -->
-    4. 
+    4. We have seen in [](Section 1.md#ex-elementary-categories) how structures of sets, monoids (in particular, groups), posets, graphs induce categories. In fact, the morphisms of those structures induce functors between induced categories.
+
+        - If \(f:S\to T\) is a function, then it induces a functor between discrete categories \(\sfS\to\sfT\), which is \(f\) on objects and send \(\id_s\) to \(\id_{f(s)}\); the functoriality is clear, since only composable pairs are identities of the same object.
+        - If \(f:M\to N\) is a monoid homomorphism, then it induces a functor \(\sfM\to\sfN\), which send \(\ast\) to \(\ast\), and is \(f\) on morphisms \(\ast\to\ast\). In particular, a group homomorphism induces a functor between induced categories.
+        - If \(f:P\to Q\) is an order-preserving map, then it induces a functor between poset categories \(\sfP\to\sfQ\), which is \(f\) on objects, and send the unique morphism \(i\to j\) (i.e. when \(i\le j\)) in \(\sfP\) to the unique morphism \(f(i)\to f(j)\) (as \(f(i)\le f(j)\)). Then the functoriality is clear, since the morphisms with given source and target is unique in poset categories.
+        - If \(f:G\to H\) is a morphism of graphs, then it induces a functor between induced categories.
+    5. Sometimes, there 
 <!--Free functors -->
     5. 
 <!--Fundamental groups and homology groups -->
