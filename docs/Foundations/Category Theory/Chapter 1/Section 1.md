@@ -60,20 +60,20 @@ We now introduce the most typical examples of categories, from various fields of
     1. The category \(\Set\) has sets as its objects, and functions between those sets as morphisms between the objects. The conditions are verified in set theory. A function is an isomorphism if and only if it is a bijection, and two sets are isomorphic if and only if they have the same cardinality. The automorphisms of a set \(A\) are also called the 'permutations' of \(A\), and \(\Aut_\Set(A)\) is often denoted by \(\Sym(A)\).
     { #ex-category }
     2. The category \(\Set_\ast\) consists of 'pointed sets' (i.e. a pair \((A,a)\) of a set \(A\) and its element \(a\)) and 'pointed maps' between them (i.e. a pointed map from \((A,a)\) to \((B,b)\) is a function \(f:A\to B\) with \(f(a) = b\)).
-    3. Partially ordered sets and order-preserving maps between them form a category, whose isomorphisms are order-isomorphisms (i.e. a bijective order-preserving maps).
+    3. Partially ordered sets and order-preserving maps between them form a category \(\poSet\), whose isomorphisms are order-isomorphisms (i.e. a bijective order-preserving maps).
     4. In algebra, we have bunch of algebraic structures, and each with structure-preserving functions form categories. In the below examples, isomorphisms are exactly the bijective morphisms (since inverse function is also a morphism).
 
         - \(\Mnd\): monoids and monoid homomorphisms.
-        - \(\CMnd\): commutative monoids and monoid homomorphisms between them.
+        - \(\cMnd\): commutative monoids and monoid homomorphisms between them.
         - \(\Grp\): groups and group homomorphisms.
         - \(\Ab\): abelian groups and group homomorphisms between them.
         - \(\Ring\): (unital) rings and (unital) ring homomorphisms between them. (Throughout this blog, 'ring' and 'ring homomorphism' will always denote unital ones.)
-        - \(\CRing\): commutative rings and ring homomorphisms between them.
+        - \(\cRing\): commutative rings and ring homomorphisms between them.
         - \(\Dom\): integral domains and injective ring homomorphisms between them. (The choice of morphisms is on purpose: we shall shortly see its convenience while dealing with universal property of field of fractions.)
         - \(\Field\): fields and ring homomorphisms between them.
         - For each field \(k\), the category \(\Vec_k\) consists of \(k\)-vector spaces and \(k\)-linear maps between them. More generally, for each ring \(R\), the category \(R-\Mod\) (resp. \(\Mod-R\)) consists of left (resp. right) \(R\)-modules and \(R\)-linear maps between them. For these categories, we have another abbreviation for sets of morphisms: we denote them by \(\Hom_R(M,N)\), \(\End_R(M)\), and \(\Aut_R(M)\). If \(R\) is commutative, we simply denote the category by \(\Mod_R\).
         - For each commutative ring \(R\) (including the case of \(R = k\) being a field), the category \(\Alg_R\) consists of \(R\)-algebras (i.e. a ring \(S\) with a ring homomorphism \(\varphi:R\to S\) (or the homomorphism \(\varphi\) itself) whose image lie inside the center of \(S\)) and \(R\)-algebra homomorphisms (if \(\varphi:R\to S\) and \(\psi:R\to T\) represents two \(R\)-algebras, an \(R\)-algebra homomorphism from former to latter is a ring homomorphism \(\phi:S\to T\) with \(\phi\circ\varphi = \psi\)).
-        - For each commutative ring \(R\), the category \(\CAlg_R\) consists of commutative \(R\)-algebras (i.e. a ring homomorphism \(\varphi:R\to S\) with \(S\) being a commutative ring) and \(R\)-algebra homomorphisms between them.
+        - For each commutative ring \(R\), the category \(\cAlg_R\) consists of commutative \(R\)-algebras (i.e. a ring homomorphism \(\varphi:R\to S\) with \(S\) being a commutative ring) and \(R\)-algebra homomorphisms between them.
         - For each field \(k\), the category \(\LieAlg_k\) consists of Lie algebras over \(k\) with Lie algebra homomorphisms between them.
         - For each commutative \(\ast\)-ring \(R\), \(\ast\)-algebras over \(R\) (an \(R\)-algebra with an involution \(\ast\) satisfying some conditions) and \(\ast\)-algebra homomorphisms form a category.
     
@@ -81,13 +81,12 @@ We now introduce the most typical examples of categories, from various fields of
 
         - \(\Top\): topological spaces and continuous functions.
         - \(\CHaus\): compact Hausdorff spaces and continuous functions (which are necessarily closed maps).
-        - \(\LCH\): locally compact Hausdorff spaces and continuous functions.
         - \(\Top_\ast\): pointed topological spaces (i.e. a pair \((X,x)\) of a topological space \(X\) and a point \(x\in X\)) and pointed continuous maps between them (i.e. a pointed continuous map from \((X,x)\) to \((Y,y)\) is a continuous map \(f:X\to Y\) with \(f(x) = y\)).
         - \(\hTop\): topological spaces and homotopy classes of continuous functions between them, where isomorphisms are homotopy equivalences.
         - \(\hTop_\ast\): pointed topological spaces and basepoint-preserving-homotopy classes of pointed continuous maps between them.
         - \(\Mfd\): topological manifolds and continuous functions.
-        - \(\SMfd\): smooth manifolds and smooth maps.
-        - \(\CMfd\): complex manifolds and holomorphic maps.
+        - \(\sMfd\): smooth manifolds and smooth maps.
+        - \(\cMfd\): complex manifolds and holomorphic maps.
         - \(\Var_k\): abstract varieties over an algebraically closed field \(k\) and morphisms between them.
         - \(\LRS\): locally ringed spaces and their morphisms.
         - \(\Sch\): schemes and morphisms of schemes.
@@ -104,9 +103,9 @@ We now introduce the most typical examples of categories, from various fields of
     
     7. There are structures where different structures are intertwined, and they form categories.
 
-        - \(\TGrp\): topological groups and continuous group homomorphisms.
-        - \(\TRing\): topological rings and continuous ring homomorphisms.
-        - For each topological field \(k\), the category \(\TVec_k\) consists of topological vector spaces over \(k\) and continuous \(k\)-linear maps.
+        - \(\tGrp\): topological groups and continuous group homomorphisms.
+        - \(\tRing\): topological rings and continuous ring homomorphisms.
+        - For each topological field \(k\), the category \(\tVec_k\) consists of topological vector spaces over \(k\) and continuous \(k\)-linear maps.
         - \(\LieGrp\): Lie groups (which are smooth manifolds and groups at the same time, with some conditions) and Lie group homomorphisms (smooth maps which are group homomorphisms).
         - Banach (resp. Banach \({}^\ast\)-, C\({}^\ast\)-) algebras with Banach (resp. B\({}^\ast\)-, C\({}^\ast\)-) algebra homomorphisms.
         - Locally compact abelian groups and continuous group homomorphisms.
@@ -164,7 +163,7 @@ We now look at some elementary constructions on the categories.
         - By the observation right after the definition of categories, for any category \(\sfC\), the collection of all objects of \(\sfC\) and the collection of all isomorphisms of \(\sfC\) form a subcategory of \(\sfC\), which is a groupoid.
         - \(\Set\) is a subcategory of \(\Rel\).
         - \(\Ab\subset\Grp\subset\Mnd\). Both inclusions define full subcategories. Also, one may replace \(\Grp\) by the category of commutative monoids without changing the conclusion.
-        - \(\Field\subset\Dom\subset\CRing\subset\Ring\), and \(\CAlg_R\subset\Alg_R\) for \(R\in\Ob(\CRing)\). All inclusions except for the second one define full subcategories.
+        - \(\Field\subset\Dom\subset\cRing\subset\Ring\), and \(\cAlg_R\subset\Alg_R\) for \(R\in\Ob(\cRing)\). All inclusions except for the second one define full subcategories.
         - \(\CHaus,\Mfd\) are full subcategories of \(\Top\).
         - Metrizable topological spaces with continuous functions form a subcategory of \(\Top\).
         - Metric spaces with \(1\)-Lipschitz functions / Lipschitz functions / uniformly continuous functions / continuous functions form a chain of subcategories.
@@ -177,14 +176,14 @@ We now look at some elementary constructions on the categories.
         - If \(Q\) is a subset of a partially ordered set \(P\), then \(Q\) is itself a partially ordered set under inherited order, and the induces poset categories form a full subcategory \(\sfQ\subset\sfP\). In particular, if \(U\) is an open subset of \(X\), then \(\Op(U)\) is a subcategory of \(\Op(X)\), and inclusion of subsets induce inclusion of full subcategory of associated discrete categories.
         - If \(H\) is a subgraph of a graph \(G\), then the induced categories form a subcategory.
 
-        There are non-examples that one needs to be careful: giving more structures do not form subcategories in general. For instance, \(\Grp\) is not a subcategory of \(\Set\): a group \((G,\cdot)\) is more than the underlying set \(G\), and non-isomorphic groups can have same underlying set. Similarly, \(\Ring\) is not a subcategory of \(\Ab\), \(\Top\) is not a subcategory of \(\Set\), metric spaces with continuous functions or the uniform spaces with uniformly continuous functions do not form subcategories of \(\Top\), \(\CMfd\) is not a subcategory of \(\SMfd\), \(\SMfd\) is not a subcategory of \(\Mfd\), \(\LieGrp\) is not a subcategory of \(\TGrp\), and so on.
+        There are non-examples that one needs to be careful: giving more structures do not form subcategories in general. For instance, \(\Grp\) is not a subcategory of \(\Set\): a group \((G,\cdot)\) is more than the underlying set \(G\), and non-isomorphic groups can have same underlying set. Similarly, \(\Ring\) is not a subcategory of \(\Ab\), \(\Top\) is not a subcategory of \(\Set\), metric spaces with continuous functions or the uniform spaces with uniformly continuous functions do not form subcategories of \(\Top\), \(\cMfd\) is not a subcategory of \(\sMfd\), \(\sMfd\) is not a subcategory of \(\Mfd\), \(\LieGrp\) is not a subcategory of \(\tGrp\), and so on.
     2. The category \(\hTop\) is the quotient category of \(\Top\) where the congruence is given by homotopy. Similarly, \(\hTop_\ast\) is the quotient category of \(\Top_\ast\) where the congruence is given by basepoint-preserving homotopy. If we consider a category induced from a monoid \(M\), then the congruence corresponds to congruence relation of monoids, and the quotient category is just the category induced from the corresponding quotient monoid. If the given category is induced from a group, then the quotient category corresponds to quotient groups (one can show that the equivalence class \(N = [e]\) forms a normal subgroup, and the congruence relation is equal to the congruence modulo \(N\)).
     3. Product categories themselves do not give many interesting examples, so we introduce only elementary examples.
 
         - The discrete category with underlying set \(S_1\times S_2\) is the product category of two discrete categories with underlying sets \(S_1\), \(S_2\).
         - The category induced from product monoid \(M_1\times M_2\) is the product category of two categories induced from monoids \(M_1, M_2\).
     4. The under category is opposite of over category: precisely, we have \(A/\sfC = (\sfC^\op/A)^\op\).
-    5. \(\CAlg_R\) is the coslice category \(R/\CRing\).
+    5. \(\cAlg_R\) is the coslice category \(R/\cRing\).
 
 !!! remark "Grothendieck Universe"
 
