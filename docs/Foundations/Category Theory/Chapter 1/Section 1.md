@@ -167,7 +167,7 @@ We now look at some elementary constructions on the categories.
         - \(\CHaus,\Mfd\) are full subcategories of \(\Top\).
         - Metrizable topological spaces with continuous functions form a subcategory of \(\Top\).
         - Metric spaces with \(1\)-Lipschitz functions / Lipschitz functions / uniformly continuous functions / continuous functions form a chain of subcategories.
-        - Locally compact groups with continuous maps form a subcategory of \(\TGrp\).
+        - Locally compact groups with continuous maps form a subcategory of \(\tGrp\).
         - Given a category \(\sfC\), the discrete category with underlying set \(\Ob(\sfC)\) is a subcategory of \(\sfC\).
         - \(\Sch\) is a subcategory of \(\LRS\).
         - Given a category \(\sfC\) and its object \(A\), the monoid \(\End_\sfC(A)\) induces a category with one object, which is a subcategory of \(\sfC\).
