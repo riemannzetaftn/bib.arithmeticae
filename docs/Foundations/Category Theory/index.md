@@ -8,4 +8,4 @@ The 'category theory' is the next step of this process. We have the realms of gr
 
 Because of its extreme abstract and general nature, first learners may find this difficult to digest. It is helpful to keep in mind that these language is not entirely new, and is nothing more than a generalization and reformulation of the phenomena you have already seen in other areas of mathematics. To illustrate this idea, we shall present considerable amount of examples from other fields of mathematics, but often without concrete justifications. This is because the justifications are the contents of each individual field, not of category theory. It is not a problem that you do not understand some of those exercises if you have not studied those mathematics. What we expect is that you gain familiarity with the abstract language and principle of category theory via those examples.
 
-The contents of this subject (except for some examples) are based on [@MacLane; @Leinster; @Riehl].
+The contents of this subject (except for some examples) are based on [@MacLane], [@Leinster], [@Riehl].
