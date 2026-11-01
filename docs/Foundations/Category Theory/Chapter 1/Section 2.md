@@ -110,7 +110,7 @@ The concept of functors allow us to define more abstract categories.
         ```
 
         The over category \(\sfC/B\) is a special case where \(\caF = \id_\sfC\).
-    3. Similarly, there is a category \(B/\caF\) of object \(\caF\)-under \(B\), whose objects are pairs \((A,\phi)\) where \(A\in\Ob(\sfC)\) and \(\phi:B\to\caF(A)\) is a morphism in \(\sfD\). A morphism \(\psi:(A,\phi)\to(A',\phi')\) in this category is a morphism \(\psi:A\to A'\) in \(\sfC\) such that \(\phi' = \caF(\psi)\circ\phi\). In diagram, we have the following. 
+    3. Similarly, there is a category \(B/\caF\) of object \(\caF\)-under \(B\), whose objects are pairs \((A,\phi)\) where \(A\in\Ob(\sfC)\) and \(\phi:B\to\caF(A)\) is a morphism in \(\sfD\). A morphism \(\psi:(A,\phi)\to(A',\phi')\) in this category is a morphism \(\psi:A\to A'\) in \(\sfC\) such that \(\phi' = \caF(\psi)\circ\phi\). In a commutative diagram, we have the following. 
 
         ```tikzcd
             \begin{tikzcd}
@@ -123,6 +123,21 @@ The concept of functors allow us to define more abstract categories.
         This equals the category \((\caF^\op/B)^\op\). The under category \(B/\sfC\) is a special case where \(\caF = \id_\sfC\).
     4. Let \(\caF:\sfI\to\sfC\) be a functor. This is also called to be an *(\(\sfI\)-shaped) diagram (in \(\sfC\))*, and \(\sfI\) is called the *index category* of the diagram, since a functor is nothing more than a drawing of a category \(\sfI\) in the ambient category \(\sfC\), perhaps some objects and arrows being identified.
 
-        Then a *cone over \(\caF\)* is a pair \((N,\psi)\), where \(N\in\Ob(\sfC)\) and \(\psi = (\psi_i)_{i\in\Ob(\sfI)}\) is an indexed family of morphisms \(\psi_i:N\to\caF(i)\) of \(\sfC\), such that for every morphism \(\phi:i\to j\) in \(\sfI\), \(\psi_j = \caF(\phi)\circ\psi_i\).
+        Then a *cone over \(\caF\)* is a pair \((N,\psi)\), where \(N\in\Ob(\sfC)\) and \(\psi = (\psi_i)_{i\in\Ob(\sfI)}\) is an indexed family of morphisms \(\psi_i:N\to\caF(i)\) of \(\sfC\), such that for every morphism \(\phi:i\to j\) in \(\sfI\), \(\psi_j = \caF(\phi)\circ\psi_i\). A *morphism of cones over \(\caF\)* \(\phi:(N,\psi)\to(N',\psi')\) is a morphism \(\phi:N\to N'\) in \(\sfC\) such that \(\psi_i = \psi'_i\circ\phi\) for all \(i\in\Ob(\sfI)\); see the following commutative diagram, meant to be drawn for each morphism \(\phi\) in \(\sfI\).
+        
+        ```tikzcd
+            \begin{tikzcd}
+                &N \arrow[ddl,"\psi_i"{description}]\arrow[ddr,"\psi_j"{description}]\\
+                \\
+                \caF(i) \arrow[rr,"\caF(\phi)"{description}] & &\caF(j)
+            \end{tikzcd}\begin{tikzcd}
+                &N \arrow[dddl,bend right,"\psi_i"{description}]\arrow[dddr,bend left,"\psi_j"{description}]\arrow[d,"\phi"{description}]\\
+                &N' \arrow[ddl,"\psi'_i"{description}]\arrow[ddr,"\psi'_j"{description}]\\
+                \caF(i) \arrow[rr,"\caF(\phi)"{description}] & &\caF(j)
+            \end{tikzcd}
+        ```
+
+        Then the cones and their morphisms form the *category of cones over \(\caF\)*, denoted by \(\Cone(\caF)\).
+    5. Similarly, there is a *category of co-cones over \(\caF\)*, whose objects (the *co-cones over \(\caF\)*) are pairs \((N,\psi)\) where \(N\in\Ob(\sfC)\) and \(\psi = (\psi_i)_{i\in\Ob(\sfI)}\) is an indexed family of morphisms \(\psi_i:\caF(i)\to N\) in \(\sfC\), and *morphisms of co-cones* \(\phi:(N,\psi)\to(N',\psi')\) are morphisms \(\phi:N\to N'\) in \(\sfC\) such that \(\psi'_i = \psi_i\circ\phi\) for all \(i\in\Ob(\sfI)\).
 
 <!--Cat, F/B, B/F, (co)cone -->

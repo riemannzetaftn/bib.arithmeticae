@@ -140,6 +140,10 @@ Note that in the most of the above examples, the objects are sets with additiona
                 \end{tikzcd}
             ```
 
+<!-- !!! definition "Commutative Diagram"
+
+    A *diagram* in a category \(\sfC\) is -->
+
 We now look at some elementary constructions on the categories.
 
 !!! definition "First Constructions on Categories"

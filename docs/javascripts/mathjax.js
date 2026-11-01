@@ -205,6 +205,8 @@ window.MathJax = {
       LieGrp: "{\\sf LieGrp}",
       Op: "{\\sf Op}",
       Cat: "{\\sf Cat}",
+      Cone: "{\\sf Cone}",
+      coCone: "{\\sf coCone}",
       Cov: "{\\sf Cov}",
       LRS: "{\\sf LRS}",
       Mat: "{\\sf Mat}",
