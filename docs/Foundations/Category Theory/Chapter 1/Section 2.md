@@ -96,7 +96,7 @@ Throughout this blog, unless otherwise specified, a functor will denote a covari
 
 The concept of functors allow us to define more abstract categories.
 
-!!! example "Second Constructions on Categories"
+!!! definition "Second Constructions on Categories"
 
     1. Since the identity and composition of functors clearly satisfy the identity and associativity conditions, there is a category of all (small) categories, denoted by \(\Cat\); the objects are small categories and morphisms are functors between them.
     2. If \(\caF:\sfC\to\sfD\) is a functor and \(B\in\Ob(\sfD)\), then there is a category \(\caF/B\) of objects \(\caF\)-over \(B\). An object of this category is a pair \((A,\phi)\) where \(A\in\Ob(\sfC)\) and \(\phi:\caF(A)\to B\) is a morphism in \(\sfD\). A morphism \(\psi:(A,\phi)\to(A',\phi')\) in this category is a morphism \(\psi:A\to A'\) in \(\sfC\) such that \(\phi = \phi'\circ\caF(\psi)\). In diagram, we have the following.
@@ -108,5 +108,21 @@ The concept of functors allow us to define more abstract categories.
                 A' & &\caF(A')\arrow[urr, "\phi'"{description}]
             \end{tikzcd}
         ```
+
+        The over category \(\sfC/B\) is a special case where \(\caF = \id_\sfC\).
+    3. Similarly, there is a category \(B/\caF\) of object \(\caF\)-under \(B\), whose objects are pairs \((A,\phi)\) where \(A\in\Ob(\sfC)\) and \(\phi:B\to\caF(A)\) is a morphism in \(\sfD\). A morphism \(\psi:(A,\phi)\to(A',\phi')\) in this category is a morphism \(\psi:A\to A'\) in \(\sfC\) such that \(\phi' = \caF(\psi)\circ\phi\). In diagram, we have the following. 
+
+        ```tikzcd
+            \begin{tikzcd}
+                & &\caF(A) \arrow[dd,"\caF(\psi)"{description}] &A \arrow[dd,"\psi"{description}]\\
+                B \arrow[urr,"\phi"{description}]\arrow[drr,"\phi'"{description}]\\
+                & &\caF(A') &A'
+            \end{tikzcd}
+        ```
+
+        This equals the category \((\caF^\op/B)^\op\). The under category \(B/\sfC\) is a special case where \(\caF = \id_\sfC\).
+    4. Let \(\caF:\sfI\to\sfC\) be a functor. This is also called to be an *(\(\sfI\)-shaped) diagram (in \(\sfC\))*, and \(\sfI\) is called the *index category* of the diagram, since a functor is nothing more than a drawing of a category \(\sfI\) in the ambient category \(\sfC\), perhaps some objects and arrows being identified.
+
+        Then a *cone over \(\caF\)* is a pair \((N,\psi)\), where \(N\in\Ob(\sfC)\) and \(\psi = (\psi_i)_{i\in\Ob(\sfI)}\) is an indexed family of morphisms \(\psi_i:N\to\caF(i)\) of \(\sfC\), such that for every morphism \(\phi:i\to j\) in \(\sfI\), \(\psi_j = \caF(\phi)\circ\psi_i\).
 
 <!--Cat, F/B, B/F, (co)cone -->
