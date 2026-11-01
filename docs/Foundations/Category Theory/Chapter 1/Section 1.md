@@ -145,7 +145,7 @@ To move forward, we need important concept of commutative diagrams, whose formal
 
 !!! definition "Commutative Diagram"
 
-    A *diagram* in a category \(\sfC\) is a graph homomorphism \(f:G\to G(\sfC)\). In other words, it is the data of some objects of \(\sfC\) and some morphisms between them. It is called *commutative* if for every ordered pair of edges \(e, e'\) of \(G\) and finite directed paths (again, directed walks) \((e_0,...,e_n)\) and \((e'_0,...,e'_m)\) from \(e\) to \(e'\), we have \(f(e_n)\circ\cdots\circ f(e_0) = f(e'_m)\circ\cdots\circ f(e'_0)\).
+    Given a graph \(G\), a *(\(G\)-shaped) diagram* in a category \(\sfC\) is a graph homomorphism \(f:G\to G(\sfC)\). In other words, it is the data of some objects of \(\sfC\) and some morphisms between them. It is called *commutative* if for every ordered pair of edges \(e, e'\) of \(G\) and finite directed paths (again, directed walks) \((e_0,...,e_n)\) and \((e'_0,...,e'_m)\) from \(e\) to \(e'\), we have \(f(e_n)\circ\cdots\circ f(e_0) = f(e'_m)\circ\cdots\circ f(e'_0)\).
 
 The diagrams are described visually: see the following examples.
 
