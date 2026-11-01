@@ -133,6 +133,7 @@ The concept of functors allow us to define more abstract categories.
             \end{tikzcd}\begin{tikzcd}
                 &N \arrow[dddl,bend right,"\psi_i"{description}]\arrow[dddr,bend left,"\psi_j"{description}]\arrow[d,"\phi"{description}]\\
                 &N' \arrow[ddl,"\psi'_i"{description}]\arrow[ddr,"\psi'_j"{description}]\\
+                \\
                 \caF(i) \arrow[rr,"\caF(\phi)"{description}] & &\caF(j)
             \end{tikzcd}
         ```
