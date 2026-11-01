@@ -57,7 +57,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: 3.x
-      - run: pip install zensical
+      - run: pip install zensical pybtex
 
       # ---------- tikzcd ----------
       - name: Check tikzcd diagrams
@@ -89,6 +89,9 @@ jobs:
             git push || echo "::warning::SVG 자동 커밋 push 실패 (이번 배포에는 반영됨)"
           fi
       # ----------------------------
+      - name: Resolve citations
+        run: python scripts/cite.py
+      
       - name: Append last-updated dates
         run: |
           git ls-files 'docs/*.md' 'docs/**/*.md' | while IFS= read -r f; do

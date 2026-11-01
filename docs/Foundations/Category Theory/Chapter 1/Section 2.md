@@ -114,9 +114,9 @@ The concept of functors allow us to define more abstract categories.
 
         ```tikzcd
             \begin{tikzcd}
-                & &\caF(A) \arrow[dd,"\caF(\psi)"{description}] &A \arrow[dd,"\psi"{description}]\\
+                & &\caF(A) \arrow[dd,"\caF(\psi)"{description}] & &A \arrow[dd,"\psi"{description}]\\
                 B \arrow[urr,"\phi"{description}]\arrow[drr,"\phi'"{description}]\\
-                & &\caF(A') &A'
+                & &\caF(A') & &A'
             \end{tikzcd}
         ```
 
