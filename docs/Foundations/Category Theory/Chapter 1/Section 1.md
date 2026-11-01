@@ -27,6 +27,7 @@ In this section we define categories.
 We observe the followings.
 
 - From the first assumption, the domain and codomain of any morphism is uniquely determined, and there's no ambiguity in omitting subscript \(A,B,C\) from the composition symbol \(\circ\). Therefore, we speak of 'the' domain and 'the' codomain from now on. The pair \((\phi,\psi)\) of morphisms is said to be *composable* if the domain of \(\phi\) equals the codomain of \(\psi\), so that the composition \(\phi\circ\psi\) is defined.
+- A category is naturally a directed graph, where vertices are objects and edges are morphisms between them (the identity and composition is additional structure given to categories). For a category \(\sfC\), we denote its underlying graph by \(G(\sfC)\).
 - If a morphism \(\phi:A\to B\) in \(\sfC\) has inverses \(\psi,\varphi\), then we have
     
     \[\psi = \psi\circ\id_B = \psi\circ(\phi\circ\varphi) = (\psi\circ\phi)\circ\varphi = \id_A\circ\varphi = \varphi.\]
@@ -126,7 +127,7 @@ Note that in the most of the above examples, the objects are sets with additiona
         - The posets \(\bbN, \bbZ_{\ge0}, \bbZ\) with usual order, their subsets such as intervals \(\{n,n+1,\cdots,n+k\}\), and \(\bbN\) with divisibility order form poset categories.
         - For any topological space \(X\), the topology (collection of open sets) form a poset under inclusion, and the induced poset category is denoted by \(\Op(X)\). In other words, this is a category with objects being open subsets of \(X\) and morphisms being inclusion of those open subsets.
     5. There is a category \(\Mat_R\), whose objects are natural numbers and morphisms \(n\to m\) are the \(n\times m\) matrices with coefficients in \(R\), and the composition is given by matrix multiplication. In this case, \(\End(n)\) is the set of \(n\times n\) square matrices, and \(\Aut(n)\) is the group \(\GL_n(R)\) of invertible \(n\times n\) square matrices.
-    6. Any directed graph \(G\) induces a category, whose objects are vertices, morphisms between two vertices are finite paths between them, the composition is concatenation of the paths, and the identities are the empty paths.
+    6. Any directed graph \(G\) induces a category, whose objects are vertices, morphisms between two vertices are finite directed paths (to be precise, finite directed walks, which allow repetition of edges and vertices) between them, the composition is concatenation of the paths, and the identities are the empty paths.
         - The graph of two vertices and two distinct edges from a vertice to another induces a category, where all non-identity morphisms are drawn as in the following diagram.
             ```tikzcd
                 \begin{tikzcd}
@@ -140,9 +141,38 @@ Note that in the most of the above examples, the objects are sets with additiona
                 \end{tikzcd}
             ```
 
-<!-- !!! definition "Commutative Diagram"
+To move forward, we need important concept of commutative diagrams, whose formal definitions require basic knowledge on graphs.
 
-    A *diagram* in a category \(\sfC\) is -->
+!!! definition "Commutative Diagram"
+
+    A *diagram* in a category \(\sfC\) is a graph homomorphism \(f:G\to G(\sfC)\). In other words, it is the data of some objects of \(\sfC\) and some morphisms between them. It is called *commutative* if for every ordered pair of edges \(e, e'\) of \(G\) and finite directed paths (again, directed walks) \((e_0,...,e_n)\) and \((e'_0,...,e'_m)\) from \(e\) to \(e'\), we have \(f(e_n)\circ\cdots\circ f(e_0) = f(e'_m)\circ\cdots\circ f(e'_0)\).
+
+The diagrams are described visually: see the following examples.
+
+!!! example "Diagrams"
+
+    The followings are diagrams.
+    
+    ```tikzcd
+        \begin{tikzcd}
+            A \arrow[r,"\phi"{description}] &B
+        \end{tikzcd}
+        \begin{tikzcd}
+            A \arrow[r,shift left = 5pt,"\phi"{description}]\arrow[r,shift right = 5pt,"\psi"{description}] &B
+        \end{tikzcd}
+        \begin{tikzcd}
+            A \arrow[drr,"\phi"{description}]\arrow[dd,"\psi"{description}]\\
+            & &C\\
+            B \arrow[urr,"\varphi"{description}]
+        \end{tikzcd}
+        \begin{tikzcd}
+            A \arrow[rr,"f"{description}]\arrow[dd,"g"{description}] & &B \arrow[dd,"h"{description}]\\
+            \\
+            C \arrow[rr,"i"{description}] & &D
+        \end{tikzcd}
+    ```
+
+    The first one is always commutative, since there is only one directed path. The second one is commutative iff \(\phi = \psi\), the third is iff \(\phi = \varphi\circ\psi\), the last is iff \(h\circ f = i\circ g\).
 
 We now look at some elementary constructions on the categories.
 
