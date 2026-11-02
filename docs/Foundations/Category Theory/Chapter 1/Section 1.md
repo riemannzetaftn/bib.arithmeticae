@@ -127,7 +127,7 @@ Note that in the most of the above examples, the objects are sets with additiona
         - The posets \(\bbN, \bbZ_{\ge0}, \bbZ\) with usual order, their subsets such as intervals \(\{n,n+1,\cdots,n+k\}\), and \(\bbN\) with divisibility order form poset categories.
         - For any topological space \(X\), the topology (collection of open sets) form a poset under inclusion, and the induced poset category is denoted by \(\Op(X)\). In other words, this is a category with objects being open subsets of \(X\) and morphisms being inclusion of those open subsets.
     5. There is a category \(\Mat_R\), whose objects are natural numbers and morphisms \(n\to m\) are the \(n\times m\) matrices with coefficients in \(R\), and the composition is given by matrix multiplication. In this case, \(\End(n)\) is the set of \(n\times n\) square matrices, and \(\Aut(n)\) is the group \(\GL_n(R)\) of invertible \(n\times n\) square matrices.
-    6. Any directed graph \(G\) induces a category, whose objects are vertices, morphisms between two vertices are finite directed paths (to be precise, finite directed walks, which allow repetition of edges and vertices) between them, the composition is concatenation of the paths, and the identities are the empty paths.
+<!--    6. Any directed graph \(G\) induces a category, whose objects are vertices, morphisms between two vertices are finite directed paths (to be precise, finite directed walks, which allow repetition of edges and vertices) between them, the composition is concatenation of the paths, and the identities are the empty paths.
         - The graph of two vertices and two distinct edges from a vertice to another induces a category, where all non-identity morphisms are drawn as in the following diagram.
             ```tikzcd
                 \begin{tikzcd}
@@ -139,7 +139,7 @@ Note that in the most of the above examples, the objects are sets with additiona
                 \begin{tikzcd}
                     \bullet & &\bullet \arrow[ll]\arrow[rr] & &\bullet, &\bullet \arrow[rr] & &\bullet & &\bullet \arrow[ll]
                 \end{tikzcd}
-            ```
+            ``` -->
 
 To move forward, we need important concept of commutative diagrams, whose formal definitions require basic knowledge on graphs.
 
