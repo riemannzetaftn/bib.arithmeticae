@@ -27,7 +27,7 @@ In this section we define categories.
 We observe the followings.
 
 - From the first assumption, the domain and codomain of any morphism is uniquely determined, and there's no ambiguity in omitting subscript \(A,B,C\) from the composition symbol \(\circ\). Therefore, we speak of 'the' domain and 'the' codomain from now on. The pair \((\phi,\psi)\) of morphisms is said to be *composable* if the domain of \(\phi\) equals the codomain of \(\psi\), so that the composition \(\phi\circ\psi\) is defined.
-- A category is naturally a directed graph, where vertices are objects and edges are morphisms between them (the identity and composition is additional structure given to categories). For a category \(\sfC\), we denote its underlying graph by \(G(\sfC)\).
+<!-- - A category is naturally a directed graph, where vertices are objects and edges are morphisms between them (the identity and composition is additional structure given to categories). For a category \(\sfC\), we denote its underlying graph by \(G(\sfC)\). -->
 - If a morphism \(\phi:A\to B\) in \(\sfC\) has inverses \(\psi,\varphi\), then we have
     
     \[\psi = \psi\circ\id_B = \psi\circ(\phi\circ\varphi) = (\psi\circ\phi)\circ\varphi = \id_A\circ\varphi = \varphi.\]
@@ -122,34 +122,26 @@ Note that in the most of the above examples, the objects are sets with additiona
         - When \(S = 1 = \{0\}\) is a singleton, we obtain the category \(\mathsf{1}\) with unique object \(\ast\) and unique morphism \(\id_\ast\).
     3. A monoid \(M = (M,e,\cdot)\) is equivalent to a category with one object (let us denote this temporarily by \(\sfM\)). We let \(\ast\) denote the unique object, and let \(\Hom_\sfM(\ast,\ast) = M\), where \(e = \id_\ast\) and \(\cdot\) being the composition; the monoid axioms exactly says that the result is a category. Any category with unique object leads to a monoid, by the last observation after the defintion of categories. Under this correspondence, a group corresponds to a category with unique object, where all morphisms are isomorphisms. By a slight generalization, a groupoid can be thought of a category (possibly with many objects) where all morphisms are isomorphisms.
     4. Any poset \((P,\le)\) can be considered as a category (denoted by \(\sfP\) here), called the *poset categories*, where the relation \(\le\) serves as morphisms; i.e. \(\Hom_\sfP(a,b)\) is empty unless \(a\le b\), in which case it is a singleton. The axioms corresponds to the poset axiom (reflexivity and transitivity). The followings are special cases.
-        - The category \(\mathsf{2}\) is induced from the poset \(2 = \{0,1\}\) with usual order.
+        - The category \(\mathsf{2}\) is induced from the poset \(2 = \{0,1\}\) with usual order. Similarly we have categories \(\mathsf{n}\) for all natural number \(n\), having \(n\) objects.
         - For any set \(S\), the equality \(=\) is a partial order, and the induced poset category is the same as the discrete category with underlying set \(S\). Thus discrete categories are poset categories.
-        - The posets \(\bbN, \bbZ_{\ge0}, \bbZ\) with usual order, their subsets such as intervals \(\{n,n+1,\cdots,n+k\}\), and \(\bbN\) with divisibility order form poset categories.
+        - The posets \(\bbN, \bbZ_{\ge0}, \bbZ\) with usual order, their subsets such as intervals \(\{n,n+1,\cdots,n+k\}\) (which generalizes the first item above), and \(\bbN\) with divisibility order form poset categories.
+        - We also have non-totally ordered posets forming the following categories, where we omitted identity morphisms (we shall do this whenever we describe categories visually).
+            ```tikzcd
+                \begin{tikzcd}
+                    \bullet & &\bullet \arrow[ll]\arrow[rr] & &\bullet, &\bullet \arrow[rr] & &\bullet & &\bullet \arrow[ll]
+                \end{tikzcd}
+            ```
         - For any topological space \(X\), the topology (collection of open sets) form a poset under inclusion, and the induced poset category is denoted by \(\Op(X)\). In other words, this is a category with objects being open subsets of \(X\) and morphisms being inclusion of those open subsets.
-    5. There is a category \(\Mat_R\), whose objects are natural numbers and morphisms \(n\to m\) are the \(n\times m\) matrices with coefficients in \(R\), and the composition is given by matrix multiplication. In this case, \(\End(n)\) is the set of \(n\times n\) square matrices, and \(\Aut(n)\) is the group \(\GL_n(R)\) of invertible \(n\times n\) square matrices.
-<!--    6. Any directed graph \(G\) induces a category, whose objects are vertices, morphisms between two vertices are finite directed paths (to be precise, finite directed walks, which allow repetition of edges and vertices) between them, the composition is concatenation of the paths, and the identities are the empty paths.
-        - The graph of two vertices and two distinct edges from a vertice to another induces a category, where all non-identity morphisms are drawn as in the following diagram.
+    5. Another example of category consists of two objects and two non-identity arrows between them.
             ```tikzcd
                 \begin{tikzcd}
                     \bullet \arrow[rr, shift left = 5pt]\arrow[rr, shift right = 5pt] & &\bullet
                 \end{tikzcd}
             ```
-        - Other such graphs include the followings, whose induced categories are also poset categories.
-            ```tikzcd
-                \begin{tikzcd}
-                    \bullet & &\bullet \arrow[ll]\arrow[rr] & &\bullet, &\bullet \arrow[rr] & &\bullet & &\bullet \arrow[ll]
-                \end{tikzcd}
-            ``` -->
+    6. There is a category \(\Mat_R\), whose objects are natural numbers and morphisms \(n\to m\) are the \(n\times m\) matrices with coefficients in \(R\), and the composition is given by matrix multiplication. In this case, \(\End(n)\) is the set of \(n\times n\) square matrices, and \(\Aut(n)\) is the group \(\GL_n(R)\) of invertible \(n\times n\) square matrices.
+<!-- One may introduce free categories generated by multidigraphs or quivers (allow loops), but they are practically too complicated. Thus we skip them for now.-->
 
-To move forward, we need important concept of commutative diagrams, whose formal definitions require basic knowledge on graphs.
-
-!!! definition "Commutative Diagram"
-
-    Given a graph \(G\), a *(\(G\)-shaped) diagram* in a category \(\sfC\) is a graph homomorphism \(f:G\to G(\sfC)\). In other words, it is the data of some objects of \(\sfC\) and some morphisms between them. It is called *commutative* if for every ordered pair of edges \(e, e'\) of \(G\) and finite directed paths (again, directed walks) \((e_0,...,e_n)\) and \((e'_0,...,e'_m)\) from \(e\) to \(e'\), we have \(f(e_n)\circ\cdots\circ f(e_0) = f(e'_m)\circ\cdots\circ f(e'_0)\).
-
-The diagrams are described visually: see the following examples.
-
-!!! example "Diagrams"
+<!-- !!! example "Diagrams"
 
     The followings are diagrams.
     
@@ -172,7 +164,7 @@ The diagrams are described visually: see the following examples.
         \end{tikzcd}
     ```
 
-    The first one is always commutative, since there is only one directed path. The second one is commutative iff \(\phi = \psi\), the third is iff \(\phi = \varphi\circ\psi\), the last is iff \(h\circ f = i\circ g\).
+    The first one is always commutative, since there is only one directed path. The second one is commutative iff \(\phi = \psi\), the third is iff \(\phi = \varphi\circ\psi\), the last is iff \(h\circ f = i\circ g\). -->
 
 We now look at some elementary constructions on the categories.
 
@@ -187,7 +179,7 @@ We now look at some elementary constructions on the categories.
         
         and the composition being defined componentwisely. Of course, one can extend this construction to arbitrary family of categories, as long as the product of object classes exists as a class.
     4. The *opposite category* of a category \(\sfC\), denoted by \(\sfC^\op\), is given by \(\Ob(\sfC^\op) = \Ob(\sfC)\) and \(\Hom_{\sfC^\op}(B,A) = \Hom_{\sfC}(A,B)\); i.e. it is the category obtained by reversing all the arrows of the category \(\sfC\). To avoid confusion, the morphism \(\phi:A\to B\) in \(\sfC\), when considered as a morphism in \(\sfC^\op\), will be denoted by \(\phi^\op:B\to A\). The composition is defined as follows: given morphisms \(\phi^\op:B\to A\) and \(\psi^\op:C\to B\), \(\phi^\op\circ\psi^\op := (\psi\circ\phi)^\op:C\to A\). The identity is ketp the same.
-    5. Let \(A\) be an object of a category \(\sfC\). The *overcategory* or *slice category* \(\sfC/A\) is defined as follows: an object is a morphism \(\varphi:B\to A\) in \(\sfC\) with target \(A\), and a morphism from \(\varphi:B\to A\) to \(\psi:C\to A\) is a morphism \(\phi:B\to C\) such that \(\varphi = \psi\circ\phi\). In diagram, we have the following.
+    5. Let \(A\) be an object of a category \(\sfC\). The *overcategory* or *slice category* \(\sfC/A\) is defined as follows: an object is a morphism \(\varphi:B\to A\) in \(\sfC\) with target \(A\), and a morphism from \(\varphi:B\to A\) to \(\psi:C\to A\) is a morphism \(\phi:B\to C\) such that \(\varphi = \psi\circ\phi\). We have the following visualization.
 
         ```tikzcd
             \begin{tikzcd}
@@ -197,7 +189,7 @@ We now look at some elementary constructions on the categories.
             \end{tikzcd}
         ```
 
-        The objects are also called the *objects of \(\sfC\) over \(A\)*. Similarly, the *undercategory* or *coslice category* \(A/\sfC\) is defined as follows: an object is a morphism \(\phi:A\to B\) in \(\sfC\) with source \(A\), and a morphism from \(\phi:A\to B\) to \(\psi:A\to C\) is a morphism \(\varphi:B\to C\) such that \(\psi = \varphi\circ\phi\). In diagram, we have the following.
+        The objects are also called the *objects of \(\sfC\) over \(A\)*. Similarly, the *undercategory* or *coslice category* \(A/\sfC\) is defined as follows: an object is a morphism \(\phi:A\to B\) in \(\sfC\) with source \(A\), and a morphism from \(\phi:A\to B\) to \(\psi:A\to C\) is a morphism \(\varphi:B\to C\) such that \(\psi = \varphi\circ\phi\). We have the following visualization.
         
         ```tikzcd
             \begin{tikzcd}

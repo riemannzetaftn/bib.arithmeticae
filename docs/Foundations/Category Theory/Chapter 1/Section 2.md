@@ -94,6 +94,39 @@ Throughout this blog, unless otherwise specified, a functor will denote a covari
     11. The general linear groups define functors \(\GL_n:\cRing\to\Grp\), as a ring homomorphism \(\varphi:R\to S\) induces a group homomorphism \(\GL_n(R)\to\GL_n(S)\) obtained by applying \(\varphi\) to each entry. Similarly, the special linear groups define functors.
     12. An action of a monoid \(M\) to a set \(S\) corrensponds to a functor from the induced category \(\sfM\) to \(\Set\), whose image of the unique object \(\ast\) being the set \(S\). Indeed, the only map between morphisms is the map \(M = \End_\sfM(\ast)\to\End_\Set(S)\), and the functoriality is exactly the assumptions for the monoid action. In particular, if we take \(M\) to be a group \(G\), we recover group action, since invertible elements must map to an invertible element, so that the map corestricts to the map \(G\to\Aut_\Set(S)\), and the functoriality says that this is a group homomorphism. Similarly, a \(k\)-linear representation of a group \(G\) is equivalent to a functor \(\sfG\to\Vec_k\).
 
+The next definition illustrates another nature of functors.
+
+!!! definition "Diagram"
+
+    Given categories \(\sfI\) and \(\sfC\), an *\(\sfI\)-shaped diagram in \(\sfC\)* is a functor \(\caF:\sfI\to\sfC\), and \(\sfI\) is called the *index category* of the diagram \(\caF\). This is because a functor is nothing more than a drawing of a category \(\sfI\) in the ambient category \(\sfC\), where some objects and arrows might be identified. The diagram \(\caF\) is called *commutative* if each map on morphisms is constant; i.e. if \(i,j\in\Ob(\sfI\)\) and \(\phi,\psi:i\to j\) are any two morphisms in \(\sfI\), we have \(\caF(\phi) = \caF(\psi)\).
+
+We illustrate this concept with examples.
+
+!!! example "Diagram"
+
+    The followings are visual descriptions of diagrams, where nodes are objects of \(\sfC\), arrows are morphisms of \(\sfC\), and we omitted (images of) identity morphisms.
+    
+    ```tikzcd
+        \begin{tikzcd}
+            A \arrow[r,"\phi"{description}] &B
+        \end{tikzcd}
+        \begin{tikzcd}
+            A \arrow[r,shift left = 5pt,"\phi"{description}]\arrow[r,shift right = 5pt,"\psi"{description}] &B
+        \end{tikzcd}
+        \begin{tikzcd}
+            A \arrow[drr,"\phi"{description}]\arrow[dd,"\psi"{description}]\\
+            & &C\\
+            B \arrow[urr,"\varphi"{description}]
+        \end{tikzcd}
+        \begin{tikzcd}
+            A \arrow[rr,"f"{description}]\arrow[dd,"g"{description}] & &B \arrow[dd,"h"{description}]\\
+            \\
+            C \arrow[rr,"i"{description}] & &D
+        \end{tikzcd}
+    ```
+
+    The first one has index category \(\mathsf{2}\), which is a poset category. If the index category is a poset category, then the resulting diagram is always commutative, since a morphism with fixed domain and codomain is unique. The second has index category introduced in [](Section 1.md#ex-elementary-categories) 5. TBU
+
 The concept of functors allow us to define more abstract categories.
 
 !!! definition "Second Constructions on Categories"
@@ -121,7 +154,7 @@ The concept of functors allow us to define more abstract categories.
         ```
 
         This equals the category \((\caF^\op/B)^\op\). The under category \(B/\sfC\) is a special case where \(\caF = \id_\sfC\).
-    4. Let \(\caF:\sfI\to\sfC\) be a functor. This is also called to be an *(\(\sfI\)-shaped) diagram (in \(\sfC\))*, and \(\sfI\) is called the *index category* of the diagram, since a functor is nothing more than a drawing of a category \(\sfI\) in the ambient category \(\sfC\), perhaps some objects and arrows being identified.
+    4. Let \(\caF:\sfI\to\sfC\) be a functor. This is also called to be an *(\(\sfI\)-shaped) diagram (in \(\sfC\))*, and \(\sfI\) is called the *index category* of the diagram, since 
 
         Then a *cone over \(\caF\)* is a pair \((N,\psi)\), where \(N\in\Ob(\sfC)\) and \(\psi = (\psi_i)_{i\in\Ob(\sfI)}\) is an indexed family of morphisms \(\psi_i:N\to\caF(i)\) of \(\sfC\), such that for every morphism \(\phi:i\to j\) in \(\sfI\), \(\psi_j = \caF(\phi)\circ\psi_i\). A *morphism of cones over \(\caF\)* \(\phi:(N,\psi)\to(N',\psi')\) is a morphism \(\phi:N\to N'\) in \(\sfC\) such that \(\psi_i = \psi'_i\circ\phi\) for all \(i\in\Ob(\sfI)\); see the following commutative diagram, meant to be drawn for each morphism \(\phi\) in \(\sfI\).
         
