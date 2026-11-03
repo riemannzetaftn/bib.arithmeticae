@@ -104,7 +104,7 @@ We illustrate this concept with examples.
 
 !!! example "Diagram"
 
-    The followings are visual descriptions of diagrams, where nodes are objects of \(\sfC\), arrows are morphisms of \(\sfC\), and we omitted (images of) identity morphisms.
+    The followings are visual descriptions of diagrams, where nodes are objects of \(\sfC\), arrows are morphisms of \(\sfC\). For simplicity, we have omitted identity morphisms and the morphisms obtained by composing already drawn morphisms.
     
     ```tikzcd
         \begin{tikzcd}
@@ -125,7 +125,7 @@ We illustrate this concept with examples.
         \end{tikzcd}
     ```
 
-    The first one has index category \(\mathsf{2}\), which is a poset category. If the index category is a poset category, then the resulting diagram is always commutative, since a morphism with fixed domain and codomain is unique. The second has index category introduced in [](Section 1.md#ex-elementary-categories) 5. TBU
+    The first one has index category \(\mathsf{2}\), which is a poset category. If the index category is a poset category, then the resulting diagram is always commutative, since a morphism with fixed domain and codomain is unique. The second has index category introduced in [](Section 1.md#ex-elementary-categories) 5, and is commutative if and only if \(\phi = \psi\). The third has index category consisting of three objects, and TBU
 
 The concept of functors allow us to define more abstract categories.
 
