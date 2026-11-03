@@ -126,7 +126,7 @@ We illustrate this concept with examples.
 
     The first one has index category \(\mathsf{2}\), which is a poset category. If the index category is a poset category, then the resulting diagram is always commutative, since a morphism with fixed domain and codomain is unique. The second has index category introduced in [](Section 1.md#ex-elementary-categories) 5, and is commutative if and only if \(\phi = \psi\). The third has index category consisting of three objects, and four non-identity morphisms, of which one composition has been omitted in the above. It is commutative iff \(\phi = \varphi\circ\psi\). The last has index category consisting of four objects and six non-identity morphisms, of which two compositions has been omitted. It is commutative iff \(h\circ f = i\circ g\).
 
-In the following, we shall frequently use diagrams and their commutativity. Actually, we have already done this; in [](Section 1.md#def-1st-const-categories), we have defined over and under categories and described their morphisms with a commutative diagram.
+In the following, we shall frequently use diagrams and their commutativity. In fact, we have already done this implicitly; in [](Section 1.md#def-1st-const-categories), we have defined over and under categories and described their morphisms with a commutative diagram.
 
 The concept of functors allow us to define more abstract categories.
 
@@ -188,4 +188,10 @@ The concept of functors allow us to define more abstract categories.
             \end{tikzcd}
         ```
 
-<!--Cat, F/B, B/F, (co)cone -->
+Again, these constructions on categories allow us more examples of functors.
+
+!!! example "More Functors"
+
+    1. We have more examples of forgetful functors, from the category \(\Cat\).
+        
+        - The association \(\Ob\) defines a functor \(\Ob:\Cat\to\Set\). A category \(\sfC\) is mapped to the set \(\Ob(\sfC)\), and a functor \(\caF:\sfC\to\sfD\) is mapped to the function \(\Ob(\sfC)\to\Ob(\sfD)\), and this association is functorial.
