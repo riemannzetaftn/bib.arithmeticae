@@ -1,4 +1,5 @@
 window.MathJax = {
+  loader: { load: ["ui/lazy"] },
   tex: {
     inlineMath: [["\\(", "\\)"]],
     displayMath: [["\\[", "\\]"]],
