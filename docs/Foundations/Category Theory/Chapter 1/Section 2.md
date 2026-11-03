@@ -134,7 +134,7 @@ The concept of functors allow us to define more abstract categories.
 !!! definition "Second Constructions on Categories"
 
     1. Since the identity and composition of functors clearly satisfy the identity and associativity conditions, there is a category of all (small) categories, denoted by \(\Cat\); the objects are small categories and morphisms are functors between them. If we specify an object, then we have category \(\Cat_\ast\); an object is an ordered pair \((\sfC,A)\) where \(A\in\Ob(\sfC)\), and a morphism \(\caF:(\sfC,A)\to(\sfD,B)\) is a functor \(\caF:\sfC\to\sfD\) with \(\caF(A) = B\).
-    2. If \(\caF:\sfC\to\sfD\) is a functor and \(B\in\Ob(\sfD)\), then there is a category \(\caF/B\) of objects \(\caF\)-over \(B\). An object of this category is a pair \((A,\phi)\) where \(A\in\Ob(\sfC)\) and \(\phi:\caF(A)\to B\) is a morphism in \(\sfD\). A morphism \(\psi:(A,\phi)\to(A',\phi')\) in this category is a morphism \(\psi:A\to A'\) in \(\sfC\) such that \(\phi = \phi'\circ\caF(\psi)\). In diagram, we have the following.
+    2. If \(\caF:\sfC\to\sfD\) is a functor and \(B\in\Ob(\sfD)\), then there is a category \(\caF/B\) of objects \(\caF\)-over \(B\). An object of this category is a pair \((A,\phi)\) where \(A\in\Ob(\sfC)\) and \(\phi:\caF(A)\to B\) is a morphism in \(\sfD\). A morphism \(\psi:(A,\phi)\to(A',\phi')\) in this category is a morphism \(\psi:A\to A'\) in \(\sfC\) such that \(\phi = \phi'\circ\caF(\psi)\). We have the following commutative diagram description.
 
         ```tikzcd
             \begin{tikzcd}
@@ -145,7 +145,7 @@ The concept of functors allow us to define more abstract categories.
         ```
 
         The over category \(\sfC/B\) is a special case where \(\caF = \id_\sfC\).
-    3. Similarly, there is a category \(B/\caF\) of object \(\caF\)-under \(B\), whose objects are pairs \((A,\phi)\) where \(A\in\Ob(\sfC)\) and \(\phi:B\to\caF(A)\) is a morphism in \(\sfD\). A morphism \(\psi:(A,\phi)\to(A',\phi')\) in this category is a morphism \(\psi:A\to A'\) in \(\sfC\) such that \(\phi' = \caF(\psi)\circ\phi\). In a commutative diagram, we have the following. 
+    3. Similarly, there is a category \(B/\caF\) of object \(\caF\)-under \(B\), whose objects are pairs \((A,\phi)\) where \(A\in\Ob(\sfC)\) and \(\phi:B\to\caF(A)\) is a morphism in \(\sfD\). A morphism \(\psi:(A,\phi)\to(A',\phi')\) in this category is a morphism \(\psi:A\to A'\) in \(\sfC\) such that \(\phi' = \caF(\psi)\circ\phi\). In terms of commutative diagram, we have the following. 
 
         ```tikzcd
             \begin{tikzcd}
