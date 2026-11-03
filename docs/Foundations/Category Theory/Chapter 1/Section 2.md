@@ -70,7 +70,7 @@ Throughout this blog, unless otherwise specified, a functor will denote a covari
         - The above forgetful functor \(\cAlg_R\to\cRing\) has the following generalization: we have forgetful functors \(\sfC/A, A/\sfC\to\sfC\), which forgets the morphism into / from the object \(A\).
         - If we forget addition, we have forgetful functors \(\Ring\to\Mnd\) and \(\cRing\to\cMnd\). As a slight variant, the unit group \(R^\times\) of a ring \(R\) define functors \(\Ring\to\Grp\) and \(\cRing\to\Ab\).
         - \(\hTop_\ast\to\hTop\), \(\cMfd\to\sMfd\to\Mfd\), from \(\Var_k, \LRS, \Sch\) to \(\Top\).
-        - From every category in [](Section 1.md#ex-category), 6 to \(\Top\). Metric spaces with \(1\)-Lipschitz / Lipschitz / uniformly continuous functions to uniform spaces with uniformly continuous functions.
+        - From every category in [](Section 1.md#ex-category), 5 to \(\Top\). Metric spaces with \(1\)-Lipschitz / Lipschitz / uniformly continuous functions to uniform spaces with uniformly continuous functions.
         - From measure-preserving systems with their homomorphisms to measure spaces with measure-preserving maps, to measurable spaces with measurable maps.
         - From the category Hilbert spaces with unitary / bounded linear maps to Banach spaces with unitary / bounded linear maps, to metric spaces with \(1\)-Lipschitz / Lipschitz functions.
         - From \(\tGrp\) to both \(\Top\) and \(\Grp\), \(\tRing,\tVec_k\to\tGrp\) by considering only additive structure, from \(\LieGrp\) to both \(\sMfd\) and \(\Grp\).
@@ -84,12 +84,11 @@ Throughout this blog, unless otherwise specified, a functor will denote a covari
         - If \(S\) is an \(R\)-algebra, then the tensoring \(M\mapsto M\otimes_R S\) define free functors \(\Mod_R\to\Mod_S\), \(\Alg_R\to\Alg_S\) and \(\cAlg_R\to\cAlg_S\) (if \(S\) is commutative). If \(R = \bbZ\), this becomes \(\Ab\to\Mod_S\), \(\Ring\to\Alg_S\) and \(\cRing\to\cAlg_S\).
         - Given a set \(S\), we can assign discrete topology to form a discrete space with underlying set \(S\), this gives a free functor \(\Set\to\Top\).
     8. The fundamental groups in topology define a functor \(\pi_1:\Top_\ast\to\Grp\), which factors through the quotient functor \(\Top_\ast\to\hTop_\ast\), inducing a functor \(\overline{\pi_1}:\hTop_\ast\to\Grp\). Similarly, the homology groups define functors \(H_n:\Top\to\Ab\) and induced functors \(\hTop\to\Ab\).
-    9. We have seen in [](Section 1.md#ex-elementary-categories) how structures of sets, monoids (in particular, groups), posets, graphs induce categories. In fact, the morphisms of those structures induce functors between induced categories. The following examples generalize last four items of [](Section 1.md#ex-first-const-categories) 1, where the functions are injective.
+    9. We have seen in [](Section 1.md#ex-elementary-categories) how structures of sets, monoids (in particular, groups), posets, graphs induce categories. In fact, the morphisms of those structures induce functors between induced categories. The following examples generalize last three items of [](Section 1.md#ex-1st-const-categories) 1, where the functions are injective.
 
         - If \(f:S\to T\) is a function, then it induces a functor between discrete categories \(\sfS\to\sfT\), which is \(f\) on objects and send \(\id_s\) to \(\id_{f(s)}\); the functoriality is clear, since only composable pairs are identities of the same object.
         - If \(f:M\to N\) is a monoid homomorphism, then it induces a functor \(\sfM\to\sfN\), which send \(\ast\) to \(\ast\), and is \(f\) on morphisms \(\ast\to\ast\). In particular, a group homomorphism induces a functor between induced categories.
         - If \(f:P\to Q\) is an order-preserving map, then it induces a functor between poset categories \(\sfP\to\sfQ\), which is \(f\) on objects, and send the unique morphism \(i\to j\) (i.e. when \(i\le j\)) in \(\sfP\) to the unique morphism \(f(i)\to f(j)\) (as \(f(i)\le f(j)\)). Then the functoriality is clear, since the morphisms with given source and target is unique in poset categories.
-        - If \(f:G\to H\) is a morphism of graphs, then it induces a functor between induced categories.
     10. Given a function \(f:A\to B\), its image and inverse image induce order-preserving maps \(f_\ast:\caP(A)\to\caP(B)\) and \(f^\ast:\caP(B)\to\caP(A)\), and the corresponding functors between the poset categories. Moreover, the association is functorial; i.e. assining \(f\) to its (inverse) image map between power sets preserve identity and composition, hence we have two functors \(\Set\to\poSet\) and \(\Set^\op\to\poSet\), which sends a set \(A\) to its power set \(\caP(A)\) and send a function to associated image / inverse image maps.
     11. The general linear groups define functors \(\GL_n:\cRing\to\Grp\), as a ring homomorphism \(\varphi:R\to S\) induces a group homomorphism \(\GL_n(R)\to\GL_n(S)\) obtained by applying \(\varphi\) to each entry. Similarly, the special linear groups define functors.
     12. An action of a monoid \(M\) to a set \(S\) corrensponds to a functor from the induced category \(\sfM\) to \(\Set\), whose image of the unique object \(\ast\) being the set \(S\). Indeed, the only map between morphisms is the map \(M = \End_\sfM(\ast)\to\End_\Set(S)\), and the functoriality is exactly the assumptions for the monoid action. In particular, if we take \(M\) to be a group \(G\), we recover group action, since invertible elements must map to an invertible element, so that the map corestricts to the map \(G\to\Aut_\Set(S)\), and the functoriality says that this is a group homomorphism. Similarly, a \(k\)-linear representation of a group \(G\) is equivalent to a functor \(\sfG\to\Vec_k\).
@@ -104,7 +103,7 @@ We illustrate this concept with examples.
 
 !!! example "Diagram"
 
-    The followings are visual descriptions of diagrams, where nodes are objects of \(\sfC\), arrows are morphisms of \(\sfC\). For simplicity, we have omitted identity morphisms and the morphisms obtained by composing already drawn morphisms.
+    The followings are visual descriptions of diagrams, where nodes are objects of \(\sfC\), arrows are morphisms of \(\sfC\). For simplicity, we have omitted images of identity morphisms and the morphisms obtained by composing already drawn morphisms in \(\sfI\).
     
     ```tikzcd
         \begin{tikzcd}
@@ -125,7 +124,9 @@ We illustrate this concept with examples.
         \end{tikzcd}
     ```
 
-    The first one has index category \(\mathsf{2}\), which is a poset category. If the index category is a poset category, then the resulting diagram is always commutative, since a morphism with fixed domain and codomain is unique. The second has index category introduced in [](Section 1.md#ex-elementary-categories) 5, and is commutative if and only if \(\phi = \psi\). The third has index category consisting of three objects, and TBU
+    The first one has index category \(\mathsf{2}\), which is a poset category. If the index category is a poset category, then the resulting diagram is always commutative, since a morphism with fixed domain and codomain is unique. The second has index category introduced in [](Section 1.md#ex-elementary-categories) 5, and is commutative if and only if \(\phi = \psi\). The third has index category consisting of three objects, and four non-identity morphisms, of which one composition has been omitted in the above. It is commutative iff \(\phi = \varphi\circ\psi\). The last has index category consisting of four objects and six non-identity morphisms, of which two compositions has been omitted. It is commutative iff \(h\circ f = i\circ g\).
+
+In the following, we shall frequently use diagrams and their commutativity. Actually, we have already done this; in [](Section 1.md#def-1st-const-categories), we have defined over and under categories and described their morphisms with a commutative diagram.
 
 The concept of functors allow us to define more abstract categories.
 
@@ -172,6 +173,18 @@ The concept of functors allow us to define more abstract categories.
         ```
 
         Then the cones and their morphisms form the *category of cones over \(\caF\)*, denoted by \(\Cone(\caF)\).
-    5. Similarly, there is a *category of co-cones over \(\caF\)*, whose objects (the *co-cones over \(\caF\)*) are pairs \((N,\psi)\) where \(N\in\Ob(\sfC)\) and \(\psi = (\psi_i)_{i\in\Ob(\sfI)}\) is an indexed family of morphisms \(\psi_i:\caF(i)\to N\) in \(\sfC\), and *morphisms of co-cones* \(\phi:(N,\psi)\to(N',\psi')\) are morphisms \(\phi:N\to N'\) in \(\sfC\) such that \(\psi'_i = \psi_i\circ\phi\) for all \(i\in\Ob(\sfI)\).
+    5. Similarly, there is a *category of co-cones over \(\caF\)*, denoted by \(\coCone(\caF)\), whose objects (the *co-cones over \(\caF\)*) are pairs \((N,\psi)\) where \(N\in\Ob(\sfC)\) and \(\psi = (\psi_i)_{i\in\Ob(\sfI)}\) is an indexed family of morphisms \(\psi_i:\caF(i)\to N\) in \(\sfC\), and *morphisms of co-cones* \(\phi:(N,\psi)\to(N',\psi')\) are morphisms \(\phi:N\to N'\) in \(\sfC\) such that \(\psi'_i = \phi\circ\psi_i\) for all \(i\in\Ob(\sfI)\). See the following commutative diagrams.
+
+        ```tikzcd
+            \begin{tikzcd}
+                \caF(i) \arrow[ddr,"\psi_i"{description}]\arrow[rr,"\caF(\phi)"{description}] & &\caF(j) \arrow[ddl,"\psi_j"{description}]\\
+                \\
+                &N
+            \end{tikzcd}\begin{tikzcd}
+                \caF(i) \arrow[ddr,"\psi_i"{description}]\arrow[rr,"\caF(\phi)"{description}]\arrow[dddr,bend right,"\psi'_i"{description}] & &\caF(j) \arrow[ddl,bend left,"\psi_j"{description}]\arrow[dddl,"\psi'_j"{description}]\\
+                \\
+                &N \arrow[d,"\phi"{description}]
+                &N'
+        ```
 
 <!--Cat, F/B, B/F, (co)cone -->
