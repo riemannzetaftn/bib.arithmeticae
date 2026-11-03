@@ -132,7 +132,7 @@ The concept of functors allow us to define more abstract categories.
 
 !!! definition "Second Constructions on Categories"
 
-    1. Since the identity and composition of functors clearly satisfy the identity and associativity conditions, there is a category of all (small) categories, denoted by \(\Cat\); the objects are small categories and morphisms are functors between them.
+    1. Since the identity and composition of functors clearly satisfy the identity and associativity conditions, there is a category of all (small) categories, denoted by \(\Cat\); the objects are small categories and morphisms are functors between them. If we specify an object, then we have category \(\Cat_\ast\); an object is an ordered pair \((\sfC,A)\) where \(A\in\Ob(\sfC)\), and a morphism \(\caF:(\sfC,A)\to(\sfD,B)\) is a functor \(\caF:\sfC\to\sfD\) with \(\caF(A) = B\).
     2. If \(\caF:\sfC\to\sfD\) is a functor and \(B\in\Ob(\sfD)\), then there is a category \(\caF/B\) of objects \(\caF\)-over \(B\). An object of this category is a pair \((A,\phi)\) where \(A\in\Ob(\sfC)\) and \(\phi:\caF(A)\to B\) is a morphism in \(\sfD\). A morphism \(\psi:(A,\phi)\to(A',\phi')\) in this category is a morphism \(\psi:A\to A'\) in \(\sfC\) such that \(\phi = \phi'\circ\caF(\psi)\). In diagram, we have the following.
 
         ```tikzcd
@@ -192,6 +192,8 @@ Again, these constructions on categories allow us more examples of functors.
 
 !!! example "More Functors"
 
-    1. We have more examples of forgetful functors, from the category \(\Cat\).
+    1. We have more examples of forgetful functors.
         
-        - The association \(\Ob\) defines a functor \(\Ob:\Cat\to\Set\). A category \(\sfC\) is mapped to the set \(\Ob(\sfC)\), and a functor \(\caF:\sfC\to\sfD\) is mapped to the function \(\Ob(\sfC)\to\Ob(\sfD)\), and this association is functorial.
+        - We have a forgetful functor \(\Ob:\Cat\to\Set\), which forgets morphisms. A category \(\sfC\) is mapped to the set \(\Ob(\sfC)\), and a functor \(\caF:\sfC\to\sfD\) is mapped to the function \(\Ob(\sfC)\to\Ob(\sfD)\), and this association is functorial. This also gives a functor \(\Cat_\ast\to\Set_\ast\).
+        - The association \((\sfC,A)\mapsto\End_\sfC(A)\) defines a functor \(\Cat_\ast\to\Mnd\); we have seen that each \(\End_\sfC(A)\) is a monoid, and if \(\caF:(\sfC,A)\to(\sfD,B)\) is a functor, then there is a function on morphisms \(\End_\sfC(A)\to\End_\sfD(B)\) is functorial, which exactly says that it is a monoid homomorphism. This is forgetful, as it forgets all other objects and morphisms from / into them.
+        - Similarly, \((\sfC,A)\mapsto\Aut_\sfC(A)\) defines a functor \(\Cat_\ast\to\Grp\).
