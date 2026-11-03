@@ -57,7 +57,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: 3.x
-      - run: pip install zensical pybtex
+      - run: pip install zensical pybtex beautifulsoup4
 
       # ---------- tikzcd ----------
       - name: Check tikzcd diagrams
@@ -103,6 +103,8 @@ jobs:
       - run: zensical build --clean
         env:
           PYTHONPATH: scripts
+      - name: Number theorems
+        run: python scripts/number_theorems.py site
       - uses: actions/upload-pages-artifact@v5
         with:
           path: site

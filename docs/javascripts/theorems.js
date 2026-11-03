@@ -215,6 +215,7 @@
   async function run() {
     const myRun = ++runId;
     const root = document.querySelector(".md-content") || document.body;
+    if (root.hasAttribute("data-thm-static")) return;
     const loc = parseLocation(location.pathname);
     const prefix = getPrefix(root, loc);
     const counters = await getStartCounts(loc);
