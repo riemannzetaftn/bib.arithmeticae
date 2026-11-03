@@ -187,6 +187,8 @@ The concept of functors allow us to define more abstract categories.
                 &N'
             \end{tikzcd}
         ```
+    
+    These constructions will be revisited when we introduce 'universal properties', which is one of the most important concepts in category theory.
 
 Again, these constructions on categories allow us more examples of functors.
 
