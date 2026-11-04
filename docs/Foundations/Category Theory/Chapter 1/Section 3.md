@@ -45,7 +45,7 @@ Here comes the examples.
             \end{tikzcd}
         ```
 
-        That is, we have \(g\cdot f(a) = f(g\cdot a)\), or the map is \(G\)-equivariant. This applies to linear representations of groups and \(G\)-modules; that is, the category of \(G\)-sets is identified with functor category \([\sfG,\Set]\), the category of \(k\)-linear representations of \(G\) is identified with \([\sfG,\Vec_k]\), and the category of \(G\)-module is identified with \([\sfG,\Ab]\). This is a first example of functor categories that arise in practice.
+        That is, we have \(g\cdot f(a) = f(g\cdot a)\), or the map is \(G\)-equivariant. This applies to linear representations of groups and \(G\)-modules; that is, the category of \(G\)-sets is identified with the functor category \([\sfG,\Set]\), the category of \(k\)-linear representations of \(G\) is identified with \([\sfG,\Vec_k]\), and the category of \(G\)-module is identified with \([\sfG,\Ab]\). This is a first example of functor categories that arise in practice.
     6. A cone \((N,\psi)\) over a diagram \(\caF:\sfI\to\sfC\) is equivalent to a natural transformation from the constant functor \(\Delta_N\) to the functor \(\caF\), where \(\psi = (\psi_i)_{i\in\Ob(\sfI)}\) is the natural transformation. Indeed, the commutativity assumption is equivalent to the naturality. Dually, a co-cone \((N,\psi)\) of a functor \(\caF\) is equivalent to a natural transformation from \(\caF\) to the \(\Delta_N\). We further observe the followings:
 
         - The product category \(\sfC^I\), where \(I\) is a set, is identified with functor category \([\sfI,\sfC]\), where \(\sfI\) is the discrete category with underlying set \(I\). If \(\caF\) is such a functor, then the collection \((\caF(i))_{i\in\Ob(\sfI)}\) is an object of \(\sfC^I\), and given an object \((A_i)_{i\in\Ob(\sfI)}\) of \(\sfC^I\), the association \(i\mapsto A_i\), \(\id_i\mapsto\id_{A_i}\) defines a functor \(\sfI\to\sfC\). This explains the general notation \(\sfD^\sfC\) of a functor category; it generalizes product categories.
@@ -54,3 +54,32 @@ Here comes the examples.
 
         As a conclusion, the category \(\Cone(\caF)\) is identified with the category \(\Delta/\caF\). Dually, the category \(\coCone(\caF)\) corresponds to the category \(\caF/\Delta\).
 <!-- unit, counit 소개하기... 귀찮음. -->
+
+The natural transformations can also be composed horizontally.
+
+!!! definition "Horizontal Composition"
+
+    Let \(\caF_1,\caG_1:\sfC\to\sfD\) and \(\caF_2,\caG_2:\sfD\to\sfE\) be functors and \(\eta:\caF_1\to\caG_1\), \(\varepsilon:\caF_2\to\caG_2\) be natural transformations. Their *horizontal composition* \(\varepsilon\ast\eta:\caF_2\circ\caF_1\to\caG_2\circ\caG_1\) is defined by \((\varepsilon\ast\eta)_A = \varepsilon_{\caG_1(A)}\circ\caF_2(\eta_A) = \caG_2(\eta_A)\circ\varepsilon_{\caF_1(A)}\).
+
+Let us check well-definedness.
+
+- First, the equality holds by the naturality of \(\varepsilon\): see the following commutative diagram.
+
+    ```tikzcd
+        \begin{tikzcd}
+            \caF_2(\caF_1(A)) \arrow[dd,"\caF_2(\eta_A)"{description}]\arrow[rr,"\varepsilon_{\caF_1(A)}"{description}] & &\caG_2(\caF_1(A)) \arrow[dd,"\caG_2(\eta_A)"{description}]\\
+            \\
+            \caF_2(\caG_1(A)) \arrow[rr,"\varepsilon_{\caG_1(A)}"{description}] & &\caG_2(\caG_1(A))
+        \end{tikzcd}
+    ```
+- Second, given a morphism \(\phi:A\to B\) in \(\sfC\), consider the following commutative diagram.
+
+    ```tikzcd
+        \begin{tikzcd}
+            \caF_2(\caF_1(A)) \arrow[dd,"\caF_2(\caF_1(\phi))"{description}]\\
+            \\
+            \caF_2(\caF_1(B))
+        \end{tikzcd}
+    ```
+
+    TBU
