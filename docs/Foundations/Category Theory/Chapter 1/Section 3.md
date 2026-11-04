@@ -44,4 +44,4 @@ Here comes the examples.
         That is, we have \(g\cdot f(a) = f(g\cdot a)\), or the map is \(G\)-equivariant. This applies to linear representations of groups and \(G\)-modules; that is, the category of \(G\)-sets is identified with functor category \([\sfG,\Set]\), the category of \(k\)-linear representations of \(G\) is identified with \([\sfG,\Vec_k]\), and the category of \(G\)-module is identified with \([\sfG,\Ab]\). This is a first example of functor categories that arise in practice.
     5. 
 <!-- cone as a natural transform...? but is this used later? same as categories too? -->
-<!-- product category as functor categories, and diagonal functions. -->
+<!-- product category as functor categories, and diagonal functors. -->
