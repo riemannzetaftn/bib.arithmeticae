@@ -26,7 +26,7 @@ Here comes the examples.
 
 !!! example "Natural Transformations"
 
-    1. Recall from [](Section 2.md#ex-functor) that \(\GL_n\) and \((\bline)^\times\) (the unit groups) define functors \(\cRing\to\Grp\). Then the determinant defines a natural transformation from \(\GL_n\to(\bline)^\times\); for each commutative ring \(R\), \(\det_R:\GL_n(R)\to R^\times\) is a group homomorphism, and given a ring homomorphism \(f:R\to S\) we have \(f^\times\circ\det_R = \det_S\circ\GL_n(f)\). The naturality implies that the determinant is defined in a uniform way, regardless of structure of each ring.
+    1. Recall from [](Section 2.md#ex-functor) that \(\GL_n\) and \((\bline)^\times\) (the unit groups) define functors \(\cRing\to\Grp\). Then the determinant defines a natural transformation \(\GL_n\to(\bline)^\times\); for each commutative ring \(R\), \(\det_R:\GL_n(R)\to R^\times\) is a group homomorphism, and given a ring homomorphism \(f:R\to S\) we have \(f^\times\circ\det_R = \det_S\circ\GL_n(f)\). The naturality implies that the determinant is defined in a uniform way, regardless of structure of each ring.
     2. The inversion maps \(g\mapsto g^{-1}\) define a natural isomorphism from the identity functor to the opposite functor on \(\Grp\): it is a group isomorphism from a group \(G\) to its opposite group \(G^\op\), and for any group homomorphism \(f:G\to H\), we have \(f(g)^{-1}=f^\op(g^{-1})\), proving naturality.
     3. We have a natural transformation from the identity functor on \(\Vec_k\) to the double dual functor, given as follows: for each vector space \(V\), the morphism \(\eta_V:V\to V^{\vee\vee}\) send a vector \(v\) to the linear functional \(\tilde{v}:V^\vee\to k\), \(\tilde{v}(f) = f(v)\). This is \(k\)-linear, and the naturality is proved as follows: if \(\phi:V\to W\) is a linear map, then \(\phi^{\vee\vee}(\tilde{v}) = \widetilde{\phi(v)}\). Indeed, for every \(f\in W^\vee\), \(\phi^{\vee\vee}(\tilde{v})(f) = (\tilde{v}\circ\phi^\vee)(f) = \tilde{v}(\phi^\vee(f)) = \tilde{v}(f\circ\phi) = f(\phi(v)) = \widetilde{\phi(v)}(f)\). One can see that the maps \(\eta_V\) are injective.
 
@@ -42,6 +42,6 @@ Here comes the examples.
         ```
 
         That is, we have \(g\cdot f(a) = f(g\cdot a)\), or the map is \(G\)-equivariant. This applies to linear representations of groups and \(G\)-modules; that is, the category of \(G\)-sets is identified with functor category \([\sfG,\Set]\), the category of \(k\)-linear representations of \(G\) is identified with \([\sfG,\Vec_k]\), and the category of \(G\)-module is identified with \([\sfG,\Ab]\). This is a first example of functor categories that arise in practice.
-    5. 
-<!-- cone as a natural transform...? but is this used later? same as categories too? -->
+    5. A cone \((N,\psi)\) over a functor \(\caF:\sfC\to\sfD\) is equivalent to a natural transformation from the constant functor with value \(N\) to the functor \(\caF\), where \(\psi = (\psi_i)_{i\in\Ob(\sfI)}\) is the natural transformation. Indeed, the commutativity assumption is equivalent to the naturality. Dually, a co-cone \((N,\psi)\) of a functor \(\caF\) is equivalent to a natural transformation from \(\caF\) to the constant functor with value \(N\).
+<!-- 6. In fact, the category \(\Cone(\caF)\) can be identified with the over category \(\Delta/\caF\) -->
 <!-- product category as functor categories, and diagonal functors. -->

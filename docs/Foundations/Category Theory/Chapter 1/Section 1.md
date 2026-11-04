@@ -206,6 +206,8 @@ We now look at some elementary constructions on the categories.
     4. The under category is opposite of over category: precisely, we have \(A/\sfC = (\sfC^\op/A)^\op\).
     5. \(\cAlg_R\) is the coslice category \(R/\cRing\).
 
+A categorical statement also has its opposite (more commonly called as a dual), and if a categorical statement is true for a category \(\sfC\) iff its dual statement is true for \(\sfC^\op\). Since \(\sfC = (\sfC^\op)^\op\), in particular, given a categorical statement which is true for all category, its opposite is also true for all category. This is often referred to as the *principle of duality*. In view of this principle, we shall often omit proof of a dual statement.
+
 !!! remark "Grothendieck Universe"
 
     Note that in the above we define \(\Ob(\sfC)\) to be a class, and in the most of the above examples the objects form a proper class. Later, we shall give more constructions of categories and in the process, sometimes, the size explodes and we no longer have categories. One way is to assume existence of a 'Grothendieck universe', a set \(U\) with the following properties.
