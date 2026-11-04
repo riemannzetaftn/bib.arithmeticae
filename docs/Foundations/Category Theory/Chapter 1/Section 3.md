@@ -23,4 +23,4 @@ Here comes the examples.
 !!! example "Natural Transformations"
 
     1. Recall from [](Section 2.md#ex-functors) that \(\GL_n\) and \((\bline)^\times\) define functors \(\cRing\to\Grp\). Then the determinant defines a natural transformation from \(\GL_n\to(\bline)^\times\); for each commutative ring \(R\), \(\det_R:\GL_n(R)\to R^\times\) is a group homomorphism, and given a ring homomorphism \(f:R\to S\) we have \(f^\times\circ\det_R = \det_S\circ\GL_n(f)\). The naturality implies that the determinant is defined in a uniform way, regardless of structure of each ring.
-    2. 
+    2. The inversion maps \(g\mapsto g^{-1}\) define a natural isomorphism from the identity functor to the opposite functor on \(\Grp\): it is a group isomorphism from a group \(G\) to its opposite group \(G^\op\), and for any group homomorphism \(f:G\to H\), we have \(f(g)^{-1}=f^\op(g^{-1})\), proving naturality.
