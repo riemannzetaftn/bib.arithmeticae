@@ -28,4 +28,18 @@ Here comes the examples.
 
     1. Recall from [](Section 2.md#ex-functors) that \(\GL_n\) and \((\bline)^\times\) (the unit groups) define functors \(\cRing\to\Grp\). Then the determinant defines a natural transformation from \(\GL_n\to(\bline)^\times\); for each commutative ring \(R\), \(\det_R:\GL_n(R)\to R^\times\) is a group homomorphism, and given a ring homomorphism \(f:R\to S\) we have \(f^\times\circ\det_R = \det_S\circ\GL_n(f)\). The naturality implies that the determinant is defined in a uniform way, regardless of structure of each ring.
     2. The inversion maps \(g\mapsto g^{-1}\) define a natural isomorphism from the identity functor to the opposite functor on \(\Grp\): it is a group isomorphism from a group \(G\) to its opposite group \(G^\op\), and for any group homomorphism \(f:G\to H\), we have \(f(g)^{-1}=f^\op(g^{-1})\), proving naturality.
-    3. 
+    3. We have a natural transformation from the identity functor on \(\Vec_k\) to the double dual functor, given as follows: for each vector space \(V\), the morphism \(\eta_V:V\to V^{\vee\vee}\) send a vector \(v\) to the linear functional \(\Tilde{v}:V^\vee\to k\), \(\Tilde{v}(f) = f(v)\). This is \(k\)-linear, and the naturality is proved as follows: if \(\phi:V\to W\) is a linear map, then \(\phi^{\vee\vee}(\Tilde{v}) = \Tilde{\phi(v)}\). Indeed, for every \(f\in W^\vee\), \(\phi^{\vee\vee}(\Tilde{v})(f) = (\Tilde{v}\circ\phi^\vee)(f) = \Tilde{v}(\phi^\vee(f)) = \Tilde{v}(f\circ\phi) = f(\phi(v)) = \Tilde{\phi(v)}(f)\). One can see that the maps \(\eta_V\) are injective.
+
+        When restricted to the subcategory \(\fdVec_k\), since the space and its dual (hence the double dual) has the same finite dimension, the maps \(\eta_V\) form a natural isomorphism.
+    4. A \(G\)-equivariant map between two \(G\)-sets \(A\) and \(B\) (more generally, morphisms of sets with monoid actions), viewed as functors \(\sfG\to\Set\), is exactly the natural transformations between those functors. Indeed, since there is only one object of \(\sfG\), a natural transformation is a single map \(f:A\to B\), such that for all \(g\in G\), the following diagram commutes.
+
+        ```tikzcd
+            \begin{tikzcd}
+                A \arrow[rr,"f"{description}]\arrow[dd,"g\cdot"{description}] & &B \arrow[dd,"g\cdot"{description}]\\
+                \\
+                A \arrow[rr,"f"{description}] & &B
+            \end{tikzcd}
+        ```
+
+        That is, we have \(g\cdot f(a) = f(g\cdot a)\), or the map is \(G\)-equivariant. This applies to linear representations of groups and \(G\)-modules; that is, the category of \(G\)-sets is identified with functor category \([\sfG,\Set]\), the category of \(k\)-linear representations of \(G\) is identified with \([\sfG,\Vec_k]\), and the category of \(G\)-module is identified with \([\sfG,\Ab]\). This is a first example of functor categories that arise in practice.
+    5. 

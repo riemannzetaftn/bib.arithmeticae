@@ -47,6 +47,12 @@ A category is a structure where we relate objects by arrows between them. Why no
     - *fully faithful*, if it is bijective on morphisms; i.e. it is both full and faithful.
     - *essentially surjective*, if any object \(B\) of \(\sfD\) is isomorphic to \(\caF(A)\) for some object \(A\) of \(\sfC\). -->
 
+We observe the followings.
+
+- Since the identity and composition of functors clearly satisfy the identity and associativity conditions, there is a category of all (small) categories, denoted by \(\Cat\); the objects are small categories and morphisms are functors between them.
+- We can also compose both types of functors. If we compose a covariant and contravariant functor we obtain a contravariant functor, and if we compose two contravariant functors we obtain a covariant functor.
+- One can easily see that data of a functor \(\caF:\sfC\to\sfD\) is equivalent to the functor \(\caF^\op:\sfC^\op\to\sfD^\op\). This is called the *opposite functor* of \(\caF\).
+
 Throughout this blog, unless otherwise specified, a functor will denote a covariant one.
 
 !!! example "Functor"
@@ -60,6 +66,8 @@ Throughout this blog, unless otherwise specified, a functor will denote a covari
         If we fix an object \(A\) of \(\sfC\), then we have induced *right Hom functor* \(\Hom_\sfC(A,\bline):\sfC\to\Set\), \(B\mapsto\Hom_\sfC(A,B)\) and \(\psi\mapsto\Hom_\sfC(A,\psi):=\Hom_\sfC(\id_A,\psi)\) (which postcomposes \(\psi\)). Also, if we fix an object \(B\) of \(\sfC\), then we have induced contravariant *left Hom functor* \(\Hom_\sfC(\bline,B):\sfC\to\Set\), \(A\mapsto\Hom_\sfC(A,B)\) and \(\phi\mapsto\Hom_\sfC(\phi,B):=\Hom_\sfC(\phi,\id_B)\) (which precomposes \(\phi\)).
 
         For some concrete categories \(\sfC\), the functor can have codomain \(\sfC\); i.e. the set \(\Hom_\sfC(A,B)\) has natural structure of an object of \(\sfC\), and the functions \(\Hom_\sfC(\phi,\psi)\) are morphisms of \(\sfC\). Indeed, this holds for \(\sfC = \Mod_R\) and \(\Ab\). We say that these categories have *internal hom*, but precise definition of this concept requires knowledge on monoidal categories.
+
+        For the category \(\Vec_k\), the left Hom functor \((\bline)^\vee := \Hom_{k}(\bline,k)\) is a contravariant functor from \(\Vec_k\) to itself, also called the *dual functor*. If we compose it with itself, we obtain a covariant functor \((\bline)^{\vee\vee}\) from \(\Vec_k\) to itself, called the *double dual functor*.
     5. The tensor product \(\otimes_R\) defines a bifunctor \(\Mod_R\times\Mod_R\to\Mod_R\).
     6. In [](<Section 1.md#ex-category>), we have seen many examples of concrete categories. If \(\sfC\) is a concrete category, then there is a natural functor \(\caU:\sfC\to\Set\), which sends objects to their underlying sets, and morphisms to their underlying functions. This can be seen as forgetting the additional structure assigned. More generally, if a category \(\sfD\) is obtained by assigning more structure to given category \(\sfC\), then there is a natural functor \(\sfD\to\sfC\) forgetting the structures, and these are **informally** called the *forgetful functors*.
         
@@ -92,8 +100,9 @@ Throughout this blog, unless otherwise specified, a functor will denote a covari
         - If \(f:P\to Q\) is an order-preserving map, then it induces a functor between poset categories \(\sfP\to\sfQ\), which is \(f\) on objects, and send the unique morphism \(i\to j\) (i.e. when \(i\le j\)) in \(\sfP\) to the unique morphism \(f(i)\to f(j)\) (as \(f(i)\le f(j)\)). Then the functoriality is clear, since the morphisms with given source and target is unique in poset categories.
     11. Given a function \(f:A\to B\), its image and inverse image induce order-preserving maps \(f_\ast:\caP(A)\to\caP(B)\) and \(f^\ast:\caP(B)\to\caP(A)\), and the corresponding functors between the poset categories. Moreover, the association is functorial; i.e. assining \(f\) to its (inverse) image map between power sets preserve identity and composition, hence we have two functors \(\Set\to\poSet\) and \(\Set^\op\to\poSet\), which sends a set \(A\) to its power set \(\caP(A)\) and send a function to associated image / inverse image maps.
     12. The general linear groups define functors \(\GL_n:\cRing\to\Grp\), as a ring homomorphism \(\varphi:R\to S\) induces a group homomorphism \(\GL_n(R)\to\GL_n(S)\) obtained by applying \(\varphi\) to each entry. Similarly, the special linear groups define functors.
-    13. An action of a monoid \(M\) to a set \(S\) corrensponds to a functor from the induced category \(\sfM\) to \(\Set\), whose image of the unique object \(\ast\) being the set \(S\). Indeed, the only map between morphisms is the map \(M = \End_\sfM(\ast)\to\End_\Set(S)\), and the functoriality is exactly the assumptions for the monoid action. In particular, if we take \(M\) to be a group \(G\), we recover group action, since invertible elements must map to an invertible element, so that the map corestricts to the map \(G\to\Aut_\Set(S)\), and the functoriality says that this is a group homomorphism. Similarly, a \(k\)-linear representation of a group \(G\) is equivalent to a functor \(\sfG\to\Vec_k\).
-    14. One can easily see that data of a functor \(\caF:\sfC\to\sfD\) is equivalent to the functor \(\caF^\op:\sfC^\op\to\sfD^\op\). This is called the *opposite functor* of \(\caF\).
+    13. An action of a monoid \(M\) to a set \(S\) corrensponds to a functor from the induced category \(\sfM\) to \(\Set\), whose image of the unique object \(\ast\) being the set \(S\). Indeed, the only map between morphisms is the map \(M = \End_\sfM(\ast)\to\End_\Set(S)\), and the functoriality is exactly the assumptions for the monoid action. In particular, if we take \(M\) to be a group \(G\), we recover group action, since invertible elements must map to an invertible element, so that the map corestricts to the map \(G\to\Aut_\Set(S)\), and the functoriality says that this is a group homomorphism. Similarly, a \(k\)-linear representation of a group \(G\) is equivalent to a functor \(\sfG\to\Vec_k\). Finally, a \(G\)-module is identified with a functor \(\sfG\to\Ab\).
+
+<!-- constant functors -->
 
 The next definition illustrates another nature of functors.
 
@@ -134,7 +143,7 @@ The concept of functors allow us to define more abstract categories.
 
 !!! definition "Second Constructions on Categories"
 
-    1. Since the identity and composition of functors clearly satisfy the identity and associativity conditions, there is a category of all (small) categories, denoted by \(\Cat\); the objects are small categories and morphisms are functors between them. If we specify an object, then we have category \(\Cat_\ast\); an object is an ordered pair \((\sfC,A)\) where \(A\in\Ob(\sfC)\), and a morphism \(\caF:(\sfC,A)\to(\sfD,B)\) is a functor \(\caF:\sfC\to\sfD\) with \(\caF(A) = B\).
+    1. We have category \(\Cat_\ast\) where an object is an ordered pair \((\sfC,A)\) where \(A\in\Ob(\sfC)\), and a morphism \(\caF:(\sfC,A)\to(\sfD,B)\) is a functor \(\caF:\sfC\to\sfD\) with \(\caF(A) = B\).
     2. If \(\caF:\sfC\to\sfD\) is a functor and \(B\in\Ob(\sfD)\), then there is a category \(\caF/B\) of objects \(\caF\)-over \(B\). An object of this category is a pair \((A,\phi)\) where \(A\in\Ob(\sfC)\) and \(\phi:\caF(A)\to B\) is a morphism in \(\sfD\). A morphism \(\psi:(A,\phi)\to(A',\phi')\) in this category is a morphism \(\psi:A\to A'\) in \(\sfC\) such that \(\phi = \phi'\circ\caF(\psi)\). We have the following commutative diagram description.
 
         ```tikzcd
