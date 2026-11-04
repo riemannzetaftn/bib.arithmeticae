@@ -13,3 +13,13 @@ So far, we defined categories, which consists of objects and their morphisms, an
             \caF(B) \arrow[rr,"\eta_B"{description}] & &\caG(B)
         \end{tikzcd}
     ```
+
+    For each functor \(\caF:\sfC\to\sfD\), there is *identity (natural) transformation* \(\id_\caF:\caF\to\caF\), consisting of identity morphisms \(\id_{\caF(A)}\). Given natural transformations \(\eta:\caF\to\caG\) and \(\varepsilon:\caG\to\caH\) of functors \(\sfC\to\sfD\), their *(vertical) composition* \(\varepsilon\circ\eta:\caF\to\caH\) consists of compositions \(\varepsilon_{A}\circ\eta_A\). A natural transformation \(\eta:\caF\to\caG\) with inverse (i.e. a natural transformation \(\varepsilon:\caG\to\caF\) such that \(\varepsilon\circ\eta = \id_\caF\) and \(\eta\circ\varepsilon = \id_\caG\)) is called a *natural isomorphism* of functors. If there is a natural isomorphism between \(\caF\) and \(\caG\), we say that two functors are *naturally isomorphic* and write \(\caF\cong\caG\). The set of natural transformations from \(\caF\) to \(\caG\) is denoted by \(\Nat(\caF,\caG)\).
+
+<!-- This is sometimes compared with homotopy of continuous maps in topology; in fact, a natural transformation can be thought of a bifunctor \(\eta:\sfC\times\mathsf{2}\to\sfD\), where \(\mathsf{2}\) is the category \(\{0\to1\}\), with \(\eta(\bline,0) = \caF\) and \(\eta(\bline,1) = \caG\), whereas a homotopy of continuous maps \(f,g:X\to Y\) is a continuous map \(H:X\times[0,1]\to Y\) such that \(H(x,0) = f(x)\) and \(H(x,1) = g(x)\). -->
+
+Here comes the examples.
+
+!!! example "Natural Transformations"
+
+    1. 

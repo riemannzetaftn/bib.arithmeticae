@@ -51,7 +51,7 @@ Throughout this blog, unless otherwise specified, a functor will denote a covari
 
 !!! example "Functor"
 
-    1. If \(\sfD\) is a subcategory of \(\sfC\), then the inclusions \(\Ob(\sfD)\hookrightarrow\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\hookrightarrow\Hom_\sfC(A,B)\) form a functor \(\sfD\to\sfC\) since the identities and compositions were inherited, called an *inclusion functor*. The specific examples follow from [](<Section 1.md#ex-1st-const-categories>), 1.
+    1. If \(\sfC'\) is a subcategory of \(\sfC\), then the inclusions \(\Ob(\sfC')\hookrightarrow\Ob(\sfC)\) and \(\Hom_{\sfC'}(A,B)\hookrightarrow\Hom_\sfC(A,B)\) form a functor \(\sfC'\to\sfC\) since the identities and compositions were inherited, called an *inclusion functor*. The specific examples follow from [](<Section 1.md#ex-1st-const-categories>), 1. Moreover, one can compose a functor \(\caF:\sfC\to\sfD\) with the inclusion functor to obtain a functor \(\sfC'\to\sfD\), called the *restriction* of \(\caF\) on \(\sfC'\), denoted by \(\caF|_{\sfD}\). Similarly, if the image of a functor \(\caF:\sfC\to\sfD\) lie within the subcategory \(\sfD'\) (i.e. \(\caF(\Ob(\sfE))\subset\Ob(\sfD)\) and \(\caF(\Hom_{\sfE}(A,B))\subset\Hom_{\sfD}(\caF(A),\caF(B))\)), then we have *corestriction* functor \(\caF|^{\sfD'}:\sfC\to\sfD'\), which becomes \(\caF\) when composed with the inclusion functor. Finally, if there are subcategories \(\sfC'\subset\sfC\) and \(\sfD'\subset\sfD\) whose image of \(\sfC'\) under \(\caF\) (i.e. image of functions of \(\caF|_{\sfC'}\)) lie within \(\sfD'\), the corestriction of restriction \((\caF|_{\sfC'})|^{\sfD'}\) is also denoted by \(\caF|_{\sfC'}^{\sfD'}\), and is sometimes simply called a restriction of \(\caF\).
     { #ex-functor }
     2. If \(\sim\) is a congruence on a category \(\sfC\), then the identity map on \(\Ob(\sfC)\) and the quotient maps \(\Hom_{\sfC}(A,B)\to\Hom_{\sfC/\sim}(A,B)\) form a functor \(\sfC\to\sfC/\sim\) since the identities and compositions were inherited, called a *quotient functor*.
     3. There are natural projection functors \(\sfC\times\sfD\to\sfC,\sfD\). A functor with domain being a product category is also called *bifunctors*.
@@ -93,6 +93,7 @@ Throughout this blog, unless otherwise specified, a functor will denote a covari
     11. Given a function \(f:A\to B\), its image and inverse image induce order-preserving maps \(f_\ast:\caP(A)\to\caP(B)\) and \(f^\ast:\caP(B)\to\caP(A)\), and the corresponding functors between the poset categories. Moreover, the association is functorial; i.e. assining \(f\) to its (inverse) image map between power sets preserve identity and composition, hence we have two functors \(\Set\to\poSet\) and \(\Set^\op\to\poSet\), which sends a set \(A\) to its power set \(\caP(A)\) and send a function to associated image / inverse image maps.
     12. The general linear groups define functors \(\GL_n:\cRing\to\Grp\), as a ring homomorphism \(\varphi:R\to S\) induces a group homomorphism \(\GL_n(R)\to\GL_n(S)\) obtained by applying \(\varphi\) to each entry. Similarly, the special linear groups define functors.
     13. An action of a monoid \(M\) to a set \(S\) corrensponds to a functor from the induced category \(\sfM\) to \(\Set\), whose image of the unique object \(\ast\) being the set \(S\). Indeed, the only map between morphisms is the map \(M = \End_\sfM(\ast)\to\End_\Set(S)\), and the functoriality is exactly the assumptions for the monoid action. In particular, if we take \(M\) to be a group \(G\), we recover group action, since invertible elements must map to an invertible element, so that the map corestricts to the map \(G\to\Aut_\Set(S)\), and the functoriality says that this is a group homomorphism. Similarly, a \(k\)-linear representation of a group \(G\) is equivalent to a functor \(\sfG\to\Vec_k\).
+    14. One can easily see that data of a functor \(\caF:\sfC\to\sfD\) is equivalent to the functor \(\caF^\op:\sfC^\op\to\sfD^\op\). This is called the *opposite functor* of \(\caF\).
 
 The next definition illustrates another nature of functors.
 
@@ -154,10 +155,10 @@ The concept of functors allow us to define more abstract categories.
                 & &\caF(A') & &A'
             \end{tikzcd}
         ```
-        The under category \(B/\sfC\) is a special case where \(\caF = \id_\sfC\).
+        This equals the category \((\caF^\op/B)^\op\). The under category \(B/\sfC\) is a special case where \(\caF = \id_\sfC\).
     4. Let \(\caF:\sfI\to\sfC\) be a functor. This is also called to be an *(\(\sfI\)-shaped) diagram (in \(\sfC\))*, and \(\sfI\) is called the *index category* of the diagram, since 
 
-        Then a *cone over \(\caF\)* is a pair \((N,\psi)\), where \(N\in\Ob(\sfC)\) and \(\psi = (\psi_i)_{i\in\Ob(\sfI)}\) is an indexed family of morphisms \(\psi_i:N\to\caF(i)\) of \(\sfC\), such that for every morphism \(\phi:i\to j\) in \(\sfI\), \(\psi_j = \caF(\phi)\circ\psi_i\). A *morphism of cones over \(\caF\)* \(\phi:(N,\psi)\to(N',\psi')\) is a morphism \(\phi:N\to N'\) in \(\sfC\) such that \(\psi_i = \psi'_i\circ\phi\) for all \(i\in\Ob(\sfI)\); see the following commutative diagram, meant to be drawn for each morphism \(\phi\) in \(\sfI\).
+        Then a *cone over \(\caF\)* is a pair \((N,\psi)\), where \(N\in\Ob(\sfC)\) and \(\psi = (\psi_i)_{i\in\Ob(\sfI)}\) is an indexed family of morphisms \(\psi_i:N\to\caF(i)\) of \(\sfC\), such that for every morphism \(\phi:i\to j\) in \(\sfI\), \(\psi_j = \caF(\phi)\circ\psi_i\). A *morphism of cones over \(\caF\)* \(\varphi:(N,\psi)\to(N',\psi')\) is a morphism \(\varphi:N\to N'\) in \(\sfC\) such that \(\psi_i = \psi'_i\circ\varphi\) for all \(i\in\Ob(\sfI)\); see the following commutative diagram, meant to be drawn for each morphism \(\phi\) in \(\sfI\).
         
         ```tikzcd
             \begin{tikzcd}
@@ -165,7 +166,7 @@ The concept of functors allow us to define more abstract categories.
                 \\
                 \caF(i) \arrow[rr,"\caF(\phi)"{description}] & &\caF(j)
             \end{tikzcd}\begin{tikzcd}
-                &N \arrow[dddl,bend right,"\psi_i"{description}]\arrow[dddr,bend left,"\psi_j"{description}]\arrow[d,"\phi"{description}]\\
+                &N \arrow[dddl,bend right,"\psi_i"{description}]\arrow[dddr,bend left,"\psi_j"{description}]\arrow[d,"\varphi"{description}]\\
                 &N' \arrow[ddl,"\psi'_i"{description}]\arrow[ddr,"\psi'_j"{description}]\\
                 \\
                 \caF(i) \arrow[rr,"\caF(\phi)"{description}] & &\caF(j)
@@ -173,7 +174,7 @@ The concept of functors allow us to define more abstract categories.
         ```
 
         Then the cones and their morphisms form the *category of cones over \(\caF\)*, denoted by \(\Cone(\caF)\).
-    5. Similarly, there is a *category of co-cones over \(\caF\)*, denoted by \(\coCone(\caF)\), whose objects (the *co-cones over \(\caF\)*) are pairs \((N,\psi)\) where \(N\in\Ob(\sfC)\) and \(\psi = (\psi_i)_{i\in\Ob(\sfI)}\) is an indexed family of morphisms \(\psi_i:\caF(i)\to N\) in \(\sfC\), and *morphisms of co-cones* \(\phi:(N,\psi)\to(N',\psi')\) are morphisms \(\phi:N\to N'\) in \(\sfC\) such that \(\psi'_i = \phi\circ\psi_i\) for all \(i\in\Ob(\sfI)\). See the following commutative diagrams.
+    5. Similarly, there is a *category of co-cones over \(\caF\)*, denoted by \(\coCone(\caF)\), whose objects (the *co-cones over \(\caF\)*) are pairs \((N,\psi)\) where \(N\in\Ob(\sfC)\) and \(\psi = (\psi_i)_{i\in\Ob(\sfI)}\) is an indexed family of morphisms \(\psi_i:\caF(i)\to N\) in \(\sfC\) such that \(\psi_i = \psi_j\circ\caF(\phi)\) for all \(\phi:i\to j\) in \(\sfI\), and *morphisms of co-cones* \(\varphi:(N,\psi)\to(N',\psi')\) are morphisms \(\varphi:N\to N'\) in \(\sfC\) such that \(\psi'_i = \varphi\circ\psi_i\) for all \(i\in\Ob(\sfI)\). See the following commutative diagrams.
 
         ```tikzcd
             \begin{tikzcd}
@@ -183,10 +184,12 @@ The concept of functors allow us to define more abstract categories.
             \end{tikzcd}\begin{tikzcd}
                 \caF(i) \arrow[ddr,"\psi_i"{description}]\arrow[rr,"\caF(\phi)"{description}]\arrow[dddr,bend right,"\psi'_i"{description}] & &\caF(j) \arrow[ddl,"\psi_j"{description}]\arrow[dddl,bend left,"\psi'_j"{description}]\\
                 \\
-                &N \arrow[d,"\phi"{description}]\\
+                &N \arrow[d,"\varphi"{description}]\\
                 &N'
             \end{tikzcd}
         ```
+
+        This equals the category \(\Cone(\caF^\op)^\op\).
     
     These constructions will be revisited when we introduce 'universal properties', which is one of the most important concepts in category theory.
 
@@ -205,3 +208,4 @@ Again, these constructions on categories allow us more examples of functors.
         - The association of a category with one object to a monoid is a free functor \(\Mnd\to\Cat_\ast\). If we restrict to groups we have a free functor \(\Grp\to\Cat_\ast\), as opposed to the forgetful functor \(\Aut\).
     3. The association of poset category to a poset is a functor; the map on morphisms is described in the last item of [](#ex-functor) 10. This is not necessarily a free functor (rather, it is more close to the forgetful).
     4. Recall [](#ex-functor) 11. The associations \(f\mapsto f_\ast, f^\ast\) (to be precise, to the corresponding functors) preserve compositions, hence we have functors \(\caP:\Set\to\Cat\) and \(\caP:\Set^\op\to\Cat\), which send sets to its power set, and send functions to the image and inverse image functors between poset categories.
+    5. The opposite of category and functors define a functor \(\op:\Cat\to\Cat\). When restricted to one-object categories, identified with monoids, we obtain a opposite functor \(\op:\Mnd\to\Mnd\); the opposite of a monoid \(M\) is defined by \(M\) with the reverse operation; i.e. \(m\cdot^\op n:=n\cdot m\). One can further restrict this functor to \(\op:\Grp\to\Grp\), but when restricted to the subcategory \(\Ab\), this is nothing but the identity functor \(\id_\Ab\). Similarly, we have opposite ring functor \(\op:\Ring\to\Ring\), which restricts to the identity on the subcategory \(\CRing\). Finally, when restricted to poset categories, we have opposite poset functor \(\poSet\to\poSet\).
