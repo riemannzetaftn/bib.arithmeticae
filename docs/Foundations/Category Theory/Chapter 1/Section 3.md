@@ -61,7 +61,7 @@ The natural transformations can also be composed horizontally.
 
     Let \(\caF_1,\caG_1:\sfC\to\sfD\) and \(\caF_2,\caG_2:\sfD\to\sfE\) be functors and \(\eta:\caF_1\to\caG_1\), \(\varepsilon:\caF_2\to\caG_2\) be natural transformations. Their *horizontal composition* \(\varepsilon\ast\eta:\caF_2\circ\caF_1\to\caG_2\circ\caG_1\) is defined by \((\varepsilon\ast\eta)_A = \varepsilon_{\caG_1(A)}\circ\caF_2(\eta_A) = \caG_2(\eta_A)\circ\varepsilon_{\caF_1(A)}\).
 
-Let us check well-definedness.
+We observe the followings.
 
 - First, the equality holds by the naturality of \(\varepsilon\): see the following commutative diagram.
 
@@ -83,4 +83,12 @@ Let us check well-definedness.
         \end{tikzcd}
     ```
 
-    The left rectangle is commutative by naturality of \(\eta\) and functoriality of \(\caF_2\) (it is a composition of a commutative diagram and \(\caF_2\)), and the right rectangle is commutative by naturality of \(\varepsilon\), applied to the morphism \(\caG_1(\phi):\caG_1(A)\to\caG_1(B)\). Thus the whole diagram commutes, and we see that the horizontal composition is indeed a natural transformation.
+    The left rectangle is commutative by naturality of \(\eta\) and functoriality of \(\caF_2\) (it is a composition of a commutative diagram and \(\caF_2\)), and the right rectangle is commutative by naturality of \(\varepsilon\), applied to the morphism \(\caG_1(\phi):\caG_1(A)\to\caG_1(B)\). Thus the whole diagram commutes, and we see that the horizontal composition is indeed a natural transformation, and the horizontal composition is well-defined.
+- As a special case, suppose that \(\eta = \id_{\caF}\) where \(\caF = \caF_1 = \caG_1\). Then the composition has components \(\varepsilon_{\caF(A)}), which is a natural transformation \(\caF_2\circ\caF\to\caG_2\circ\caF\). We abbreviate this composition by \(\varepsilon\caF\). Similarly, if \(\varepsilon = \id_{\caG}\) where \(\caG = \caF_2 = \caG_2\), then the composition has components \(\caG(\eta_A)\), which is a natural transformation \(\caG\circ\caF_1\to\caG\circ\caG_1\). We abbreviate this composition by \(\caG\eta\). Note that if \(\varepsilon\) is a natural isomorphism, then so are the compositions \(\varepsilon\caF\) and if \(\eta\) is a natural isomorphism, then so are the compositions \(\caG\eta\).
+- The name of vertical and horizontal compositions come from the following visualization.
+
+    ```tikzcd
+        \begin{tikzcd}[sep = large]
+            \sfC \arrow[rr,bend left = 30,"\caF_1"{name = F1, description}]\arrow[rr,bend right = 30,"\caG_1"{name = G1, description}] & &\sfD \arrow[from = F1, to = G1, "\eta"{description}]\arrow[rr,bend left = 30,"\caF_2"{name = F2, description}]\arrow[rr, bend right = 30, "\caG_2"{name = G2, description}] & &\sfE \arrow[from = F2, to = G2, "\varepsilon"{description}]
+        \end{tikzcd}
+    ```
