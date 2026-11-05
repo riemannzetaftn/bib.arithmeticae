@@ -72,6 +72,7 @@ Let us check well-definedness.
             \caF_2(\caG_1(A)) \arrow[rr,"\varepsilon_{\caG_1(A)}"{description}] & &\caG_2(\caG_1(A))
         \end{tikzcd}
     ```
+    
 - Second, given a morphism \(\phi:A\to B\) in \(\sfC\), consider the following diagram.
 
     ```tikzcd
