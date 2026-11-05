@@ -72,14 +72,14 @@ Let us check well-definedness.
             \caF_2(\caG_1(A)) \arrow[rr,"\varepsilon_{\caG_1(A)}"{description}] & &\caG_2(\caG_1(A))
         \end{tikzcd}
     ```
-- Second, given a morphism \(\phi:A\to B\) in \(\sfC\), consider the following commutative diagram.
+- Second, given a morphism \(\phi:A\to B\) in \(\sfC\), consider the following diagram.
 
     ```tikzcd
         \begin{tikzcd}
-            \caF_2(\caF_1(A)) \arrow[dd,"\caF_2(\caF_1(\phi))"{description}]\\
+            \caF_2(\caF_1(A)) \arrow[dd,"\caF_2(\caF_1(\phi))"{description}]\arrow[rr,"\caF_2(\eta_A)"{description}] & &\caF_2(\caG_1(A)) \arrow[rr,"\varepsilon_{\caG_1(A)}"{description}]\arrow[dd,"\caF_2(\caG_1(\phi))"{description}] & &\caG_2(\caG_1(A)) \arrow[dd,"\caG_2(\caG_1(\phi))"{description}]\\
             \\
-            \caF_2(\caF_1(B))
+            \caF_2(\caF_1(B)) \arrow[rr,"\caF_2(\eta_B)"{description}] & &\caF_2(\caG_1(B)) \arrow[rr,"\varepsilon_{\caG_1(B)}"{description}] & &\caG_2(\caG_1(B))
         \end{tikzcd}
     ```
 
-    TBU
+    The left rectangle is commutative by naturality of \(\eta\) and functoriality of \(\caF_2\) (it is a composition of a commutative diagram and \(\caF_2\)), and the right rectangle is commutative by naturality of \(\varepsilon\), applied to the morphism \(\caG_1(\phi):\caG_1(A)\to\caG_1(B)\). Thus the whole diagram commutes, and we see that the horizontal composition is indeed a natural transformation.

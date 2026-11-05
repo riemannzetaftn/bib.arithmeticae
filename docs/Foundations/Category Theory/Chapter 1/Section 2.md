@@ -107,9 +107,9 @@ The next definition illustrates another nature of functors.
 
 !!! definition "Diagram"
 
-    Given categories \(\sfI\) and \(\sfC\), an *\(\sfI\)-shaped diagram in \(\sfC\)* is a functor \(\caF:\sfI\to\sfC\), and \(\sfI\) is called the *index category* of the diagram \(\caF\). This is because a functor is nothing more than a drawing of a category \(\sfI\) in the ambient category \(\sfC\), where some objects and arrows might be identified. The diagram \(\caF\) is called *commutative* if each map on morphisms is constant; i.e. if \(i,j\in\Ob(\sfI\)\) and \(\phi,\psi:i\to j\) are any two morphisms in \(\sfI\), we have \(\caF(\phi) = \caF(\psi)\).
+    Given categories \(\sfI\) and \(\sfC\), an *\(\sfI\)-shaped diagram in \(\sfC\)* is a functor \(\caD:\sfI\to\sfC\), and \(\sfI\) is called the *index category* of the diagram \(\caD\). This is because a functor is nothing more than a drawing of a category \(\sfI\) in the ambient category \(\sfC\), where some objects and arrows might be identified. The diagram \(\caD\) is called *commutative* if each map on morphisms is constant; i.e. if \(i,j\in\Ob(\sfI\)\) and \(\phi,\psi:i\to j\) are any two morphisms in \(\sfI\), we have \(\caD(\phi) = \caD(\psi)\).
 
-We illustrate this concept with examples.
+Note that if \(\caG:\sfC\to\sfD\) is a functor, then the composition \(\caG\circ\caD:\sfI\to\sfD\) is also a diagram, and if \(\caD\) was commutative, so is the diagram \(\caG\circ\caD\). We illustrate this concept with examples.
 
 !!! example "Diagram"
 
@@ -215,5 +215,5 @@ Again, these constructions on categories allow us more examples of functors.
         - The association of discrete categories to a set can be viewed as a free functor \(\Set\to\Cat\), as opposed to the forgetful functor \(\Ob\). If we specify an element and object, we have a free functor \(\Set_\ast\to\Cat_\ast\).
         - The association of a category with one object to a monoid is a free functor \(\Mnd\to\Cat_\ast\). If we restrict to groups we have a free functor \(\Grp\to\Cat_\ast\), as opposed to the forgetful functor \(\Aut\).
     3. The association of poset category to a poset is a functor; the map on morphisms is described in the last item of [](#ex-functor) 11. This is not necessarily a free functor (rather, it is more close to the forgetful).
-    4. Recall [](#ex-functor) 12. The associations \(f\mapsto f_\ast, f^\ast\) (to be precise, to the corresponding functors) preserve compositions, hence we have functors \(\caP:\Set\to\Cat\) and \(\caP:\Set^\op\to\Cat\), which send sets to its power set, and send functions to the image and inverse image functors between poset categories.
+    4. Recall [](#ex-functor) 12. The associations \(f\mapsto f_\ast, f^\ast\) (to be precise, to the corresponding functors) preserve compositions, hence we have functors \(\caP_\ast:\Set\to\Cat\) and \(\caP^\ast:\Set^\op\to\Cat\), which send sets to its power set, and send functions to the image and inverse image functors between poset categories.
     5. The opposite of category and functors define a functor \(\op:\Cat\to\Cat\). When restricted to one-object categories, identified with monoids, we obtain a opposite functor \(\op:\Mnd\to\Mnd\); the opposite of a monoid \(M\) is defined by \(M\) with the reverse operation; i.e. \(m\cdot^\op n:=n\cdot m\). The opposite of monoid homomorphism is just itself. One can further restrict this functor to \(\op:\Grp\to\Grp\), but when restricted to the subcategory \(\Ab\), this is nothing but the identity functor \(\id_\Ab\). Similarly, we have opposite ring functor \(\op:\Ring\to\Ring\), which restricts to the identity on the subcategory \(\cRing\). Finally, when restricted to poset categories, we have opposite poset functor \(\poSet\to\poSet\).
