@@ -90,8 +90,8 @@ We observe the followings.
 
     ```tikzcd
         \begin{tikzcd}[sep = large]
-            \sfC \arrow[rr,bend left = 45,"\caF_1"{name = F1, description}]\arrow[rr,"\caG_1"{name = G1, description}]\arrow[rr,bend right = 45,"\caH_1"{name = H1, description}] & &\sfD \arrow[from = F1, to = G1, "\eta_1"{description}]\arrow[from = G1, to = H1, "\eta_2"{description}]\arrow[rr,bend left = 45,"\caF_2"{name = F2, description}]\arrow[rr,"\caG_2"{name = G2, description}]\arrow[rr,bend right = 45,"\caH_2"{name = H2, description}] & &\sfE \arrow[from = F2, to = G2, "\varepsilon_1"{description}]\arrow[from = G2, to = H2, "\varepsilon_2"{description}]
+            \sfC \arrow[rr,bend left = 55,"\caF_1"{name = F1, description}]\arrow[rr,"\caG_1"{name = G1, description}]\arrow[rr,bend right = 55,"\caH_1"{name = H1, description}] & &\sfD \arrow[from = F1, to = G1, "\eta_1"{description}]\arrow[from = G1, to = H1, "\eta_2"{description}]\arrow[rr,bend left = 55,"\caF_2"{name = F2, description}]\arrow[rr,"\caG_2"{name = G2, description}]\arrow[rr,bend right = 55,"\caH_2"{name = H2, description}] & &\sfE \arrow[from = F2, to = G2, "\varepsilon_1"{description}]\arrow[from = G2, to = H2, "\varepsilon_2"{description}]
         \end{tikzcd}
     ```
 
-    The vertical compositions give natural transformations \(\eta_2\circ\eta_1:\caF_1\to\caH_1\) and \(\varepsilon_2\circ\varepsilon_1:\caF_2\to\caH_2\), and horizontal compositions give \(\varepsilon_1\circ\eta_1:\caF_2\circ\caF_1\to\caG_2\circ\caG_1\) and similar ones.
+    The vertical compositions give natural transformations \(\eta_2\circ\eta_1:\caF_1\to\caH_1\) and \(\varepsilon_2\circ\varepsilon_1:\caF_2\to\caH_2\), and horizontal compositions give \(\varepsilon_1\ast\eta_1:\caF_2\circ\caF_1\to\caG_2\circ\caG_1\) and similar ones.
