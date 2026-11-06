@@ -71,9 +71,14 @@ jobs:
 
       - name: Install TeX (only when needed)
         if: steps.tikzcd.outputs.missing == 'true'
+        timeout-minutes: 5
         run: |
+          # Azure 미러 대신 Ubuntu 공식 미러 사용
+          sudo sed -i 's#mirror+file:/etc/apt/apt-mirrors.txt#http://archive.ubuntu.com/ubuntu/#' \
+            /etc/apt/sources.list.d/ubuntu.sources
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
+            -o Acquire::Retries=3 -o Acquire::http::Timeout=30 \
             texlive-latex-recommended texlive-pictures dvisvgm
           dvisvgm --version
 
