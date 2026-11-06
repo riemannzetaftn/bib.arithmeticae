@@ -52,6 +52,7 @@ We observe the followings.
 - Since the identity and composition of functors clearly satisfy the identity and associativity conditions, there is a category of all (small) categories, denoted by \(\Cat\); the objects are small categories and morphisms are functors between them.
 - We can also compose both types of functors. If we compose a covariant and contravariant functor we obtain a contravariant functor, and if we compose two contravariant functors we obtain a covariant functor.
 - One can easily see that data of a functor \(\caF:\sfC\to\sfD\) is equivalent to the functor \(\caF^\op:\sfC^\op\to\sfD^\op\). This is called the *opposite functor* of \(\caF\).
+- Finally, a functor sends isomorphism to isomorphsms. Indeed, if \(\phi:A\to B\) is an isomorphism in \(\sfC\), then \(\caF(\phi)\circ\caF(\phi^{-1}) = \caF(\phi\circ\phi^{-1}) = \caF(\id_{B}) = \id_{\caF(B)}\) and similarly \(\caF(\phi^{-1})\circ\caF(\phi) = \id_{\caF(A)}\), so that \(\caF(\phi^{-1}) = \caF(\phi)^{-1}\).
 
 Throughout this blog, unless otherwise specified, a functor will denote a covariant one.
 
