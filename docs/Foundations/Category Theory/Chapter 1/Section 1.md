@@ -13,18 +13,18 @@ In this section we define categories.
 
     These data are subject to the following conditions.
 
-    - The classes \(\Hom_\sfC(A,B)\) are disjoint for distinct pairs \((A,B)\).
-    - For each object \(A\), there exist a morphism \(\id_A:A\to A\), called the *identity* of \(A\), such that for every \(B\in\Ob(\sfC)\), \(\phi:A\to B\) and \(\psi:B\to A\), \(\phi = \phi\circ\id_A\) and \(\psi = \id_A\circ\psi\).
+    - The sets \(\Hom_\sfC(A,B)\) are disjoint for distinct pairs \((A,B)\).
+    - For each object \(A\), there exists a morphism \(\id_A:A\to A\), called the *identity* of \(A\), such that for every \(B\in\Ob(\sfC)\), \(\phi:A\to B\) and \(\psi:B\to A\), \(\phi = \phi\circ\id_A\) and \(\psi = \id_A\circ\psi\).
     - For each quadruple \((A,B,C,D)\) of objects, and each triple \((\phi:C\to D,\psi:B\to C,\varphi:A\to B)\) of morphisms, we have *associativity* \(\phi\circ(\psi\circ\varphi) = (\phi\circ\psi)\circ\varphi\).
 
-    Given a category \(\sfC\), we define the followings.
+    Given a category \(\sfC\), we define the following.
 
     - Given a morphism \(\phi:A\to B\) in \(\sfC\), \(A\) is called a *domain* (or a *source*) of \(\phi\) and \(B\) is called a *codomain* (or a *target*) of \(\phi\).
     - A morphism \(\phi:A\to B\) in \(\sfC\) is called an *isomorphism* if there exist an *inverse* \(\psi:B\to A\), which satisfies \(\psi\circ\phi = \id_A\) and \(\phi\circ\psi = \id_B\).
     - Two objects \(A\) and \(B\) of \(\sfC\) are said to be *isomorphic* if there is an isomorphism \(\phi:A\to B\), and this is denoted by \(A\cong B\).
     - Given an object \(A\) of \(\sfC\), any morphism \(\phi:A\to A\) is called an *endomorphism* of \(A\), and an endomorphism which is an isomorphism is called an *automorphism* of \(A\). The set of endomorphisms and automorphisms of \(A\) are denoted by \(\End_\sfC(A)\) and \(\Aut_\sfC(A)\).
 
-We observe the followings.
+We observe the following.
 
 - From the first assumption, the domain and codomain of any morphism is uniquely determined, and there's no ambiguity in omitting subscript \(A,B,C\) from the composition symbol \(\circ\). Therefore, we speak of 'the' domain and 'the' codomain from now on. The pair \((\phi,\psi)\) of morphisms is said to be *composable* if the domain of \(\phi\) equals the codomain of \(\psi\), so that the composition \(\phi\circ\psi\) is defined.
 <!-- - A category is naturally a directed graph, where vertices are objects and edges are morphisms between them (the identity and composition is additional structure given to categories). For a category \(\sfC\), we denote its underlying graph by \(G(\sfC)\). -->
@@ -33,6 +33,7 @@ We observe the followings.
     \[\psi = \psi\circ\id_B = \psi\circ(\phi\circ\varphi) = (\psi\circ\phi)\circ\varphi = \id_A\circ\varphi = \varphi.\]
     
     That is, inverse of a morphism is unique provided that it exists, and we shall speak of 'the' inverse. The inverse of \(\phi\), if exists, is also denoted by \(\phi^{-1}\).
+
 - The relation of being isomorphic is
 
     - Reflexive, since for any object \(A\), \(\id_A:A\to A\) satisfies \(\id_A\circ\id_A = \id_A\), so that it is the inverse of itself, and is an isomorphism.
@@ -48,9 +49,10 @@ We observe the followings.
         \end{align*}
         
         and similarly \((\psi\circ\phi)\circ(\phi^{-1}\circ\psi^{-1}) = \id_C\).
-- The set \(\End_\sfC(A)\) is a monoid, with \(\id_A\) being the identity and composition being the multiplication. Then \(\Aut_\sfC(A)\) is its subset of invertible elements, hence form a group.
     
     Therefore, the relation of being isomorphic is an equivalence relation, and we sometimes identify those objects.
+
+- The set \(\End_\sfC(A)\) is a monoid, with \(\id_A\) being the identity and composition being the multiplication. Then \(\Aut_\sfC(A)\) is its subset of invertible elements, hence form a group.
 
 When the category \(\sfC\) is obvious from context, we may omit this in the notations. For instance, we may denote the set of morphisms, isomorphisms, endomorphisms and automorphisms by \(\Hom(A,B), \End(A)\) and \(\Aut(A)\).
 
@@ -62,7 +64,7 @@ We now introduce the most typical examples of categories, from various fields of
     { #ex-category }
     2. The category \(\Set_\ast\) consists of 'pointed sets' (i.e. a pair \((A,a)\) of a set \(A\) and its element \(a\)) and 'pointed maps' between them (i.e. a pointed map from \((A,a)\) to \((B,b)\) is a function \(f:A\to B\) with \(f(a) = b\)).
     3. Partially ordered sets and order-preserving maps between them form a category \(\poSet\), whose isomorphisms are order-isomorphisms (i.e. a bijective order-preserving maps).
-    4. In algebra, we have bunch of algebraic structures, and each with structure-preserving functions form categories. In the below examples, isomorphisms are exactly the bijective morphisms (since inverse function is also a morphism).
+    4. In algebra, we have a bunch of algebraic structures, and each with structure-preserving functions form categories. In the below examples, isomorphisms are exactly the bijective morphisms (since inverse function is also a morphism).
 
         - \(\Mnd\): monoids and monoid homomorphisms.
         - \(\cMnd\): commutative monoids and monoid homomorphisms between them.
@@ -78,7 +80,7 @@ We now introduce the most typical examples of categories, from various fields of
         - For each field \(k\), the category \(\LieAlg_k\) consists of Lie algebras over \(k\) with Lie algebra homomorphisms between them.
         - For each commutative \(\ast\)-ring \(R\), \(\ast\)-algebras over \(R\) (an \(R\)-algebra with an involution \(\ast\) satisfying some conditions) and \(\ast\)-algebra homomorphisms form a category.
     
-    5. Similarly, in topology and geometry, there are bunch of geometric structures, and each with structure-preserving functions form categories.
+    5. Similarly, in topology and geometry, there is a bunch of geometric structures, and each with structure-preserving functions form categories.
 
         - \(\Top\): topological spaces and continuous functions.
         - \(\CHaus\): compact Hausdorff spaces and continuous functions (which are necessarily closed maps).
@@ -117,11 +119,11 @@ Note that in the most of the above examples, the objects are sets with additiona
 
     1. Sets and binary relations (which is a generalization of functions, and we can compose relations) between them form a category \(\Rel\).
     { #ex-elementary-categories }
-    2. Any set \(S\) can be considered as a category (let us denote this temporarily by \(\sfS\)), whose only morphisms are identities: i.e. \(\Hom_\sfS(a,b)\) is empty if \(a\neq b\), and is a singleton \(\{\id_a\}\) if \(a = b\). This is called a *discrete category* with underlying set \(S\). The followings are the first examples of discrete categories.
+    2. Any set \(S\) can be considered as a category (let us denote this temporarily by \(\sfS\)), whose only morphisms are identities: i.e. \(\Hom_\sfS(a,b)\) is empty if \(a\neq b\), and is a singleton \(\{\id_a\}\) if \(a = b\). This is called a *discrete category* with underlying set \(S\). the following are the first examples of discrete categories.
         - When \(S = 0 = \emptyset\), we obtain the *empty category*, which we denote by \(\mathsf{0}\), is a category with no object or morphisms.
         - When \(S = 1 = \{0\}\) is a singleton, we obtain the category \(\mathsf{1}\) with unique object \(\ast\) and unique morphism \(\id_\ast\).
     3. A monoid \(M = (M,e,\cdot)\) is equivalent to a category with one object (let us denote this temporarily by \(\sfM\)). We let \(\ast\) denote the unique object, and let \(\Hom_\sfM(\ast,\ast) = M\), where \(e = \id_\ast\) and \(\cdot\) being the composition; the monoid axioms exactly says that the result is a category. Any category with unique object leads to a monoid, by the last observation after the defintion of categories. Under this correspondence, a group corresponds to a category with unique object, where all morphisms are isomorphisms. By a slight generalization, a groupoid can be thought of a category (possibly with many objects) where all morphisms are isomorphisms.
-    4. Any poset \((P,\le)\) can be considered as a category (denoted by \(\sfP\) here), called the *poset categories*, where the relation \(\le\) serves as morphisms; i.e. \(\Hom_\sfP(a,b)\) is empty unless \(a\le b\), in which case it is a singleton. The axioms corresponds to the poset axiom (reflexivity and transitivity). The followings are special cases.
+    4. Any poset \((P,\le)\) can be considered as a category (denoted by \(\sfP\) here), called the *poset categories*, where the relation \(\le\) serves as morphisms; i.e. \(\Hom_\sfP(a,b)\) is empty unless \(a\le b\), in which case it is a singleton. The axioms corresponds to the poset axiom (reflexivity and transitivity). the following are special cases.
         - The category \(\mathsf{2}\) is induced from the poset \(2 = \{0,1\}\) with usual order. Similarly we have categories \(\mathsf{n}\) for all natural number \(n\), having \(n\) objects.
         - For any set \(S\), the equality \(=\) is a partial order, and the induced poset category is the same as the discrete category with underlying set \(S\). Thus discrete categories are poset categories.
         - The posets \(\bbN, \bbZ_{\ge0}, \bbZ\) with usual order, their subsets such as intervals \(\{n,n+1,\cdots,n+k\}\) (which generalizes the first item above), and \(\bbN\) with divisibility order form poset categories.
@@ -138,7 +140,7 @@ Note that in the most of the above examples, the objects are sets with additiona
                     \bullet \arrow[rr, shift left = 5pt]\arrow[rr, shift right = 5pt] & &\bullet
                 \end{tikzcd}
             ```
-    6. There is a category \(\Mat_R\), whose objects are natural numbers and morphisms \(n\to m\) are the \(n\times m\) matrices with coefficients in \(R\), and the composition is given by matrix multiplication. In this case, \(\End(n)\) is the set of \(n\times n\) square matrices, and \(\Aut(n)\) is the group \(\GL_n(R)\) of invertible \(n\times n\) square matrices.
+    6. There is a category \(\Mat_R\), whose objects are natural numbers and morphisms \(n\to m\) are the \(m\times n\) matrices with coefficients in \(R\), and the composition is given by matrix multiplication. In this case, \(\End(n)\) is the set of \(n\times n\) square matrices, and \(\Aut(n)\) is the group \(\GL_n(R)\) of invertible \(n\times n\) square matrices.
 <!-- One may introduce free categories generated by multidigraphs or quivers (allow loops), but they are practically too complicated. Thus we skip them for now.-->
 
 We now look at some elementary constructions on the categories.
@@ -152,8 +154,8 @@ We now look at some elementary constructions on the categories.
 
         \[\Hom_{\sfC\times\sfD}((A,C),(B,D)) = \Hom_{\sfC}(A,B)\times\Hom_{\sfD}(C,D),\]
         
-        and the composition being defined componentwisely. Of course, one can extend this construction to arbitrary family of categories, as long as the product of object classes exists as a class.
-    4. The *opposite category* of a category \(\sfC\), denoted by \(\sfC^\op\), is given by \(\Ob(\sfC^\op) = \Ob(\sfC)\) and \(\Hom_{\sfC^\op}(B,A) = \Hom_{\sfC}(A,B)\); i.e. it is the category obtained by reversing all the arrows of the category \(\sfC\). To avoid confusion, the morphism \(\phi:A\to B\) in \(\sfC\), when considered as a morphism in \(\sfC^\op\), will be denoted by \(\phi^\op:B\to A\). The composition is defined as follows: given morphisms \(\phi^\op:B\to A\) and \(\psi^\op:C\to B\), \(\phi^\op\circ\psi^\op := (\psi\circ\phi)^\op:C\to A\). The identity is ketp the same.
+        and the composition being defined componentwise. Of course, one can extend this construction to arbitrary family of categories, as long as the product of object classes exists as a class.
+    4. The *opposite category* of a category \(\sfC\), denoted by \(\sfC^\op\), is given by \(\Ob(\sfC^\op) = \Ob(\sfC)\) and \(\Hom_{\sfC^\op}(B,A) = \Hom_{\sfC}(A,B)\); i.e. it is the category obtained by reversing all the arrows of the category \(\sfC\). To avoid confusion, the morphism \(\phi:A\to B\) in \(\sfC\), when considered as a morphism in \(\sfC^\op\), will be denoted by \(\phi^\op:B\to A\). The composition is defined as follows: given morphisms \(\phi^\op:B\to A\) and \(\psi^\op:C\to B\), \(\phi^\op\circ\psi^\op := (\psi\circ\phi)^\op:C\to A\). The identity is kept the same.
     5. Let \(A\) be an object of a category \(\sfC\). The *overcategory* or *slice category* \(\sfC/A\) is defined as follows: an object is a morphism \(\varphi:B\to A\) in \(\sfC\) with target \(A\), and a morphism from \(\varphi:B\to A\) to \(\psi:C\to A\) is a morphism \(\phi:B\to C\) such that \(\varphi = \psi\circ\phi\). We have the following visualization.
 
         ```tikzcd
@@ -178,7 +180,7 @@ We now look at some elementary constructions on the categories.
 
 !!! example "First Constructions on Categories"
 
-    1. If \(\sfD\) consists of given subsets \(\Ob(\sfD)\subset\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\subset\Hom_\sfC(A,B)\), then for \(\sfD\) to be a subcategory of \(\sfC\) under the inherited identity and composition, it is necessary and sufficient that each \(\Hom_\sfD(A,A)\) contain \(\id_A\) and that the morphisms are closed under composition. The followings are usual examples of subcategories.
+    1. If \(\sfD\) consists of given subsets \(\Ob(\sfD)\subset\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\subset\Hom_\sfC(A,B)\), then for \(\sfD\) to be a subcategory of \(\sfC\) under the inherited identity and composition, it is necessary and sufficient that each \(\Hom_\sfD(A,A)\) contain \(\id_A\) and that the morphisms are closed under composition. the following are usual examples of subcategories.
     { #ex-1st-const-categories }
 
         - By the observation right after the definition of categories, for any category \(\sfC\), the collection of all objects of \(\sfC\) and the collection of all isomorphisms of \(\sfC\) form a subcategory of \(\sfC\), which is a groupoid.
@@ -193,7 +195,7 @@ We now look at some elementary constructions on the categories.
         - Given a category \(\sfC\), the discrete category with underlying set \(\Ob(\sfC)\) is a subcategory of \(\sfC\).
         - \(\Sch\) is a subcategory of \(\LRS\).
         - Given a category \(\sfC\) and its object \(A\), the monoid \(\End_\sfC(A)\) induces a category with one object, which is a subcategory of \(\sfC\).
-        - If \(S'\) is a subset of \(S\), then the induced discrete categories form a full subcategory \(\sfS'\to\sfS\).
+        - If \(S'\) is a subset of \(S\), then the induced discrete categories form a full subcategory \(\sfS'\subset\sfS\).
         - If \(M'\) is a submonoid of \(M\), then the induced categories form a subcategory \(\sfM'\subset\sfM\). It is a full subcategory if and only if \(M' = M\). In particular, this includes the concept of subgroups.
         - If \(Q\) is a subset of a partially ordered set \(P\), then \(Q\) is itself a partially ordered set under inherited order, and the induces poset categories form a full subcategory \(\sfQ\subset\sfP\). In particular, if \(U\) is an open subset of \(X\), then \(\Op(U)\) is a subcategory of \(\Op(X)\), and inclusion of subsets induce inclusion of full subcategory of associated discrete categories.
 

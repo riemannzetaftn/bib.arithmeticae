@@ -40,7 +40,7 @@ A category is a structure where we relate objects by arrows between them. Why no
 
     Given functors \(\caF:\sfC\to\sfD\) and \(\caG:\sfD\to\sfC\), if \(\caG\circ\caF = \id_\sfC\) and \(\caF\circ\caG = \id_\sfD\), we say that \(\caG\) is the *inverse* of \(\caF\), and \(\caF\) is an *isomorphism of categories*.
 
-We observe the followings.
+We observe the following.
 
 - Since the identity and composition of functors clearly satisfy the identity and associativity conditions, there is a category of all (small) categories, denoted by \(\Cat\); the objects are small categories and morphisms are functors between them.
 - We can also compose both types of functors. If we compose a covariant and contravariant functor we obtain a contravariant functor, and if we compose two contravariant functors we obtain a covariant functor.
@@ -107,7 +107,7 @@ Note that if \(\caG:\sfC\to\sfD\) is a functor, then the composition \(\caG\circ
 
 !!! example "Diagram"
 
-    The followings are visual descriptions of diagrams, where nodes are objects of \(\sfC\), arrows are morphisms of \(\sfC\). For simplicity, we have omitted images of identity morphisms and the morphisms obtained by composing already drawn morphisms in \(\sfI\).
+    the following are visual descriptions of diagrams, where nodes are objects of \(\sfC\), arrows are morphisms of \(\sfC\). For simplicity, we have omitted images of identity morphisms and the morphisms obtained by composing already drawn morphisms in \(\sfI\).
     
     ```tikzcd
         \begin{tikzcd}
@@ -158,9 +158,7 @@ The concept of functors allow us to define more abstract categories.
             \end{tikzcd}
         ```
         This equals the category \((\caF^\op/B)^\op\). The under category \(B/\sfC\) is a special case where \(\caF = \id_\sfC\).
-    4. Let \(\caF:\sfI\to\sfC\) be a functor. This is also called to be an *(\(\sfI\)-shaped) diagram (in \(\sfC\))*, and \(\sfI\) is called the *index category* of the diagram, since 
-
-        Then a *cone over \(\caF\)* is a pair \((N,\psi)\), where \(N\in\Ob(\sfC)\) and \(\psi = (\psi_i)_{i\in\Ob(\sfI)}\) is an indexed family of morphisms \(\psi_i:N\to\caF(i)\) of \(\sfC\), such that for every morphism \(\phi:i\to j\) in \(\sfI\), \(\psi_j = \caF(\phi)\circ\psi_i\). A *morphism of cones over \(\caF\)* \(\varphi:(N,\psi)\to(N',\psi')\) is a morphism \(\varphi:N\to N'\) in \(\sfC\) such that \(\psi_i = \psi'_i\circ\varphi\) for all \(i\in\Ob(\sfI)\); see the following commutative diagram, meant to be drawn for each morphism \(\phi\) in \(\sfI\).
+    4. Let \(\caF:\sfI\to\sfC\) be a functor. Then a *cone over \(\caF\)* is a pair \((N,\psi)\), where \(N\in\Ob(\sfC)\) and \(\psi = (\psi_i)_{i\in\Ob(\sfI)}\) is an indexed family of morphisms \(\psi_i:N\to\caF(i)\) of \(\sfC\), such that for every morphism \(\phi:i\to j\) in \(\sfI\), \(\psi_j = \caF(\phi)\circ\psi_i\). A *morphism of cones over \(\caF\)* \(\varphi:(N,\psi)\to(N',\psi')\) is a morphism \(\varphi:N\to N'\) in \(\sfC\) such that \(\psi_i = \psi'_i\circ\varphi\) for all \(i\in\Ob(\sfI)\); see the following commutative diagram, meant to be drawn for each morphism \(\phi\) in \(\sfI\).
         
         ```tikzcd
             \begin{tikzcd}

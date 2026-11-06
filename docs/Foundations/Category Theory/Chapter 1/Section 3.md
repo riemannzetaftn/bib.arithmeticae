@@ -16,7 +16,7 @@ So far, we defined categories, which consists of objects and their morphisms, an
 
     For each functor \(\caF:\sfC\to\sfD\), there is *identity (natural) transformation* \(\id_\caF:\caF\to\caF\), consisting of identity morphisms \(\id_{\caF(A)}\). Given natural transformations \(\eta:\caF\to\caG\) and \(\varepsilon:\caG\to\caH\) of functors \(\sfC\to\sfD\), their *(vertical) composition* \(\varepsilon\circ\eta:\caF\to\caH\) consists of compositions \(\varepsilon_{A}\circ\eta_A\) (the naturality is established by pasting two commutative rectangles together). A natural transformation \(\eta:\caF\to\caG\) with inverse (i.e. a natural transformation \(\varepsilon:\caG\to\caF\) such that \(\varepsilon\circ\eta = \id_\caF\) and \(\eta\circ\varepsilon = \id_\caG\)) is called a *natural isomorphism* of functors. If there is a natural isomorphism between \(\caF\) and \(\caG\), we say that two functors are *naturally isomorphic* and write \(\caF\simeq\caG\). The set of natural transformations from \(\caF\) to \(\caG\) is denoted by \(\Nat(\caF,\caG)\).
 
-We observe the followings.
+We observe the following.
 
 - A natural transformation \(\eta:\caF\to\caG\) is a natural isomorphism if and only if each component \(\eta_A\) is an isomorphism in \(\sfD\). If \(\eta\) is a natural isomorphism with inverse \(\varepsilon:\caG\to\caF\), then for each object \(A\) of \(\sfC\) we have \(\varepsilon_A\circ\eta_A = (\varepsilon\circ\eta)_A = (\id_\caF)_A = \id_{\caF(A)}\) and similarly \(\eta_A\circ\varepsilon_A = \id_{\caG(A)}\), so that \(\eta_A:\caG(A)\to\caF(A)\) is an isomorphism with inverse \(\varepsilon_A\). Conversely, if each \(\eta_A\) is an isomorphism, let us denote the inverse by \(\varepsilon_A\). Then they form a natural transformation \(\varepsilon = (\varepsilon_A)\), since from \(\caG(\phi)\circ\eta_A = \eta_B\circ\caF(\phi)\) we obtain \(\varepsilon_B\circ\caG(\phi) = \caF(\phi)\circ\varepsilon_A\).
 - The identity and composition of natural transformations satisfy the identity and composition assumption, hence for given categories \(\sfC\) and \(\sfD\), we have a *functor category* \([\sfC,\sfD]\) (or \(\sfD^\sfC\)), whose objects are functors \(\sfC\to\sfD\) and morphisms are natural transformations.
@@ -46,7 +46,7 @@ Here comes the examples.
         ```
 
         That is, we have \(g\cdot f(a) = f(g\cdot a)\), or the map is \(G\)-equivariant. This applies to linear representations of groups and \(G\)-modules; that is, the category of \(G\)-sets is identified with the functor category \([\sfG,\Set]\), the category of \(k\)-linear representations of \(G\) is identified with \([\sfG,\Vec_k]\), and the category of \(G\)-module is identified with \([\sfG,\Ab]\). This is a first example of functor categories that arise in practice.
-    6. A cone \((N,\psi)\) over a diagram \(\caF:\sfI\to\sfC\) is equivalent to a natural transformation from the constant functor \(\Delta_N\) to the functor \(\caF\), where \(\psi = (\psi_i)_{i\in\Ob(\sfI)}\) is the natural transformation. Indeed, the commutativity assumption is equivalent to the naturality. Dually, a co-cone \((N,\psi)\) of a functor \(\caF\) is equivalent to a natural transformation from \(\caF\) to the \(\Delta_N\). We further observe the followings:
+    6. A cone \((N,\psi)\) over a diagram \(\caF:\sfI\to\sfC\) is equivalent to a natural transformation from the constant functor \(\Delta_N\) to the functor \(\caF\), where \(\psi = (\psi_i)_{i\in\Ob(\sfI)}\) is the natural transformation. Indeed, the commutativity assumption is equivalent to the naturality. Dually, a co-cone \((N,\psi)\) of a functor \(\caF\) is equivalent to a natural transformation from \(\caF\) to the \(\Delta_N\). We further observe the following:
 
         - The product category \(\sfC^I\), where \(I\) is a set, is identified with functor category \([\sfI,\sfC]\), where \(\sfI\) is the discrete category with underlying set \(I\). If \(\caF\) is such a functor, then the collection \((\caF(i))_{i\in\Ob(\sfI)}\) is an object of \(\sfC^I\), and given an object \((A_i)_{i\in\Ob(\sfI)}\) of \(\sfC^I\), the association \(i\mapsto A_i\), \(\id_i\mapsto\id_{A_i}\) defines a functor \(\sfI\to\sfC\). This explains the general notation \(\sfD^\sfC\) of a functor category; it generalizes product categories.
         - There is a *diagonal functor* \(\Delta = \Delta_{\bline}:\sfC\to\sfC^\sfI\) for any categories \(\sfI\) and \(\sfC\), which sends an object \(A\) of \(\sfC\) to the constant functor \(\Delta_A\), and sends a morphism \(\phi:A\to B\) of \(\sfC\) to a natural transformation \(\Delta_\phi:\Delta_A\to\Delta_B\), which consists of the family \((\Delta_\phi)_i = \phi\), which natural as \(\phi\circ\id_A = \phi = \id_B\circ\phi\).
@@ -63,7 +63,7 @@ The natural transformations can also be composed horizontally.
         
     \[(\varepsilon\ast\eta)_A = \varepsilon_{\caG_1(A)}\circ\caF_2(\eta_A) = \caG_2(\eta_A)\circ\varepsilon_{\caF_1(A)}.\]
 
-We observe the followings.
+We observe the following.
 
 - First, the equality holds by the naturality of \(\varepsilon\): see the following commutative diagram.
 
@@ -104,7 +104,7 @@ We now introduce the equivalence of categories.
 
     A functor \(\caF:\sfC\to\sfD\) is called an *equivalence of categories*, or simply an *equivalence* if there is a functor \(\caG:\sfD\to\sfC\) such that \(\caG\circ\caF\simeq\id_{\sfC}\) and \(\caF\circ\caG\simeq\id_{\sfD}\). In this case, \(\caG\) is called an *inverse equivalence* of \(\caF\), and \(\sfC\) is said to be *equivalent* to \(\sfD\).
 
-We observe the followings.
+We observe the following.
 
 - This is a weaker notion than the isomorphism of categories, which might be too strong in view of category theory. For instance, consider the category \(\mathsf{1}\), which has unique object and morphism. Given any set \(S\), we have a category \(\sfC\) where \(\Ob(\sfC) = S\) and for each \(s_1, s_2\in S\), \(\Hom_{\sfC}(s_1,s_2)\) is a singleton. Then every pair of objects is isomorphic via unique isomorphism, and the category is equivalent to \(\mathsf{1}\); given \(s_0\in S\) we can choose a constant functor \(\mathsf{1}\to\sfC\) with value \(s_0\), and a constant functor \(\sfC\to\mathsf{1}\) to the unique object of \(\mathsf{1}\). Then their compositions become an identity on \(\mathsf{1}\) and a constant functor \(\sfC\to\sfC\) with value \(s_0\), which is naturally isomorphic to the identity functor on \(\sfC\), as the morphisms \(\eta_s:s\to s_0\) form a natural transformation. Indeed, every diagram in \(\sfC\) commutes, since morphisms between given objects are unique. However, if \(|S|>1\), then two categories are never isomorphic. In view of category theory, \(\sfC\) do not necessarily contain more data than \(\mathsf{1}\); every objects are isomorphic, and are not distinguished by the structure of category.
 - If we keep the analogy between homotopy and natural isomorphism, this corresponds to homotopy equivalence in topology.
