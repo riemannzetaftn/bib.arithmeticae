@@ -20,7 +20,7 @@ In this section we define categories.
     Given a category \(\sfC\), we define the following.
 
     - Given a morphism \(\phi:A\to B\) in \(\sfC\), \(A\) is called a *domain* (or a *source*) of \(\phi\) and \(B\) is called a *codomain* (or a *target*) of \(\phi\).
-    - A morphism \(\phi:A\to B\) in \(\sfC\) is called an *isomorphism* if there exist an *inverse* \(\psi:B\to A\), which satisfies \(\psi\circ\phi = \id_A\) and \(\phi\circ\psi = \id_B\).
+    - A morphism \(\phi:A\to B\) in \(\sfC\) is called an *isomorphism* if there exists an *inverse* \(\psi:B\to A\), which satisfies \(\psi\circ\phi = \id_A\) and \(\phi\circ\psi = \id_B\).
     - Two objects \(A\) and \(B\) of \(\sfC\) are said to be *isomorphic* if there is an isomorphism \(\phi:A\to B\), and this is denoted by \(A\cong B\).
     - Given an object \(A\) of \(\sfC\), any morphism \(\phi:A\to A\) is called an *endomorphism* of \(A\), and an endomorphism which is an isomorphism is called an *automorphism* of \(A\). The set of endomorphisms and automorphisms of \(A\) are denoted by \(\End_\sfC(A)\) and \(\Aut_\sfC(A)\).
 
@@ -119,11 +119,11 @@ Note that in the most of the above examples, the objects are sets with additiona
 
     1. Sets and binary relations (which is a generalization of functions, and we can compose relations) between them form a category \(\Rel\).
     { #ex-elementary-categories }
-    2. Any set \(S\) can be considered as a category (let us denote this temporarily by \(\sfS\)), whose only morphisms are identities: i.e. \(\Hom_\sfS(a,b)\) is empty if \(a\neq b\), and is a singleton \(\{\id_a\}\) if \(a = b\). This is called a *discrete category* with underlying set \(S\). the following are the first examples of discrete categories.
+    2. Any set \(S\) can be considered as a category (let us denote this temporarily by \(\sfS\)), whose only morphisms are identities: i.e. \(\Hom_\sfS(a,b)\) is empty if \(a\neq b\), and is a singleton \(\{\id_a\}\) if \(a = b\). This is called a *discrete category* with underlying set \(S\). The following are the first examples of discrete categories.
         - When \(S = 0 = \emptyset\), we obtain the *empty category*, which we denote by \(\mathsf{0}\), is a category with no object or morphisms.
         - When \(S = 1 = \{0\}\) is a singleton, we obtain the category \(\mathsf{1}\) with unique object \(\ast\) and unique morphism \(\id_\ast\).
-    3. A monoid \(M = (M,e,\cdot)\) is equivalent to a category with one object (let us denote this temporarily by \(\sfM\)). We let \(\ast\) denote the unique object, and let \(\Hom_\sfM(\ast,\ast) = M\), where \(e = \id_\ast\) and \(\cdot\) being the composition; the monoid axioms exactly says that the result is a category. Any category with unique object leads to a monoid, by the last observation after the defintion of categories. Under this correspondence, a group corresponds to a category with unique object, where all morphisms are isomorphisms. By a slight generalization, a groupoid can be thought of a category (possibly with many objects) where all morphisms are isomorphisms.
-    4. Any poset \((P,\le)\) can be considered as a category (denoted by \(\sfP\) here), called the *poset categories*, where the relation \(\le\) serves as morphisms; i.e. \(\Hom_\sfP(a,b)\) is empty unless \(a\le b\), in which case it is a singleton. The axioms corresponds to the poset axiom (reflexivity and transitivity). the following are special cases.
+    3. A monoid \(M = (M,e,\cdot)\) is equivalent to a category with one object (let us denote this temporarily by \(\sfM\)). We let \(\ast\) denote the unique object, and let \(\Hom_\sfM(\ast,\ast) = M\), where \(e = \id_\ast\) and \(\cdot\) being the composition; the monoid axioms exactly says that the result is a category. Any category with unique object leads to a monoid, by the last observation after the definition of categories. Under this correspondence, a group corresponds to a category with unique object, where all morphisms are isomorphisms. By a slight generalization, a groupoid can be thought of a category (possibly with many objects) where all morphisms are isomorphisms.
+    4. Any poset \((P,\le)\) can be considered as a category (denoted by \(\sfP\) here), called the *poset categories*, where the relation \(\le\) serves as morphisms; i.e. \(\Hom_\sfP(a,b)\) is empty unless \(a\le b\), in which case it is a singleton. The axioms corresponds to the poset axiom (reflexivity and transitivity). The following are special cases.
         - The category \(\mathsf{2}\) is induced from the poset \(2 = \{0,1\}\) with usual order. Similarly we have categories \(\mathsf{n}\) for all natural number \(n\), having \(n\) objects.
         - For any set \(S\), the equality \(=\) is a partial order, and the induced poset category is the same as the discrete category with underlying set \(S\). Thus discrete categories are poset categories.
         - The posets \(\bbN, \bbZ_{\ge0}, \bbZ\) with usual order, their subsets such as intervals \(\{n,n+1,\cdots,n+k\}\) (which generalizes the first item above), and \(\bbN\) with divisibility order form poset categories.
@@ -180,7 +180,7 @@ We now look at some elementary constructions on the categories.
 
 !!! example "First Constructions on Categories"
 
-    1. If \(\sfD\) consists of given subsets \(\Ob(\sfD)\subset\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\subset\Hom_\sfC(A,B)\), then for \(\sfD\) to be a subcategory of \(\sfC\) under the inherited identity and composition, it is necessary and sufficient that each \(\Hom_\sfD(A,A)\) contain \(\id_A\) and that the morphisms are closed under composition. the following are usual examples of subcategories.
+    1. If \(\sfD\) consists of given subsets \(\Ob(\sfD)\subset\Ob(\sfC)\) and \(\Hom_\sfD(A,B)\subset\Hom_\sfC(A,B)\), then for \(\sfD\) to be a subcategory of \(\sfC\) under the inherited identity and composition, it is necessary and sufficient that each \(\Hom_\sfD(A,A)\) contain \(\id_A\) and that the morphisms are closed under composition. The following are usual examples of subcategories.
     { #ex-1st-const-categories }
 
         - By the observation right after the definition of categories, for any category \(\sfC\), the collection of all objects of \(\sfC\) and the collection of all isomorphisms of \(\sfC\) form a subcategory of \(\sfC\), which is a groupoid.
@@ -208,7 +208,7 @@ We now look at some elementary constructions on the categories.
     4. The under category is opposite of over category: precisely, we have \(A/\sfC = (\sfC^\op/A)^\op\).
     5. \(\cAlg_R\) is the coslice category \(R/\cRing\).
 
-A categorical statement also has its opposite (more commonly called as a dual), and if a categorical statement is true for a category \(\sfC\) iff its dual statement is true for \(\sfC^\op\). Since \(\sfC = (\sfC^\op)^\op\), in particular, given a categorical statement which is true for all category, its opposite is also true for all category. This is often referred to as the *principle of duality*. In view of this principle, we shall often omit proof of a dual statement.
+A categorical statement also has its opposite (more commonly called as a dual), and a categorical statement is true for a category \(\sfC\) iff its dual statement is true for \(\sfC^\op\). Since \(\sfC = (\sfC^\op)^\op\), in particular, given a categorical statement which is true for all category, its opposite is also true for all category. This is often referred to as the *principle of duality*. In view of this principle, we shall often omit proof of a dual statement.
 
 !!! remark "Grothendieck Universe"
 
