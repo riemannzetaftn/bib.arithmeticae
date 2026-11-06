@@ -8,6 +8,5 @@
 }
 .md-typeset p {
   text-align: justify;
-  word-break: break-all;   /* 한글 줄 끝 간격을 고르게 */
   hyphens: auto;           /* 영어 단어가 섞일 때 하이픈 처리 */
 }
