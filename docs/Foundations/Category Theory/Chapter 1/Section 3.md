@@ -59,7 +59,9 @@ The natural transformations can also be composed horizontally.
 
 !!! definition "Horizontal Composition"
 
-    Let \(\caF_1,\caG_1:\sfC\to\sfD\) and \(\caF_2,\caG_2:\sfD\to\sfE\) be functors and \(\eta:\caF_1\to\caG_1\), \(\varepsilon:\caF_2\to\caG_2\) be natural transformations. Their *horizontal composition* \(\varepsilon\ast\eta:\caF_2\circ\caF_1\to\caG_2\circ\caG_1\) is defined by \((\varepsilon\ast\eta)_A = \varepsilon_{\caG_1(A)}\circ\caF_2(\eta_A) = \caG_2(\eta_A)\circ\varepsilon_{\caF_1(A)}\).
+    Let \(\caF_1,\caG_1:\sfC\to\sfD\) and \(\caF_2,\caG_2:\sfD\to\sfE\) be functors and \(\eta:\caF_1\to\caG_1\), \(\varepsilon:\caF_2\to\caG_2\) be natural transformations. Their *horizontal composition* \(\varepsilon\ast\eta:\caF_2\circ\caF_1\to\caG_2\circ\caG_1\) is defined by 
+        
+    \[(\varepsilon\ast\eta)_A = \varepsilon_{\caG_1(A)}\circ\caF_2(\eta_A) = \caG_2(\eta_A)\circ\varepsilon_{\caF_1(A)}.\]
 
 We observe the followings.
 
@@ -133,7 +135,15 @@ We observe the followings.
     - *fully faithful*, if it is bijective on morphisms; i.e. it is both full and faithful.
     - *essentially surjective*, if any object \(B\) of \(\sfD\) is isomorphic to \(\caF(A)\) for some object \(A\) of \(\sfC\).
 
-The equivalence is expressed by these properties.
+- The inclusion functors are faithful, and it is fully faithful iff the subcategory is full.
+- If \(\caF:\sfC\to\sfD\) is fully faithful and \(\caF(\phi)\) is an isomorphism in \(\sfD\), then \(\phi:A\to B\) is an isomorphism in \(\sfC\) (the converse was true for all functors, so we have equivalence). Indeed, if \(\psi:\caF(B)\to\caF(A)\) is the inverse of \(\caF(\phi)\), then \(\psi = \caF(\varphi)\) for some \(\varphi:B\to A\) in \(\sfC\) by fullness, and we have
+
+    \begin{align*}
+        \caF(\varphi\circ\phi) &= \caF(\varphi)\circ\caF(\phi) = \psi\circ\caF(\phi) = \id_{\caF(A)} = \caF(\id_A),\\
+        \caF(\phi\circ\varphi) &= \caF(\phi)\circ\caF(\varphi) = \caF(\phi)\circ\psi = \id_{\caF(B)} = \caF(\id_B).
+    \end{align*}
+
+    and the faithfulness implies that \(\varphi\circ\phi = \id_A, \phi\circ\varphi = \id_B\), so that \(\phi\) is an isomorphism with inverse \(\varphi\).
 
 !!! proposition
 
@@ -141,3 +151,16 @@ The equivalence is expressed by these properties.
 
 !!! proof
 
+    Let \(\caF\) be an equivalence with inverse \(\caG\), and the natural isomorphism \(\eta:\id_{\sfC}\to\caG\circ\caF\). Consider the function
+        
+    \begin{align*}
+        \Hom_{\sfC}(A,B)\xrightarrow{\caF}\Hom_{\sfD}(\caF(A),\caF(B))\xrightarrow{\caG}\Hom_{\sfC}(\caG(\caF(A)),\caG(\caF(B)))\xrightarrow{\eta_B^{-1}\circ(\bline)\circ\eta_A}\Hom_{\sfC}(A,B)
+    \end{align*}
+    
+    of Hom-sets. This is the identity, since \(\caG(\caF(\phi))\circ\eta_A=\eta_B\circ\id_{\sfC}(\phi) = \eta_B\circ\phi\) by naturality of \(\eta\). This shows that \(\caF\) is injective on Hom-sets, and by symmetry of equivalence, \(\caG\) is also injective on Hom-sets. The rightmost map is a bijection, as the morphisms \(\eta_A,\eta_B^{-1}\) are isomorphisms. Since the composition of two rightmost maps (which are injective) is injective and is also a left inverse to the map \(\caF\), it is bijective. It follows that \(\caF\), being a right inverse to a bijection, is in fact bijective and a two-sided inverse to the composition. Thus \(\caF\) is fully faithful. For given \(B\in\Ob(\sfD)\), we see that \(\caF(\caG(B))\cong B\) by the natural isomorphism \(\caF\circ\caG\cong\id_{\sfD}\), and \(\caF\) is also essentially surjective.
+
+    Conversely, let \(\caF\) be a fully faithful and essentially surjective functor. Given \(A\in\Ob(\sfD)\), take some \(\caG(A)\in\Ob(\sfC)\) s.t there is an isomorphism \(\varepsilon_A:\caF(\caG(A))\to A\) (we are using the axiom of choice). Also, given \(\phi:A\to B\) in \(\sfD\), let \(\caG(\phi):\caG(A)\to\caG(B)\) be given by the unique morphism s.t \(\caF(\caG(\phi)) = \varepsilon_{B}^{-1}\circ\phi\circ\varepsilon_A\). Then by functoriality and faithfulness of \(\caF\) it follows that \(\caG:\sfD\to\sfC\) is a functor, and by construction \(\varepsilon:\caF\circ\caG\to\id_{\sfD}\) is a natural isomorphism. Thus for given \(A\in\Ob(\sfC)\), there is an isomorphism \(\varepsilon_{\caF(A)}:\caF(\caG(\caF(A)))\to\caF(A)\), and its preimage under \(\caF\) is a morphism \(\eta_A:\caG(\caF(A))\to A\), which is also an isomorphism by \cref{lem:fffisom}. We shall show that they are natural. Let \(\phi:A\to B\) in \(\sfC\) be given. If we take \(\caF\) to the desired diagram, we have \begin{center}\begin{tikzcd}
+        \caF(\caG(\caF(A))) \arrow[rr,"\varepsilon_{\caF(A)}"{description}]\arrow[dd,"\caF(\caG(\caF(\phi)))"{description}] & &\caF(A)\arrow[dd, "\caF(\phi)"{description}]\\
+        \\
+        \caF(\caG(\caF(B))) \arrow[rr,"\varepsilon_{\caF(B)}"{description}] & &\caF(B)
+    \end{tikzcd}\end{center} which is commutative by naturality of \(\varepsilon\) applied to the morphism \(\caF(\phi):\caF(A)\to\caF(B)\). Thus by faithfulness, we see that the original diagram also commutes, and \(\eta\) is a natural isomorphism, and \(\caF\) is an equivalence with an inverse \(\caG\).
