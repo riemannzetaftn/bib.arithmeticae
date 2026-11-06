@@ -14,7 +14,7 @@ So far, we defined categories, which consists of objects and their morphisms, an
         \end{tikzcd}
     ```
 
-    For each functor \(\caF:\sfC\to\sfD\), there is *identity (natural) transformation* \(\id_\caF:\caF\to\caF\), consisting of identity morphisms \(\id_{\caF(A)}\). Given natural transformations \(\eta:\caF\to\caG\) and \(\varepsilon:\caG\to\caH\) of functors \(\sfC\to\sfD\), their *(vertical) composition* \(\varepsilon\circ\eta:\caF\to\caH\) consists of compositions \(\varepsilon_{A}\circ\eta_A\) (the naturality is established by pasting two commutative rectangles together). A natural transformation \(\eta:\caF\to\caG\) with inverse (i.e. a natural transformation \(\varepsilon:\caG\to\caF\) such that \(\varepsilon\circ\eta = \id_\caF\) and \(\eta\circ\varepsilon = \id_\caG\)) is called a *natural isomorphism* of functors. If there is a natural isomorphism between \(\caF\) and \(\caG\), we say that two functors are *naturally isomorphic* and write \(\caF\cong\caG\). The set of natural transformations from \(\caF\) to \(\caG\) is denoted by \(\Nat(\caF,\caG)\).
+    For each functor \(\caF:\sfC\to\sfD\), there is *identity (natural) transformation* \(\id_\caF:\caF\to\caF\), consisting of identity morphisms \(\id_{\caF(A)}\). Given natural transformations \(\eta:\caF\to\caG\) and \(\varepsilon:\caG\to\caH\) of functors \(\sfC\to\sfD\), their *(vertical) composition* \(\varepsilon\circ\eta:\caF\to\caH\) consists of compositions \(\varepsilon_{A}\circ\eta_A\) (the naturality is established by pasting two commutative rectangles together). A natural transformation \(\eta:\caF\to\caG\) with inverse (i.e. a natural transformation \(\varepsilon:\caG\to\caF\) such that \(\varepsilon\circ\eta = \id_\caF\) and \(\eta\circ\varepsilon = \id_\caG\)) is called a *natural isomorphism* of functors. If there is a natural isomorphism between \(\caF\) and \(\caG\), we say that two functors are *naturally isomorphic* and write \(\caF\simeq\caG\). The set of natural transformations from \(\caF\) to \(\caG\) is denoted by \(\Nat(\caF,\caG)\).
 
 We observe the followings.
 
@@ -85,7 +85,7 @@ We observe the followings.
 
     The left rectangle is commutative by naturality of \(\eta\) and functoriality of \(\caF_2\) (it is a composition of a commutative diagram and \(\caF_2\)), and the right rectangle is commutative by naturality of \(\varepsilon\), applied to the morphism \(\caG_1(\phi):\caG_1(A)\to\caG_1(B)\). Thus the whole diagram commutes, and we see that the horizontal composition is indeed a natural transformation, and the horizontal composition is well-defined.
 
-- As a special case, suppose that \(\eta = \id_{\caF}\) where \(\caF = \caF_1 = \caG_1\). Then the composition has components \(\varepsilon_{\caF(A)}\), which is a natural transformation \(\caF_2\circ\caF\to\caG_2\circ\caF\). We abbreviate this composition by \(\varepsilon\caF\) or \(\varepsilon_{\caF}\). Similarly, if \(\varepsilon = \id_{\caG}\) where \(\caG = \caF_2 = \caG_2\), then the composition has components \(\caG(\eta_A)\), which is a natural transformation \(\caG\circ\caF_1\to\caG\circ\caG_1\). We abbreviate this composition by \(\caG\eta\). The general horizontal compositions are then expressed by the vertical comopsition; the definition becomes \(\varepsilon\ast\eta = \varepsilon\caG_1\circ\caF_2\eta = \caG_2\eta\circ\varepsilon\caF_1\). Note that if \(\varepsilon\) is a natural isomorphism, then so are the compositions \(\varepsilon\caF\) and if \(\eta\) is a natural isomorphism, then so are the compositions \(\caG\eta\). <!--    An example is the case where \(\eta\) is the abelianization maps -->
+- As a special case, suppose that \(\eta = \id_{\caF}\) where \(\caF = \caF_1 = \caG_1\). Then the composition has components \(\varepsilon_{\caF(A)}\), which is a natural transformation \(\caF_2\circ\caF\to\caG_2\circ\caF\). We abbreviate this composition by \(\varepsilon\caF\) or \(\varepsilon_{\caF}\). Similarly, if \(\varepsilon = \id_{\caG}\) where \(\caG = \caF_2 = \caG_2\), then the composition has components \(\caG(\eta_A)\), which is a natural transformation \(\caG\circ\caF_1\to\caG\circ\caG_1\). We abbreviate this composition by \(\caG\eta\). The general horizontal compositions are then expressed by the vertical comopsition of these; the definition becomes \(\varepsilon\ast\eta = \varepsilon\caG_1\circ\caF_2\eta = \caG_2\eta\circ\varepsilon\caF_1\). Note that if \(\varepsilon\) is a natural isomorphism, then so are the compositions \(\varepsilon\caF\) and if \(\eta\) is a natural isomorphism, then so are the compositions \(\caG\eta\). <!--    An example is the case where \(\eta\) is the abelianization maps -->
 - The name of vertical and horizontal compositions come from the following visualization.
 
     ```tikzcd
@@ -95,3 +95,48 @@ We observe the followings.
     ```
 
     The vertical compositions give natural transformations \(\eta_2\circ\eta_1:\caF_1\to\caH_1\) and \(\varepsilon_2\circ\varepsilon_1:\caF_2\to\caH_2\), and horizontal compositions give \(\varepsilon_1\ast\eta_1:\caF_2\circ\caF_1\to\caG_2\circ\caG_1\) and similar ones.
+
+We now introduce the equivalence of categories.
+
+!!! definition "Equivalence of Categories"
+
+    A functor \(\caF:\sfC\to\sfD\) is called an *equivalence of categories*, or simply an *equivalence* if there is a functor \(\caG:\sfD\to\sfC\) such that \(\caG\circ\caF\simeq\id_{\sfC}\) and \(\caF\circ\caG\simeq\id_{\sfD}\). In this case, \(\caG\) is called an *inverse equivalence* of \(\caF\), and \(\sfC\) is said to be *equivalent* to \(\sfD\).
+
+We observe the followings.
+- This is a weaker notion than the isomorphism of categories, which might be too strong in view of category theory. For instance, consider the category \(\mathsf{1}\), which has unique object and morphism. Given any set \(S\), we have a category \(\sfC\) where \(\Ob(\sfC) = S\) and for each \(s_1, s_2\in S\), \(\Hom_{\sfC}(s_1,s_2)\) is a singleton. Then every pair of objects is isomorphic via unique isomorphism, and the category is equivalent to \(\mathsf{1}\); given \(s_0\in S\) we can choose a constant functor \(\mathsf{1}\to\sfC\) with value \(s_0\), and a constant functor \(\sfC\to\mathsf{1}\) to the unique object of \(\mathsf{1}\). Then their compositions become an identity on \(\mathsf{1}\) and a constant functor \(\sfC\to\sfC\) with value \(s_0\), which is naturally isomorphic to the identity functor on \(\sfC\), as the morphisms \(\eta_s:s\to s_0\) form a natural transformation. Indeed, every diagram in \(\sfC\) commutes, since morphisms between given objects are unique. However, if \(\|S\|>1\), then two categories are never isomorphic. In view of category theory, \(\sfC\) do not necessarily contain more data than \(\mathsf{1}\); every objects are isomorphic, and are not distinguished by the structure of category.
+- If we keep the analogy between homotopy and natural isomorphism, this corresponds to homotopy equivalence in topology.
+- The equivalence is an equivalence relation of categories. By definition the reflexivity and symmetry are immediate. For transitivity, suppose that \(\caF_1:\sfC\to\sfD\) has an inverse equivalence \(\caG_1\) and \(\caF_2:\sfD\to\sfE\) has an inverse equivalence \(\caG_2\). We claim that \(\caG_1\circ\caG_2:\sfE\to\sfC\) is an inverse equivalence of \(\caF_2\circ\caF_1\). Let \(\eta_1:\caG_1\circ\caF_1\to\id_\sfC\), \(\varepsilon_1:\caF_1\circ\caG_1\to\id_\sfD\), \(\eta_2:\caG_2\circ\caF_2\to\id_\sfD\) and \(\varepsilon_2:\caF_2\circ\caG_2\to\id_\sfE\) be the natural isomorphisms. Then we have 
+
+    \begin{align*}
+        \caG_1\circ\caG_2\circ\caF_2\circ\caF_1 &\simeq \caG_1\circ\id_\sfD\circ\caF_1 &\text{via }\caG_1\eta_2\caF_1\\
+        &= \caG_1\circ\caF_1\\
+        &\simeq \id_\sfC &\text{via }\eta_1
+    \end{align*}
+
+    and 
+
+    \begin{align*}
+        \caF_2\circ\caF_1\circ\caG_1\circ\caG_2 &\simeq \caF_2\circ\id_\sfD\circ\caG_2 &\text{via } \caF_2\varepsilon_1\\
+        &= \caF_2\circ\caG_2\\
+        &\simeq \id_\sfE &\text{via }\varepsilon_2
+    \end{align*}
+
+    as desired.
+
+!!! definition "Properties of Functors"
+
+    A (covariant or contravariant) functor \(\caF:\sfC\to\sfD\) is said to be 
+
+    - *faithful*, if it is injective on morphisms.
+    - *full*, if it is surjective on morphisms.
+    - *fully faithful*, if it is bijective on morphisms; i.e. it is both full and faithful.
+    - *essentially surjective*, if any object \(B\) of \(\sfD\) is isomorphic to \(\caF(A)\) for some object \(A\) of \(\sfC\).
+
+The equivalence is expressed by these properties.
+
+!!! proposition
+
+    A functor is an equivalence of categories if and only if it is fully faithful and essentially surjective.
+
+!!! proof
+

@@ -39,13 +39,6 @@ A category is a structure where we relate objects by arrows between them. Why no
     ```
 
     Given functors \(\caF:\sfC\to\sfD\) and \(\caG:\sfD\to\sfC\), if \(\caG\circ\caF = \id_\sfC\) and \(\caF\circ\caG = \id_\sfD\), we say that \(\caG\) is the *inverse* of \(\caF\), and \(\caF\) is an *isomorphism of categories*.
-    
-<!-- A (covariant or contravariant) functor \(\caF:\sfC\to\sfD\) is said to be 
-
-    - *faithful*, if it is injective on morphisms.
-    - *full*, if it is surjective on morphisms.
-    - *fully faithful*, if it is bijective on morphisms; i.e. it is both full and faithful.
-    - *essentially surjective*, if any object \(B\) of \(\sfD\) is isomorphic to \(\caF(A)\) for some object \(A\) of \(\sfC\). -->
 
 We observe the followings.
 
