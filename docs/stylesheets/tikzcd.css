@@ -6,7 +6,12 @@
 .md-typeset .tikzcd .tikzcd-bg-stroke {
   stroke: var(--tikzcd-bg, var(--md-default-bg-color));
 }
-.md-typeset p {
+.md-typeset {
   text-align: justify;
-  hyphens: auto;           /* 영어 단어가 섞일 때 하이픈 처리 */
+  hyphens: auto;
+}
+
+/* 양쪽 맞춤이 어울리지 않는 요소는 원래대로 */
+.md-typeset :is(h1, h2, h3, h4, h5, h6, .admonition-title, th, td) {
+  text-align: start;
 }
