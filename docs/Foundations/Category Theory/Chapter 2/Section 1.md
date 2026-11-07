@@ -11,3 +11,9 @@ The concept of universal properties has many different realizations, and we begi
     - *universal object* of \(\sfC\), if it is an initial or a final object of \(\sfC\).
 
     The property of being a universal object of \(\sfC\) is called the *universal property* in \(\sfC\).
+
+Again, we start with examples.
+
+!!! example "Universal Object"
+
+    
