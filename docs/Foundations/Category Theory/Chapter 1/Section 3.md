@@ -126,6 +126,27 @@ We observe the following.
 
     as desired.
 
+- Being an inverse equivalence is invariant under natural isomorphism. If \(\caG\) is an inverse equivalence of \(\caF:\sfC\to\sfD\) and \(\caG\simeq\caG'\), then we have
+
+    \begin{align*}
+        &\caG'\circ\caF \simeq \caG\circ\caF \simeq \id_\sfC,
+        &\caF\circ\caG' \simeq \caF\circ\caG \simeq \id_\sfD
+    \end{align*}
+
+    by the horizontal composition of natural isomorphisms with identity transformations.
+
+- Conversely, if exists, inverse equivalence of a functor is unique up to natural isomorphism (i.e. any two inverse equivalence are naturally isomorphic). Suppose that \(\caF:\sfC\to\sfD\) and \(\caG,\caG':\sfD\to\sfC\) are functors with natural isomorphisms \(\eta:\caG\circ\caF\to\id_\sfC\) and \(\varepsilon':\id_\sfD\to\caF\circ\caG'\). Then we have 
+
+    \begin{align*}
+        \caG &= \caG\circ\id_\sfD\\
+        &\simeq \caG\circ(\caF\circ\caG') &\text{via }\caG\varepsilon'\\
+        &= (\caG\circ\caF)\circ\caG'\\
+        &\simeq \id_\sfC\circ\caG' &\text{via }\eta\caG'\\
+        &= \caG'
+    \end{align*}
+
+    as desired. Note that we only used one direction of equivalences, hence we have something more: given that \(\caF\) is an equivalence of categories, with \(\caG\) being its one-sided inverse equivalence (i.e. we only have one of two natural isomorphisms), then \(\caG\) is naturally isomorphic to any inverse equivalence of \(\caF\), and hence is itself an inverse equivalence of \(\caF\) by the previous observation.
+
 !!! definition "Properties of Functors"
 
     A (covariant or contravariant) functor \(\caF:\sfC\to\sfD\) is said to be 
@@ -170,3 +191,9 @@ We observe the following.
     ```
     
     which is commutative by naturality of \(\varepsilon\) applied to the morphism \(\caF(\phi):\caF(A)\to\caF(B)\). Thus by faithfulness, we see that the original diagram also commutes, and \(\eta\) is a natural isomorphism, and \(\caF\) is an equivalence with an inverse \(\caG\).
+
+Next, we show that every category is equivalent to a skeletal one; that is, up to equivalence, isomorphic objects are identified.
+
+!!! definition "Skeletal Category"
+
+    A category \(\sfC\) is called *skeletal* if any two isomorphic objects are equal. A *skeleton* of a category \(\sfC\) is a full subcategory of \(\sfC\) containing exactly one object for each isomorphism class of \(\sfC\).
