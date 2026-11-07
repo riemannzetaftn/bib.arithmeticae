@@ -9,6 +9,10 @@ extra_javascript = [
   "javascripts/tikzcd.js"
 ]
 
+[project.extra.analytics]
+provider = "google"
+property = "G-XXXXXXXXXX"
+
 [project.theme]
 language = "en"
 features = [
