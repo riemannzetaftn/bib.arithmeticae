@@ -11,7 +11,7 @@ extra_javascript = [
 
 [project.extra.analytics]
 provider = "google"
-property = "G-XXXXXXXXXX"
+property = "G-JD28X953EK"
 
 [project.theme]
 language = "en"
