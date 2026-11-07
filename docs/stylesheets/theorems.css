@@ -1,0 +1,21 @@
+/* proof: 상자 없이 "Proof." + 끝에 ∎ */
+.md-typeset .admonition.proof {
+  border: none;
+  box-shadow: none;
+  background: none;
+  padding: 0;
+  margin: 1em 0;
+  font-size: inherit;          /* admonition은 기본 글씨가 본문보다 작음 */
+}
+.md-typeset .proof > .admonition-title {
+  float: left;                 /* 첫 문단과 같은 줄에 */
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0 .4em 0 0;
+  font-weight: normal;
+  font-style: italic;
+}
+.md-typeset .proof > .admonition-title::before { display: none; }  /* 아이콘 제거 */
+.md-typeset .proof > .admonition-title::after  { content: "."; }
+.md-typeset .admonition.proof::after { content: "∎"; display: block; text-align: right; }

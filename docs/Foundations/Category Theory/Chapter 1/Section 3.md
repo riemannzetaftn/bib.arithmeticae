@@ -197,3 +197,11 @@ Next, we show that every category is equivalent to a skeletal one; that is, up t
 !!! definition "Skeletal Category"
 
     A category \(\sfC\) is called *skeletal* if any two isomorphic objects are equal. A *skeleton* of a category \(\sfC\) is a full subcategory of \(\sfC\) containing exactly one object for each isomorphism class of \(\sfC\).
+
+!!! proposition
+
+    Every category \(\sfC\) is equivalent to any of its skeleton.
+
+!!! proof
+
+    

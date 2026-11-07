@@ -1,7 +1,7 @@
 [project]
 site_name = "Bibliotheca Arithmeticae"
 site_url = "https://riemannzetaftn.github.io/bib.arithmeticae/"
-extra_css = ["stylesheets/tikzcd.css"]
+extra_css = ["stylesheets/tikzcd.css", "stylesheets/theorems.css"]
 extra_javascript = [
   "javascripts/mathjax.js",
   "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js",
