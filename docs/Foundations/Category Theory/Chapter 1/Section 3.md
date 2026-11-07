@@ -173,10 +173,10 @@ We observe the following.
 !!! proof
 
     Let \(\caF\) be an equivalence with inverse \(\caG\), and the natural isomorphism \(\eta:\id_{\sfC}\to\caG\circ\caF\). Consider the function
-        
-    \begin{align*}
+    
+    \begin{small}\begin{align*}
         \Hom_{\sfC}(A,B)\xrightarrow{\caF}\Hom_{\sfD}(\caF(A),\caF(B))\xrightarrow{\caG}\Hom_{\sfC}(\caG(\caF(A)),\caG(\caF(B)))\xrightarrow{\eta_B^{-1}\circ(\bline)\circ\eta_A}\Hom_{\sfC}(A,B)
-    \end{align*}
+    \end{align*}\end{small}
     
     of Hom-sets. This is the identity, since \(\caG(\caF(\phi))\circ\eta_A=\eta_B\circ\id_{\sfC}(\phi) = \eta_B\circ\phi\) by naturality of \(\eta\). This shows that \(\caF\) is injective on Hom-sets, and by symmetry of equivalence, \(\caG\) is also injective on Hom-sets. The rightmost map is a bijection, as the morphisms \(\eta_A,\eta_B^{-1}\) are isomorphisms. Since the composition of two rightmost maps (which are injective) is injective and is also a left inverse to the map \(\caF\), it is bijective. It follows that \(\caF\), being a right inverse to a bijection, is in fact bijective and a two-sided inverse to the composition. Thus \(\caF\) is fully faithful. For given \(B\in\Ob(\sfD)\), we see that \(\caF(\caG(B))\cong B\) by the natural isomorphism \(\caF\circ\caG\simeq\id_{\sfD}\), and \(\caF\) is also essentially surjective.
 
