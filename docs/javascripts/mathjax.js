@@ -193,6 +193,7 @@ window.MathJax = {
       Vec: "{\\sf Vec}",
       fdVec: "{\\sf fdVec}",
       Mod: "{\\sf Mod}",
+      biLin: "{\\sf biLin}",
       pMod: "{\\sf pMod}",
       pAlg: "{\\sf pAlg}",
       pSh: "{\\sf pSh}",

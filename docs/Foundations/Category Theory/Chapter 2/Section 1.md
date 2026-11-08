@@ -30,14 +30,39 @@ Again, we start with examples.
     2. In most categories arise in algebra such as \(\Mnd,\cMnd,\Grp,\Ab,\Vec_k,\fdVec_k,\Mod_R,\LieAlg_k\), there is a *zero object*, which are both initial and final. They consist of one element (usually called the identity or the zero element) and trivial operation between them.
     3. In \(\Ring\) and \(\cRing\), the ring \(\bbZ\) is initial and the zero ring is final. In \(\Alg_R\) and \(\cAlg_R\), the trivial algebra \(R\) is initial and zero algebra is final.
     4. In \(\Field\), there is no initial or final object. In fact, there is no morphism between fields of different characteristic. If we restrict to the full subcategory of fields of fixed characteristic, then \(\bbQ\) is initial in the characteristic \(0\), and \(\bbF_p\) are initial in characteristic \(p\). However, there is no final object. If \(F\) is a final object, then any field \(K\) with the given characteristic is uniquely embedded in \(F\), and in particular \(K\) has no non-trivial automorphisms which would induce different embeddings, but this is not the case for many fields (e.g. \(\bbC\), \(\bbF_{p^n}\)).
-    5. In \(\Top\), \(\CHaus\), \(\Mfd\), \(\sMfd\) and \(\cMfd\), the empty space and singleton spaces are initial and final. In \(\hTop\), the empty space is still initial, and contractible spaces (which are homotopy equivalent to singleton spaces) are final. In \(\hTop_\ast\), the contractible spaces are both initial and final.
-    6. In discrete categories with more than one object, there is no initial or final object. In one-object categories (identified with a monoid) has no initial or final object, unless the monoid is trivial so that the unique object is both initial and final.
-    7. In a poset category, an element is an initial object if and only if it is the minimum, and is a final object if and only if it is the maximum.
-    8. In the category of [](<../Chapter 1/Section 1.md#ex-elementary-categories>) 5, there is no initial or final object, as there are two distinct morphisms between two objects.
-    9. In \(\Cat\), the empty category \(\mathsf{0}\) is initial and the category \(\mathsf{1}\) is final.
+    5. The initial object of \(\biLin_R(M,N)\) is the tensor product \(M\otimes_R N\) equipped with natural bilinear map \(M\times N\to M\otimes_R N\), \((m,n)\mapsto m\otimes n\).
+    6. In \(\Top\), \(\CHaus\), \(\Mfd\), \(\sMfd\) and \(\cMfd\), the empty space and singleton spaces are initial and final. In \(\hTop\), the empty space is still initial, and contractible spaces (which are homotopy equivalent to singleton spaces) are final. In \(\hTop_\ast\), the contractible spaces are both initial and final.
+    7. In discrete categories with more than one object, there is no initial or final object. In one-object categories (identified with a monoid) has no initial or final object, unless the monoid is trivial so that the unique object is both initial and final.
+    8. In a poset category, an element is an initial object if and only if it is the minimum, and is a final object if and only if it is the maximum.
+    9. In the category of [](<../Chapter 1/Section 1.md#ex-elementary-categories>) 5, there is no initial or final object, as there are two distinct morphisms between two objects.
+    10. In \(\Cat\), the empty category \(\mathsf{0}\) is initial and the category \(\mathsf{1}\) is final.
 
 You might notice that the above initial and final objects of usual categories are rather trivial and boring. More important and interesting examples comes from more complex, built-up categories.
 
 !!! definition "Universal Morphism"
 
     Let \(\caF:\sfC\to\sfD\) be a functor and \(B\in\Ob(\sfD)\). A *universal morphism* from \(\caF\) to \(B\) is the final object in the category \(\caF/B\), and a *universal morphism* from \(\caF\) to \(B\) is the initial object in the category \(B/\caF\).
+
+Let us elaborate on the definition.
+
+- A universal morphism from \(\caF\) to \(B\) is an ordered pair \((A,\phi)\), where \(A\) is an object of \(\sfC\) and \(\phi:\caF(A)\to B\) is a morphism in \(\sfD\), such that for any other such pair \((A',\phi')\), there exist unique morphism \(\psi:A'\to A\) in \(\sfC\) such that \(\phi' = \phi\circ\caF(\psi)\). This is described by the following diagram.
+
+    ```tikzcd
+        \begin{tikzcd}
+            A' \arrow[dd, dashed, "\exists!\psi"{description}] & &\caF(A') \arrow[dd, "\caF(\psi)"{description}]\arrow[drr, "\forall\phi'"{description}]\\
+            & & & &B\\
+            A & &\caF(A) \arrow[urr, "\phi"{description}]
+        \end{tikzcd}
+    ```
+
+    (From now on, we shall denote uniquely existing morphisms by dashed arrows.)
+
+- Dually, a universal morphism from \(B\) to \(\caF\) is an ordered pair \((A,\phi)\) where \(A\) is an object of \(\sfC\) and \(\phi:B\to\caF(A)\) is a morphism in \(\sfD\), such that for any other such pair \((A',\phi')\), there exist unique morphism \(\psi:A\to A'\) in \(\sfC\) such that \(\phi' = \caF(\psi)\circ\phi\). This is described by the following diagram.
+
+    ```tikzcd
+        \begin{tikzcd}
+            & &\caF(A) \arrow[dd,"\caF(\psi)"{description}] & &A \arrow[dd,dashed,"\exists!\psi"{description}]\\
+            B \arrow[urr,"\phi"{description}]\arrow[drr,"\forall\phi'"{description}]\\
+            & &\caF(A') & &A'
+        \end{tikzcd}
+    ```
