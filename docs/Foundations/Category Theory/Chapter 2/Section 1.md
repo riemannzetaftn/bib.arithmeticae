@@ -1,4 +1,4 @@
-# Section 1. Initial and Final Objects
+# Section 1. Introduction
 
 The concept of universal properties has many different realizations, and we begin with the most simple one.
 
@@ -33,3 +33,9 @@ Again, we start with examples.
     7. In a poset category, an element is an initial object if and only if it is the minimum, and is a final object if and only if it is the maximum.
     8. In the category of [](<../Chapter 1/Section 1.md#ex-elementary-categories>) 5, there is no initial or final object, as there are two distinct morphisms between two objects.
     9. In \(\Cat\), the empty category \(\mathsf{0}\) is initial and the category \(\mathsf{1}\) is final.
+
+You might notice that the above initial and final objects of usual categories are rather trivial and boring. More important and interesting examples comes from more complex, built-up categories.
+
+!!! definition "Universal Morphism"
+
+    Let \(\caF:\sfC\to\sfD\) be a functor and \(B\in\Ob(\sfD)\). A *universal morphism* from \(\caF\) to \(B\) is the final object in the category \(\caF/B\), and a *universal morphism* from \(\caF\) to \(B\) is the initial object in the category \(B/\caF\).
