@@ -4,16 +4,27 @@ The concept of universal properties has many different realizations, and we begi
 
 !!! definition "Universal Object"
 
-    Let \(\sfC\) be a category. An object \(A\) of \(\sfC\) is called an
+    Let \(\sfC\) be a category. An object \(A\) of \(\sfC\) is said to be
     
-    - *initial object* of \(\sfC\), if for every object \(B\) of \(\sfC\) there is unique morphism \(A\to B\).
-    - *final object* of \(\sfC\), if for every object \(B\) of \(\sfC\) there is unique morphism \(B\to A\).
-    - *universal object* of \(\sfC\), if it is an initial or a final object of \(\sfC\).
+    - an *initial object* of \(\sfC\), or is *initial* in \(\sfC\), if for every object \(B\) of \(\sfC\) there is unique morphism \(A\to B\).
+    - a *final object* of \(\sfC\), or is *final* in \(\sfC\), if for every object \(B\) of \(\sfC\) there is unique morphism \(B\to A\).
+    - a *universal object* of \(\sfC\), or is *universal* in \(\sfC\), if it is an initial or a final object of \(\sfC\).
 
-    The property of being a universal object of \(\sfC\) is called the *universal property* in \(\sfC\).
+    The property of being universal in \(\sfC\) is called the *universal property* in \(\sfC\).
+
+We first observe the followings.
+
+- An object \(A\) of \(\sfC\) is initial (resp. final) in \(\sfC\) iff it is final (resp. initial) in \(\sfC^\op\). That is, two concepts are dual to each other.
+- Universal properties determine an object uniquely, up to a unique isomorphism.
+
+    - If \(A\) is initial, and \(\phi:A'\to A\) is an isomorphism, then \(A'\) is also initial, since the map \(\Hom_\sfC(\phi,B)\) is a bijection.
+    - Conversely, if \(A\) and \(A'\) are both initial, then there are unique morphisms \(\phi:A\to A'\) and \(\phi':A'\to A\). Their compositions \(\phi'\circ\phi:A\to A\) and \(\phi\circ\phi':A'\to A'\) are the unique morphisms from \(A\) and \(A'\), hence must be the identities \(\id_A\) and \(\id_{A'}\). Thus the unique morphisms \(\phi, \phi'\) are isomorphisms which are inverses to each other.
 
 Again, we start with examples.
 
 !!! example "Universal Object"
 
-    
+    1. In \(\Set\), the empty set is initial, and the singletons are final. In \(\Set_\ast\), the singletons are both initial and final. In \(\poSet\), the empty poset is initial and singleton posets are final.
+    2. In most categories arise in algebra such as \(\Mnd,\cMnd,\Grp,\Ab,\Ring,\cRing,\Vec_k,\fdVec_k,\Mod_R,\Alg_R,\cAlg_R,\LieAlg_k\) and the category of \(\ast\)-algebras over \(R\), there is a *zero object*, which are both initial and final. They consist of one element (usually called the identity or the zero element) and trivial operation between them.
+    3. In \(\Top\), \(\Mfd\), \(\sMfd\), \(\cMfd\), the empty space and singleton spaces are initial and final. In \(\hTop\), the empty space is still initial, and contractible spaces (homotopy equivalent to singleton spaces) are final. In \(\hTop_\ast\), the contractible spaces are both initial and final.
+    4. 
