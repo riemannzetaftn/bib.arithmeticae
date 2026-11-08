@@ -35,21 +35,21 @@ In this section, we discuss details on limits and colimits, starting from common
         
         Then an \(\sfI\)-shaped diagram \(\caF\) in \(\sfC\) is equivalent to two morphisms \(f, g:A\to B\) (where \(f = \caF(\phi_1), g = \caF(\phi_2), A = \caF(i)\) and \(B = \caF(j)\)). A cone (resp. co-cone) over \(\caF\) is just a morphism \(h:C\to A\) with \(f\circ h = g\circ h\) (resp. \(h:B\to C\) with \(h\circ f = h\circ g\)), as the morphism from \(C\) to \(B\) (resp. from \(A\) to \(C\)) is then determined by commutativity.
 
-        In this case, the limit of \(\caF\) is called the *equalizer* of \(f\) and \(g\), and denoted by \(\eq(f,g)\). Letting \(\iota:\eq(f,g)\to A\) be the natural morphism, we have the following universal property; for every morphism \(h:C\to A\) such that \(f\circ h = g\circ h\) (i.e. \(h\) 'equalizes' \(f\) and \(g\)), there is a unique morphism \(\Tilde{h}:C\to\eq(f,g)\) s.t \(h = \iota\circ\Tilde{h}\). Thus the following diagram commutes.
+        In this case, the limit of \(\caF\) is called the *equalizer* of \(f\) and \(g\), and denoted by \(\eq(f,g)\). Letting \(\iota:\eq(f,g)\to A\) be the natural morphism, we have the following universal property; for every morphism \(h:C\to A\) such that \(f\circ h = g\circ h\) (i.e. \(h\) 'equalizes' \(f\) and \(g\)), there is a unique morphism \(\tilde{h}:C\to\eq(f,g)\) s.t \(h = \iota\circ\tilde{h}\). Thus the following diagram commutes.
 
         ```tikzcd
             \begin{tikzcd}
-                C \arrow[drr,"\forall h"{description}]\arrow[dd, "\exists!\Tilde{h}"{description},dashed]\\
+                C \arrow[drr,"\forall h"{description}]\arrow[dd, "\exists!\tilde{h}"{description},dashed]\\
                 & &A \arrow[rr, shift left, "f"]\arrow[rr, shift right, swap, "g"] & &B\\
                 \eq(f,g) \arrow[urr, "\iota"{description}]
             \end{tikzcd}
         ```
 
-        Dually, the colimit of \(\caF\) is called the *coequalizer* of \(f\) and \(g\), denoted by \(\coeq(f,g)\). Letting \(\pi:B\to\coeq(f,g)\) be the natural morphism, we have the following universal property; for every morphism \(h:B\to C\) such that \(h\circ f = h\circ g\) (i.e. \(h\) 'coequalizes' \(f\) and \(g\)), there is a unique morphism \(\Tilde{h}:\coeq(f,g)\to C\) s.t \(h = \Tilde{h}\circ\pi\). In other words, we have the following commutative diagram.
+        Dually, the colimit of \(\caF\) is called the *coequalizer* of \(f\) and \(g\), denoted by \(\coeq(f,g)\). Letting \(\pi:B\to\coeq(f,g)\) be the natural morphism, we have the following universal property; for every morphism \(h:B\to C\) such that \(h\circ f = h\circ g\) (i.e. \(h\) 'coequalizes' \(f\) and \(g\)), there is a unique morphism \(\tilde{h}:\coeq(f,g)\to C\) s.t \(h = \tilde{h}\circ\pi\). In other words, we have the following commutative diagram.
 
         ```tikzcd
             \begin{tikzcd}
-                & & & &\coeq(f,g) \arrow[dd, "\exists!\Tilde{h}"{description}, dashed]\\
+                & & & &\coeq(f,g) \arrow[dd, "\exists!\tilde{h}"{description}, dashed]\\
                 A \arrow[rr, shift left, "f"]\arrow[rr, shift right, swap, "g"] & &B \arrow[urr, "\pi"{description}]\arrow[drr, "\forall h"{description}]\\
                 & & & &C
             \end{tikzcd}
@@ -98,4 +98,16 @@ In this section, we discuss details on limits and colimits, starting from common
         ```
         
         Note that this corresponds to coproduct of \(f, g\) in the under category \(A/\sfC\).
-    5. 
+    5. Let \(\sfI\) be a poset category, whose underlying poset \((I,\le)\) is a directed set; i.e. a poset such that for all \(i, j\in I\), there is \(k\in I\) with \(i, j\le k\). Then the \(\sfI\)-shaped diagrams \(\caF\) in \(\sfC\) are equivalent to a *directed system* in \(\sfC\), directed by \((I,\le)\). This consists of the following data: the collection of objects \((A_i)_{i\in I}\), the collection of morphisms \((f_{ij}:A_i\to A_j)_{i,j\in I, i\le j}\) such that \(f_{ii} = \id_{A_i}\) and \(f_{ik} = f_{jk}\circ f_{ij}\) whenever \(i\le j\le k\). Under the identification \(A_i = \caF(i), f_{ij} = \caF(i\to j)\), the latter conditions correspond to the functoriality. Then a co-cone over such \(\caF\) corresponds to a collection of morphisms \((\psi_i:A_i\to A)_{i\in I}\), such that \(\psi_i = \psi_j\circ f_{ij}\) whenever \(i, j\in I\), \(i\le j\).
+
+        Then the colimit of \(\caF\) is called the *direct limit* or the *injective limit* of the directed system \(((A_i)_{i\in I},(f_{ij})_{i\le j})\), and is denoted by \((\varinjlim A_i,(\iota_i)_{i\in I})\). The universal property is as follows: for every family of morphisms \((\psi_i:A_i\to A)_{i\in i}\) such that \(\psi_i = \psi_j\circ f_{ij}\) whenever \(i, j\in I\), \(i\le j\), there exists a unique morphism \(\varphi:\varinjlim A_i\to A\) s.t \(\psi_i = \varphi\circ\iota_i\). The corresponding diagram is not much different from that of general colimit.
+        
+        Poset categories with underlying directed sets are special cases of *filtered categories*, which are categories in which every pair of objects (or equivalently, a functor from discrete category with two objects) and every pair of morphisms with same domain and codomain (or equivalently, a functor from the index category introduced in 2) admits a co-cone. Explicitly, a category \(\sfC\) is said to be *filtered* if the following hold.
+            
+        - For all \(A, B\in\Ob(\sfC)\), there is \(C\in\Ob(\sfC)\) and morphisms \(\varphi:A\to C, \psi:B\to C\).
+        - For all morphisms \(\varphi,\psi:A\to B\), there is a morphism \(\phi:B\to C\) s.t \(\phi\circ\varphi = \phi\circ\psi\).
+
+        In case of directed sets, the first condition is true, and the second condition follows since there are at most one morphism between two objects. A colimit of functor from a filtered category is called a *filtered colimit*.
+    6. Let \(\sfI\) be as above. Then the \(\sfI^\op\)-shaped diagrams \(\caF\) in \(\sfC\) (in other words, a contravariant functor \(\caF:\sfI\to\sfC\)) are equivalent to the *inverse systems* in \(\sfC\), which consists of the following data; a collection of objects \((A_i)_{i\in I}\), a collection of morphisms \((f_{ij}:A_j\to A_i)_{i,j\in I,i\le j}\) such that \(f_{ii} = \id_{A_i}\) and \(f_{ik} = f_{ij}\circ f_{jk}\) whenever \(i\le j\le k\). Under the identification \(A_i = \caF(i), f_{ij} = \caF(i\to j)\), the latter conditions correspond to the functoriality. Then a cone over such \(\caF\) corresponds to a collection of morphisms \((\psi_i:A\to A_i)_{i\in I}\) such that \(\psi_i = f_{ij}\circ\psi_j\) whenever \(i\le j, i, j\in I\).
+
+        Then the limit of \(\caF\) is called the *inverse limit* or the *projective limit* of the inverse system \(((A_i)_{i\in I}, (f_{ij})_{i\le j})\), and is denoted by \((\varprojlim A_i,(\pi_i)_{i\in I})\). The universal property is as follows. For every family of morphisms \((\psi_i:A\to A_i)_{i\in I}\) s.t \(\psi_i = f_{ij}\circ\psi_j\) whenever \(i\le j, i, j\in I\), there exists a unique morphism \(\varphi:A\to\varprojlim A_i\) s.t \(\psi_i = \pi_i\circ\varphi\) for all \(i\in I\). The diagram is not much different from general diagram for limits.
