@@ -25,6 +25,8 @@ Again, we start with examples.
 !!! example "Universal Object"
 
     1. In \(\Set\), the empty set is initial, and the singletons are final. In \(\Set_\ast\), the singletons are both initial and final. In \(\poSet\), the empty poset is initial and singleton posets are final.
-    2. In most categories arise in algebra such as \(\Mnd,\cMnd,\Grp,\Ab,\Ring,\cRing,\Vec_k,\fdVec_k,\Mod_R,\Alg_R,\cAlg_R,\LieAlg_k\) and the category of \(\ast\)-algebras over \(R\), there is a *zero object*, which are both initial and final. They consist of one element (usually called the identity or the zero element) and trivial operation between them.
-    3. In \(\Top\), \(\Mfd\), \(\sMfd\), \(\cMfd\), the empty space and singleton spaces are initial and final. In \(\hTop\), the empty space is still initial, and contractible spaces (homotopy equivalent to singleton spaces) are final. In \(\hTop_\ast\), the contractible spaces are both initial and final.
-    4. 
+    2. In most categories arise in algebra such as \(\Mnd,\cMnd,\Grp,\Ab,\Vec_k,\fdVec_k,\Mod_R,\LieAlg_k\), there is a *zero object*, which are both initial and final. They consist of one element (usually called the identity or the zero element) and trivial operation between them.
+    3. In \(\Ring\) and \(\cRing\), the ring \(\bbZ\) is initial and the zero ring is final. In \(\Alg_R\) and \(\cAlg_R\), the trivial algebra \(R\) is initial and zero algebra is final.
+    4. In \(\Field\), there is no initial or final object. In fact, there is no morphism between fields of different characteristic. If we restrict to the full subcategory of fields of fixed characteristic, then \(\bbQ\) is initial in the characteristic \(0\), and \(\bbF_p\) are initial in characteristic \(p\). However, there is no final object. If \(F\) is a final object, then any field \(K\) with the given characteristic is uniquely embedded in \(F\), and in particular \(K\) has no non-trivial automorphism, but this is not the case for many fields (e.g. \(\bbC\), \(\bbF_{p^n}\)).
+    5. In \(\Top\), \(\Mfd\), \(\sMfd\), \(\cMfd\), the empty space and singleton spaces are initial and final. In \(\hTop\), the empty space is still initial, and contractible spaces (homotopy equivalent to singleton spaces) are final. In \(\hTop_\ast\), the contractible spaces are both initial and final.
+    6. 
