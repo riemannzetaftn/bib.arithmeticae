@@ -31,5 +31,5 @@ Again, we start with examples.
     5. In \(\Top\), \(\CHaus\), \(\Mfd\), \(\sMfd\) and \(\cMfd\), the empty space and singleton spaces are initial and final. In \(\hTop\), the empty space is still initial, and contractible spaces (which are homotopy equivalent to singleton spaces) are final. In \(\hTop_\ast\), the contractible spaces are both initial and final.
     6. In discrete categories with more than one object, there is no initial or final object. In one-object categories (identified with a monoid) has no initial or final object, unless the monoid is trivial so that the unique object is both initial and final.
     7. In a poset category, an element is an initial object if and only if it is the minimum, and is a final object if and only if it is the maximum.
-    8. In the category of [](<docs/Foundations/Category Theory/Chapter 1/Section 1.md#ex-elementary-categories>) 5, there is no initial or final object, as there are two distinct morphisms between two objects.
-    9. In the category \(\Cat\), the empty category \(\mathsf{0}\) is initial and the category \(\mathsf{1}\) is final.
+    8. In the category of [](<../Chapter 1/Section 1.md#ex-elementary-categories>) 5, there is no initial or final object, as there are two distinct morphisms between two objects.
+    9. In \(\Cat\), the empty category \(\mathsf{0}\) is initial and the category \(\mathsf{1}\) is final.
