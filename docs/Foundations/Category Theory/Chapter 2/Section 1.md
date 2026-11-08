@@ -66,3 +66,8 @@ Let us elaborate on the definition.
             & &\caF(A') & &A'
         \end{tikzcd}
     ```
+
+Now, some authors say that universal properties are properties of being universal morphisms. These turns out to be equivalent in some sense.
+
+- By definition, universal morphisms are universal objects in the over/under categories.
+- Conversely, any universal object \(A\) of a category \(\sfC\) is in fact equivalent to a universal morphism: for the unique functor \(\Delta_\ast:\sfC\to\mathsf{1}\), we see that the category \(\Delta_\ast/\ast\) is identified (via isomorphism of categories) to \(\sfC\) as the commutativity in \(\mathsf{1}\) is trivial, so that an initial (resp. final) object of \(\sfC\) corresponds to a universal morphism from \(\Delta_\ast\) to \(\ast\) (resp. from \(\ast\) to \(\Delta_\ast\)).
