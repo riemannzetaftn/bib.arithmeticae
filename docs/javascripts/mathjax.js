@@ -213,6 +213,7 @@ window.MathJax = {
       Cov: "{\\sf Cov}",
       LRS: "{\\sf LRS}",
       Mat: "{\\sf Mat}",
+      colim: "{\\rm colim}",
       Sym: "{\\rm Sym}",
       Nat: "{\\rm Nat}",
       GL: "{\\rm GL}",

@@ -102,7 +102,9 @@ We observe the followings.
         
         In this case, the morphism \(\varphi\) is said to be *induced* from the family of morphisms \((\psi_i)\), by the universal property of limit.
     
-    - Dually, a colimit of \(\caF\) is a co-cone \((\colim\caF,\iota = (\iota_i)_{i\in\Ob(\sfI)})\) over \(\caF\) such that for any other co-cone \((N,\psi)\) over \(\caF\), there exists a unique morphism \(\varphi:\colim\caF\to N\) such that for all \(i\in\Ob(\sfI)\), \(\psi_i = \varphi\circ\iota_i\). The corresponding commutative diagram is the following, where \(\phi:i\to j\) is any morphism in \(\sfI\). \begin{center}
+    - Dually, a colimit of \(\caF\) is a co-cone \((\colim\caF,\iota = (\iota_i)_{i\in\Ob(\sfI)})\) over \(\caF\) such that for any other co-cone \((N,\psi)\) over \(\caF\), there exists a unique morphism \(\varphi:\colim\caF\to N\) such that for all \(i\in\Ob(\sfI)\), \(\psi_i = \varphi\circ\iota_i\). The corresponding commutative diagram is the following, where \(\phi:i\to j\) is any morphism in \(\sfI\).
+
+        ```tikzcd
             \begin{tikzcd}
                 \caF(i) \arrow[rr, "\caF(\phi)"{description}]\arrow[ddddr, "\psi_i"{description}, bend right = 30]\arrow[ddr, "\iota_i"{description}] & &\caF(j) \arrow[ddl, "\iota_j"{description}]\arrow[ddddl, "\psi_j"{description}, bend left = 30]\\
                 \\
@@ -110,9 +112,11 @@ We observe the followings.
                 \\
                 &N
             \end{tikzcd}
-        \end{center} In this case, the morphism \(\varphi\) is said to be *induced* from the family of morphisms \((\psi_i)\), by the universal property of colimit.
+        ```
+        
+        In this case, the morphism \(\varphi\) is said to be *induced* from the family of morphisms \((\psi_i)\), by the universal property of colimit.
     
-    Here, we are abusing the notation: the notation \(\lim\caF\) (resp. \(\colim\caF\)) will stand for both the limit (resp. colimit), which is an ordered pair, and its underlying object in \(\sfC\).
+    Here, we are abusing notations: the notation \(\lim\caF\) (resp. \(\colim\caF\)) will stand for both the limit (resp. colimit), which is an ordered pair, and its underlying object in \(\sfC\).
 
 - The limits and colimits are also unique up to unique isomorphism, but one needs to make sure in which sense the morphism is unique. Having said this, we shall speak of 'the' limit and colimit.
 - Being limits or colimits is again equivalent to being universal object or morphisms in a sense.
