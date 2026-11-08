@@ -20,6 +20,8 @@ We first observe the followings.
     - If \(A\) is initial, and \(\phi:A'\to A\) is an isomorphism, then \(A'\) is also initial, since the maps \(\Hom_\sfC(\phi,B)\) are bijections.
     - Conversely, if \(A\) and \(A'\) are both initial, then there are unique morphisms \(\phi:A\to A'\) and \(\phi':A'\to A\). Their compositions \(\phi'\circ\phi:A\to A\) and \(\phi\circ\phi':A'\to A'\) are the unique morphisms from \(A\) and \(A'\), hence must be the identities \(\id_A\) and \(\id_{A'}\). Thus the unique morphisms \(\phi, \phi'\) are isomorphisms which are inverses to each other.
 
+    In this sense, we shall speak of 'the' initial (resp. final, universal) object.
+
 Again, we start with examples.
 
 !!! example "Universal Object"
