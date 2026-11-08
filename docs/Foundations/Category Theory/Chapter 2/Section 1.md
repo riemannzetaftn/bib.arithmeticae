@@ -43,31 +43,81 @@ You might notice that the above initial and final objects of usual categories ar
 
     Let \(\caF:\sfC\to\sfD\) be a functor and \(B\in\Ob(\sfD)\). A *universal morphism* from \(\caF\) to \(B\) is the final object in the category \(\caF/B\), and a *universal morphism* from \(\caF\) to \(B\) is the initial object in the category \(B/\caF\).
 
-Let us elaborate on the definition.
+We observe the followings.
 
-- A universal morphism from \(\caF\) to \(B\) is an ordered pair \((A,\phi)\), where \(A\) is an object of \(\sfC\) and \(\phi:\caF(A)\to B\) is a morphism in \(\sfD\), such that for any other such pair \((A',\phi')\), there exist unique morphism \(\psi:A'\to A\) in \(\sfC\) such that \(\phi' = \phi\circ\caF(\psi)\). This is described by the following diagram.
+- First, we expand the definition explicitly.
+    
+    - A universal morphism from \(\caF\) to \(B\) is an ordered pair \((A,\phi)\), where \(A\) is an object of \(\sfC\) and \(\phi:\caF(A)\to B\) is a morphism in \(\sfD\), such that for any other such pair \((A',\phi')\), there exists a unique morphism \(\psi:A'\to A\) in \(\sfC\) such that \(\phi' = \phi\circ\caF(\psi)\). This is described by the following diagram.
 
-    ```tikzcd
-        \begin{tikzcd}
-            A' \arrow[dd, dashed, "\exists!\psi"{description}] & &\caF(A') \arrow[dd, "\caF(\psi)"{description}]\arrow[drr, "\forall\phi'"{description}]\\
-            & & & &B\\
-            A & &\caF(A) \arrow[urr, "\phi"{description}]
-        \end{tikzcd}
-    ```
+        ```tikzcd
+            \begin{tikzcd}
+                A' \arrow[dd, dashed, "\exists!\psi"{description}] & &\caF(A') \arrow[dd, "\caF(\psi)"{description}]\arrow[drr, "\forall\phi'"{description}]\\
+                & & & &B\\
+                A & &\caF(A) \arrow[urr, "\phi"{description}]
+            \end{tikzcd}
+        ```
 
-    (From now on, we shall denote uniquely existing morphisms by dashed arrows.)
+        (From now on, we shall denote uniquely existing morphisms by dashed arrows.)
 
-- Dually, a universal morphism from \(B\) to \(\caF\) is an ordered pair \((A,\phi)\) where \(A\) is an object of \(\sfC\) and \(\phi:B\to\caF(A)\) is a morphism in \(\sfD\), such that for any other such pair \((A',\phi')\), there exist unique morphism \(\psi:A\to A'\) in \(\sfC\) such that \(\phi' = \caF(\psi)\circ\phi\). This is described by the following diagram.
+    - Dually, a universal morphism from \(B\) to \(\caF\) is an ordered pair \((A,\phi)\) where \(A\) is an object of \(\sfC\) and \(\phi:B\to\caF(A)\) is a morphism in \(\sfD\), such that for any other such pair \((A',\phi')\), there exists a unique morphism \(\psi:A\to A'\) in \(\sfC\) such that \(\phi' = \caF(\psi)\circ\phi\). This is described by the following diagram.
 
-    ```tikzcd
-        \begin{tikzcd}
-            & &\caF(A) \arrow[dd,"\caF(\psi)"{description}] & &A \arrow[dd,dashed,"\exists!\psi"{description}]\\
-            B \arrow[urr,"\phi"{description}]\arrow[drr,"\forall\phi'"{description}]\\
-            & &\caF(A') & &A'
-        \end{tikzcd}
-    ```
+        ```tikzcd
+            \begin{tikzcd}
+                & &\caF(A) \arrow[dd,"\caF(\psi)"{description}] & &A \arrow[dd,dashed,"\exists!\psi"{description}]\\
+                B \arrow[urr,"\phi"{description}]\arrow[drr,"\forall\phi'"{description}]\\
+                & &\caF(A') & &A'
+            \end{tikzcd}
+        ```
 
-Now, some authors say that universal properties are properties of being universal morphisms. These turns out to be equivalent in some sense.
+        This equals the universal morphism from \(\caF^\op\) to \(B\).
 
-- By definition, universal morphisms are universal objects in the over/under categories.
-- Conversely, any universal object \(A\) of a category \(\sfC\) is in fact equivalent to a universal morphism: for the unique functor \(\Delta_\ast:\sfC\to\mathsf{1}\), we see that the category \(\Delta_\ast/\ast\) is identified (via isomorphism of categories) to \(\sfC\) as the commutativity in \(\mathsf{1}\) is trivial, so that an initial (resp. final) object of \(\sfC\) corresponds to a universal morphism from \(\Delta_\ast\) to \(\ast\) (resp. from \(\ast\) to \(\Delta_\ast\)).
+- The universal morphisms are also unique up to unique isomorphism, but in the over / under category: i.e. even though \((A,\phi)\) and \((A',\phi')\) are two universal morphisms, mere isomorphisms \(\psi:A\to A'\) in \(\sfC\) might not be unique, and we need the commutativity assumption to have uniqueness. Thus when we say that a universal morphism is unique, you should keep in mind the exact sense in which this is unique. Having said this, we shall speak of 'the' universal morphism.
+
+- Some authors say that universal properties are properties of being universal morphisms. These turns out to be equivalent in some sense.
+
+    - By definition, universal morphisms are universal objects in the over/under categories.
+    - Conversely, any universal object \(A\) of a category \(\sfC\) is in fact equivalent to a universal morphism: for the unique functor \(\Delta_\ast:\sfC\to\mathsf{1}\), we see that the category \(\Delta_\ast/\ast\) is identified (via isomorphism of categories) to \(\sfC\) as the commutativity in \(\mathsf{1}\) is trivial, so that the initial (resp. final) object of \(\sfC\) corresponds to a universal morphism from \(\Delta_\ast\) to \(\ast\) (resp. from \(\ast\) to \(\Delta_\ast\)).
+
+The categories of cones and co-cones also induce interesting universal properties.
+
+!!! definition "Limit and Colimit"
+
+    Let \(\caF:\sfI\to\sfC\) be a diagram. A *limit* of \(\caF\), denoted by \(\lim\caF\), is the final object of the category \(\Cone(\caF)\), and a *colimit* of \(\caF\), denoted by \(\colim\caF\), is the initial object of the category \(\coCone(\caF)\).
+
+We observe the followings.
+
+- We expand the definition again.
+
+    - A limit of \(\caF\) is a cone \((\lim\caF,\pi = (\pi_i)_{i\in\Ob(\sfI)})\) over \(\caF\) such that for any other cone \((N,\psi)\) over \(\caF\), there exists a unique morphism \(\varphi:N\to\lim\caF\) such that for all \(i\in\Ob(\sfI)\), \(\psi_i = \pi_i\circ\varphi\). The corresponding commutative diagram is the following, where \(\phi:i\to j\) is any morphism in \(\sfI\).
+        
+        ```tikzcd
+            \begin{tikzcd}
+                &N'\arrow[dd,dashed,"\exists!\varphi"{description}]\arrow[ddddl, bend right = 30, "\psi_i"{description}]\arrow[ddddr, bend left = 30, "\psi_j"{description}]\\
+                \\
+                &\lim\caF\arrow[ddl, swap, "\pi_i"{description}]\arrow[ddr, "\pi_j"{description}]\\
+                \\
+                \caF(i) \arrow[rr, "\caF(\phi)"{description}] & &\caF(j)
+            \end{tikzcd}
+        ```
+        
+        In this case, the morphism \(\varphi\) is said to be *induced* from the family of morphisms \((\psi_i)\), by the universal property of limit.
+    
+    - Dually, a colimit of \(\caF\) is a co-cone \((\colim\caF,\iota = (\iota_i)_{i\in\Ob(\sfI)})\) over \(\caF\) such that for any other co-cone \((N,\psi)\) over \(\caF\), there exists a unique morphism \(\varphi:\colim\caF\to N\) such that for all \(i\in\Ob(\sfI)\), \(\psi_i = \varphi\circ\iota_i\). The corresponding commutative diagram is the following, where \(\phi:i\to j\) is any morphism in \(\sfI\). \begin{center}
+            \begin{tikzcd}
+                \caF(i) \arrow[rr, "\caF(\phi)"{description}]\arrow[ddddr, "\psi_i"{description}, bend right = 30]\arrow[ddr, "\iota_i"{description}] & &\caF(j) \arrow[ddl, "\iota_j"{description}]\arrow[ddddl, "\psi_j"{description}, bend left = 30]\\
+                \\
+                &\colim\caF \arrow[dd, dashed, "\exists!\varphi"{description}]\\
+                \\
+                &N
+            \end{tikzcd}
+        \end{center} In this case, the morphism \(\varphi\) is said to be *induced* from the family of morphisms \((\psi_i)\), by the universal property of colimit.
+    
+    Here, we are abusing the notation: the notation \(\lim\caF\) (resp. \(\colim\caF\)) will stand for both the limit (resp. colimit), which is an ordered pair, and its underlying object in \(\sfC\).
+
+- The limits and colimits are also unique up to unique isomorphism, but one needs to make sure in which sense the morphism is unique. Having said this, we shall speak of 'the' limit and colimit.
+- Being limits or colimits is again equivalent to being universal object or morphisms in a sense.
+
+    - By definition, the limit and colimit of a functor are universal objects in the category of cones and co-cones over the functor. Also, since the category \(\Cone(\caF)\) is identified with the category \(\Delta/\caF\), the limit of \(\caF\) corresponds to the universal morphism from \(\Delta\) to \(\caF\), and since the category \(\coCone(\caF)\) is identified with the category \(\caF/\Delta\), the colimit of \(\caF\) corresponds to the universal morphism from \(\caF\) to \(\Delta\).
+    - Conversely, the initial (resp. final) object of a category \(\sfC\) corresponds to the limit (resp. colimit) of empty diagram \(\caF:\mathsf{0}\to\sfC\), since a cone or co-cone over the diagram is nothing but an object of \(\sfC\) (and the categories \(\Cone(\caF),\coCone(\caF)\) are identified with \(\sfC\)).
+
+The examples of universal morphisms and (co)limits will be given in the later sections.
