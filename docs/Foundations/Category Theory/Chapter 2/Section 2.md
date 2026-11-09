@@ -76,7 +76,7 @@ In this section, we discuss details on limits and colimits, starting from common
         ```
         
         Note that equivalently, \(A\times_C B\) is the product of \(f, g\) in the over category \(\sfC/C\). This explains the name of fibered product.
-    4. Let \(\sfI\) be the opposite category of the category introduced in (3) above. Alternatively, we have
+    4. Let \(\sfI\) be the opposite category of the category introduced right before. Alternatively, we have
 
         ```tikzcd
             \begin{tikzcd}
@@ -98,7 +98,7 @@ In this section, we discuss details on limits and colimits, starting from common
         ```
         
         Note that this corresponds to coproduct of \(f, g\) in the under category \(A/\sfC\).
-    5. Let \(\sfI\) be a poset category, whose underlying poset \((I,\le)\) is a directed set; i.e. a poset such that for all \(i, j\in I\), there is \(k\in I\) with \(i, j\le k\). Then the \(\sfI\)-shaped diagrams \(\caF\) in \(\sfC\) are equivalent to a *directed system* in \(\sfC\), directed by \((I,\le)\). This consists of the following data: the collection of objects \((A_i)_{i\in I}\), the collection of morphisms \((f_{ij}:A_i\to A_j)_{i,j\in I, i\le j}\) such that \(f_{ii} = \id_{A_i}\) and \(f_{ik} = f_{jk}\circ f_{ij}\) whenever \(i\le j\le k\). Under the identification \(A_i = \caF(i), f_{ij} = \caF(i\to j)\), the latter conditions correspond to the functoriality. Then a co-cone over such \(\caF\) corresponds to a collection of morphisms \((\psi_i:A_i\to A)_{i\in I}\), such that \(\psi_i = \psi_j\circ f_{ij}\) whenever \(i, j\in I\), \(i\le j\).
+    5. Let \(\sfI\) be a poset category, whose underlying poset \((I,\le)\) is a directed set; i.e. a nonempty poset such that for all \(i, j\in I\), there is \(k\in I\) with \(i, j\le k\). Then the \(\sfI\)-shaped diagrams \(\caF\) in \(\sfC\) are equivalent to a *directed system* in \(\sfC\), directed by \((I,\le)\). This consists of the following data: the collection of objects \((A_i)_{i\in I}\), the collection of morphisms \((f_{ij}:A_i\to A_j)_{i,j\in I, i\le j}\) such that \(f_{ii} = \id_{A_i}\) and \(f_{ik} = f_{jk}\circ f_{ij}\) whenever \(i\le j\le k\). Under the identification \(A_i = \caF(i), f_{ij} = \caF(i\to j)\), the latter conditions correspond to the functoriality. Then a co-cone over such \(\caF\) corresponds to a collection of morphisms \((\psi_i:A_i\to A)_{i\in I}\), such that \(\psi_i = \psi_j\circ f_{ij}\) whenever \(i, j\in I\), \(i\le j\).
 
         Then the colimit of \(\caF\) is called the *direct limit* or the *injective limit* of the directed system \(((A_i)_{i\in I},(f_{ij})_{i\le j})\), and is denoted by \((\varinjlim A_i,(\iota_i)_{i\in I})\). The universal property is as follows: for every family of morphisms \((\psi_i:A_i\to A)_{i\in i}\) such that \(\psi_i = \psi_j\circ f_{ij}\) whenever \(i, j\in I\), \(i\le j\), there exists a unique morphism \(\varphi:\varinjlim A_i\to A\) s.t \(\psi_i = \varphi\circ\iota_i\). The corresponding diagram is not much different from that of general colimit.
         
@@ -111,3 +111,56 @@ In this section, we discuss details on limits and colimits, starting from common
     6. Let \(\sfI\) be as above. Then the \(\sfI^\op\)-shaped diagrams \(\caF\) in \(\sfC\) (in other words, a contravariant functor \(\caF:\sfI\to\sfC\)) are equivalent to the *inverse systems* in \(\sfC\), which consists of the following data; a collection of objects \((A_i)_{i\in I}\), a collection of morphisms \((f_{ij}:A_j\to A_i)_{i,j\in I,i\le j}\) such that \(f_{ii} = \id_{A_i}\) and \(f_{ik} = f_{ij}\circ f_{jk}\) whenever \(i\le j\le k\). Under the identification \(A_i = \caF(i), f_{ij} = \caF(i\to j)\), the latter conditions correspond to the functoriality. Then a cone over such \(\caF\) corresponds to a collection of morphisms \((\psi_i:A\to A_i)_{i\in I}\) such that \(\psi_i = f_{ij}\circ\psi_j\) whenever \(i\le j, i, j\in I\).
 
         Then the limit of \(\caF\) is called the *inverse limit* or the *projective limit* of the inverse system \(((A_i)_{i\in I}, (f_{ij})_{i\le j})\), and is denoted by \((\varprojlim A_i,(\pi_i)_{i\in I})\). The universal property is as follows. For every family of morphisms \((\psi_i:A\to A_i)_{i\in I}\) s.t \(\psi_i = f_{ij}\circ\psi_j\) whenever \(i\le j, i, j\in I\), there exists a unique morphism \(\varphi:A\to\varprojlim A_i\) s.t \(\psi_i = \pi_i\circ\varphi\) for all \(i\in I\). The diagram is not much different from general diagram for limits.
+
+        The categories \(\sfI^\op\) are special cases of *cofiltered categories*, which are categories in which every pair of objects (or equivalently, a functor from discrete category with two objects) and every pair of morphisms with same domain and codomain (or equivalently, a functor from the index category introduced in 2) admits a cone. Explicitly, a category \(\sfC\) is said to be *cofiltered* if the following hold.
+            
+        - For all \(A, B\in\Ob(\sfC)\), there is \(C\in\Ob(\sfC)\) and morphisms \(\varphi:C\to A, \psi:C\to B\).
+        - For all morphisms \(\varphi,\psi:A\to B\), there is a morphism \(\phi:C\to A\) s.t \(\varphi\circ\phi = \psi\circ\phi\).
+
+        In case of opposite of directed sets, the first condition is true, and the second condition follows since there are at most one morphism between two objects. A limit of functor from a cofiltered category is called a *cofiltered limit*.
+    7. A category \(\sfI\) is called *finite* if both \(\Ob(\sfI)\) and \(\Hom(\sfI)\) are finite, and a diagram \(\caF:\sfI\to\sfC\) is called *finite* if the index category is finite. The limits and colimits of a finite diagrams are called the *finite (co)limits*. For instance, (co)product of finitely many objects, (co)equalizers, pullback and pushour are finite (co)limits.
+
+We have seen that universal object (and hence (co)limits) might not exist, depending on the category. Thus we are primarily concerned with their existence. If they exist, then we wish to compute them; i.e. their formula in terms of data of the diagram. There are many ways to do this, and here we present the most basic principle.
+
+!!! theorem
+
+    Let \(\caF:\sfI\to\sfC\) be a diagram.
+
+    - Suppose that the products \(\prod_{i\in\Ob(\sfI)}\caF(i)\) and \(\prod_{\phi\in\Hom(\sfI)}\caF(\cod(\phi))\) exist. Then there are two natural morphisms from the former to the latter, and if their equalizer exists, it forms the limit of \(\caF\).
+    - Suppose that the coproducts \(\coprod_{i\in\Ob(\sfI)}\caF(i)\) and \(\coprod_{\phi\in\Hom(\sfI)}\caF(\dom(\phi))\) exist. Then there are two natural morphisms from the latter to the former, and if their coequalizer exists, it forms the colimit of \(\caF\).
+
+!!! proof
+
+    We first consider the limits. Given a morphism \(\phi\) of \(\sfI\), there is a family of morphisms \(\pi_{\cod(\phi)}:\prod_{i\in\Ob(\sfI)}\caF(i)\to\caF(\cod(\phi))\) in \(\sfC\). This family induces a unique morphism \(\phi_1:\prod_{i\in\Ob(\sfI)}\caF(i)\to\prod_{\phi\in\Hom(\sfI)}\caF(\cod(\phi))\). Similarly, the family of morphisms \(\caF(\phi)\circ\pi_{\dom(\phi)}:\prod_{i\in\Ob(\sfI)}\caF(i)\to\caF(\cod(\phi))\) induces a unique morphism \(\phi_2:\prod_{i\in\Ob(\sfI)}\caF(i)\to\prod_{\phi\in\Hom(\sfI)}\caF(\cod(\phi))\).
+
+    We denote their equalizer by \(\epsilon:L\to\prod_{i\in\Ob(\sfI)}\caF(i)\). Then there are morphisms \(\lambda_i:=\pi_i\circ\epsilon:L\to\caF(i)\), and we claim that \((L,\lambda = (\lambda_i)_{i\in\Ob(\sfI)})\) is the limit of \(\caF\).
+
+    - First, we show that it is a cone. For each morphism \(\phi:i\to j\) in \(\sfI\), 
+
+        \begin{align*}
+            \caF(\phi)\circ\lambda_i &= \caF(\phi)\circ\pi_i\circ\epsilon &\text{by definition of }\lambda_i\\
+            &= \caF(\phi)\circ\pi_{\dom(\phi)}\circ\epsilon &\text{by definition of }\phi\\
+            &= \pi_{\phi}\circ\phi_2\circ\epsilon &\text{by definition of }\phi_2\\
+            &= \pi_{\phi}\circ\phi_1\circ\epsilon &\text{by definition of }e\\
+            &= \pi_{\cod(\phi)}\circ\epsilon &\text{by definition of }\phi_1\\
+            &= \pi_j\circ\epsilon &\text{by definition of }\phi\\
+            &= \lambda_j &\text{by definition of }\lambda_j.
+        \end{align*}
+    
+    - Second, we show that this cone is universal. Suppose that \((N,\psi)\) is another cone over \(\caF\). Then the morphisms \(\psi_i\) induce a unique morphism \(\varepsilon:N\to\prod_{i\in\Ob(\sfI)}\caF(i)\). We claim that this map equalizes \(\phi_1\) and \(\phi_2\); i.e. \(\phi_1\circ\varepsilon = \phi_2\circ\varepsilon\). For each morphism \(\phi:i\to j\) in \(\sfI\), we have
+
+        \begin{align*}
+            \pi_\phi\circ\phi_2\circ\varepsilon &= \caF(\phi)\circ\pi_{\dom(\phi)}\circ\varepsilon &\text{by definition of }\phi_2\\
+            &= \caF(\phi)\circ\psi_{\dom(\phi)} &\text{by definition of }\varepsilon\\
+            &= \psi_{\cod(\phi)} &\text{since }(N,\psi)\text{ is a cone over }\caF\\
+            &= \pi_{\cod(\phi)}\circ\varepsilon &\text{by definition of }\varepsilon\\
+            &= \pi_{\phi}\circ\phi_2\circ\varepsilon &\text{by definition of }\phi_2.
+        \end{align*}
+
+        That is, two morphisms \(\phi_1\circ\varepsilon\) and \(\phi_2\circ\varepsilon\) are induced by the same family of morphisms, by the universal property of the product \(\prod_{\phi\in\Hom(\sfI)}\caF(\cod(\phi))\), and they must be the same, as claimed.
+
+        Then by the universal property of the equalizer \(\epsilon\), there exists a unique morphism \(\varphi:N\to L\) such that \(\varepsilon = \epsilon\circ\varphi\). We claim that this is in fact a morphism of cones \(\varphi:(N,\psi)\to(L,\lambda)\). Indeed, for every object \(i\) of \(\sfI\), we have
+
+        \begin{align*}
+
+        \end{align*}

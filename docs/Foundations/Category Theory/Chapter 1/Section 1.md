@@ -54,7 +54,7 @@ We observe the following.
 
 - The set \(\End_\sfC(A)\) is a monoid, with \(\id_A\) being the identity and composition being the multiplication. Then \(\Aut_\sfC(A)\) is its subset of invertible elements, hence form a group.
 
-When the category \(\sfC\) is obvious from context, we may omit this in the notations. For instance, we may denote the set of morphisms, isomorphisms, endomorphisms and automorphisms by \(\Hom(A,B), \End(A)\) and \(\Aut(A)\).
+- When the category \(\sfC\) is obvious from context, we may omit this in the notations. For instance, we may denote the set of morphisms, isomorphisms, endomorphisms and automorphisms by \(\Hom(A,B), \End(A)\) and \(\Aut(A)\). Also, we sometimes denote the union of all \(\Hom_\sfC(A,B)\) by \(\Hom(\sfC)\).
 
 We now introduce the most typical examples of categories, from various fields of mathematics. Note that in practice, we can always force the first assumption (disjointness of Hom-sets), as in the formal definition of functions in set theory (we include the domain and codomain in the definition of a function), so we don't bother about it.
 
