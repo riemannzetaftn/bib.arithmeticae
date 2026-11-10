@@ -20,7 +20,17 @@
 </script>
 
 <div class="giscus"></div>
-<p style="font-size: .75rem; color: var(--md-default-fg-color--light); margin-top: .4rem;">
-  Math: use <code>$...$</code> for inline and <code>$$...$$</code> for display formulas.
-  The custom macros of this site (e.g. <code>\sfC</code>, <code>\Hom</code>) are not available in comments.
+<p class="giscus-hint">
+  Math in comments: $...$ for inline, $$...$$ for display.
+  Custom macros of this site (e.g. \sfC, \Hom) are not supported here.
 </p>
+<style>
+  .md-typeset .giscus-hint {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #9ca3af;
+    margin: .4rem 0 0;
+    padding-left: 9px;
+  }
+</style>
