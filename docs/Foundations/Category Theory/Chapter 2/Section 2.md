@@ -118,7 +118,7 @@ In this section, we discuss details on limits and colimits, starting from common
         - For all morphisms \(\varphi,\psi:A\to B\), there is a morphism \(\phi:C\to A\) s.t \(\varphi\circ\phi = \psi\circ\phi\).
 
         In case of opposite of directed sets, the first condition is true, and the second condition follows since there are at most one morphism between two objects. A limit of functor from a cofiltered category is called a *cofiltered limit*.
-    7. A category \(\sfI\) is called *finite* if both \(\Ob(\sfI)\) and \(\Hom(\sfI)\) are finite, and a diagram \(\caF:\sfI\to\sfC\) is called *finite* if the index category is finite. The limits and colimits of a finite diagrams are called the *finite (co)limits*. For instance, (co)product of finitely many objects, (co)equalizers, pullback and pushour are finite (co)limits.
+    7. A category \(\sfI\) is called *finite* if both \(\Ob(\sfI)\) and \(\Hom(\sfI)\) are finite, and a diagram \(\caF:\sfI\to\sfC\) is called *finite* if the index category is finite. The limits and colimits of a finite diagrams are called the *finite (co)limits*. For instance, (co)product of finitely many objects, (co)equalizers, pullback and pushour are finite (co)limits. Similarly, a diagram is said to be *small* if the index category is, and (co)limits of small diagrams are called the *small (co)limits*.
 
 We have seen that universal object (and hence (co)limits) might not exist, depending on the category. Thus we are primarily concerned with their existence. If they exist, then we wish to compute them; i.e. their formula in terms of data of the diagram. There are many ways to do this, and here we present the most basic principle.
 
@@ -184,3 +184,15 @@ We have seen that universal object (and hence (co)limits) might not exist, depen
     \end{align*}
 
     are induced by the family of morphisms \(\iota_{\dom(\phi)}:\caF(\dom(\phi))\to\coprod_{i\in\Ob(\sfI)}\caF(i)\) and the family of morphism \(\iota_{\cod(\phi)}\circ\caF(\phi):\caF(\dom(\phi))\to\coprod_{i\in\Ob(\sfI)}\caF(i)\). Given their coequalizer \((L,\epsilon)\), the pair \((L,(\epsilon\circ\iota_i)_{i\in\Ob(\sfI)})\) forms the colimit of \(\caF\).
+
+!!! definition "(co)Complete Category"
+
+    A category \(\sfC\) is said to be *complete* if it has all (small) limits, and *cocomplete* if it has all (small) colimits.
+
+!!! corollary
+
+    A category \(\sfC\) is complete iff it has all small products and equalizers, and is cocomplete iff it has all small coproducts and coequalizers.
+
+!!! proof
+
+    Since small products and equalizers are small limits, the only if direction is clear. The if direction is implied by the above theorem. The proof for co-completeness is dual.
