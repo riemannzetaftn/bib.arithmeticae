@@ -195,4 +195,4 @@ We have seen that universal object (and hence (co)limits) might not exist, depen
 
 !!! proof
 
-    Since small products and equalizers are small limits, the only if direction is clear. The if direction is implied by the above theorem. The proof for co-completeness is dual.
+    Since small products and equalizers are small limits, the only if direction is clear. The if direction is implied by the above theorem. The proof for cocompleteness is dual.
