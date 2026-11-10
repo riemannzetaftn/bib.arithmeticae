@@ -15,6 +15,7 @@ property = "G-JD28X953EK"
 
 [project.theme]
 language = "en"
+custom dir = "overrides"
 features = [
   "navigation.indexes",
   "navigation.path",

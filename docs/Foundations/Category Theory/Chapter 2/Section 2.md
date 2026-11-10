@@ -162,5 +162,7 @@ We have seen that universal object (and hence (co)limits) might not exist, depen
         Then by the universal property of the equalizer \(\epsilon\), there exists a unique morphism \(\varphi:N\to L\) such that \(\varepsilon = \epsilon\circ\varphi\). We claim that this is in fact a morphism of cones \(\varphi:(N,\psi)\to(L,\lambda)\). Indeed, for every object \(i\) of \(\sfI\), we have
 
         \begin{align*}
-
+            \lambda_i \circ \varphi &= \pi_i\circ\epsilon\circ\varphi &\text{by definition of }\lambda_i\\
+            &= \pi_i\circ\varepsilon &\text{by definition of }\varphi\\
+            &= \psi_i &\text{by definition of }\varepsilon.
         \end{align*}
