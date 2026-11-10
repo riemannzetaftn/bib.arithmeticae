@@ -131,7 +131,13 @@ We have seen that universal object (and hence (co)limits) might not exist, depen
 
 !!! proof
 
-    We first consider the limits. Given a morphism \(\phi\) of \(\sfI\), there is a family of morphisms \(\pi_{\cod(\phi)}:\prod_{i\in\Ob(\sfI)}\caF(i)\to\caF(\cod(\phi))\) in \(\sfC\). This family induces a unique morphism \(\phi_1:\prod_{i\in\Ob(\sfI)}\caF(i)\to\prod_{\phi\in\Hom(\sfI)}\caF(\cod(\phi))\). Similarly, the family of morphisms \(\caF(\phi)\circ\pi_{\dom(\phi)}:\prod_{i\in\Ob(\sfI)}\caF(i)\to\caF(\cod(\phi))\) induces a unique morphism \(\phi_2:\prod_{i\in\Ob(\sfI)}\caF(i)\to\prod_{\phi\in\Hom(\sfI)}\caF(\cod(\phi))\).
+    We first consider the limits. Given a morphism \(\phi\) of \(\sfI\), there is a family of morphisms \(\pi_{\cod(\phi)}:\prod_{i\in\Ob(\sfI)}\caF(i)\to\caF(\cod(\phi))\) in \(\sfC\). This family induces a unique morphism
+    
+    \[\phi_1:\prod_{i\in\Ob(\sfI)}\caF(i)\to\prod_{\phi\in\Hom(\sfI)}\caF(\cod(\phi)).\]
+    
+    Similarly, the family of morphisms \(\caF(\phi)\circ\pi_{\dom(\phi)}:\prod_{i\in\Ob(\sfI)}\caF(i)\to\caF(\cod(\phi))\) induces a unique morphism
+    
+    \[\phi_2:\prod_{i\in\Ob(\sfI)}\caF(i)\to\prod_{\phi\in\Hom(\sfI)}\caF(\cod(\phi)).\]
 
     We denote their equalizer by \(\epsilon:L\to\prod_{i\in\Ob(\sfI)}\caF(i)\). Then there are morphisms \(\lambda_i:=\pi_i\circ\epsilon:L\to\caF(i)\), and we claim that \((L,\lambda = (\lambda_i)_{i\in\Ob(\sfI)})\) is the limit of \(\caF\).
 
