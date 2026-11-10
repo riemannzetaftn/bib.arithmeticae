@@ -94,6 +94,9 @@ jobs:
             git push || echo "::warning::SVG 자동 커밋 push 실패 (이번 배포에는 반영됨)"
           fi
       # ----------------------------
+      - name: Generate contents
+        run: python scripts/gen_toc.py
+
       - name: Resolve citations
         run: python scripts/cite.py
       
