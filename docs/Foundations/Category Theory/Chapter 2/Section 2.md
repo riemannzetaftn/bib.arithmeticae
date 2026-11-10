@@ -138,23 +138,23 @@ We have seen that universal object (and hence (co)limits) might not exist, depen
     - First, we show that it is a cone. For each morphism \(\phi:i\to j\) in \(\sfI\), 
 
         \begin{align*}
-            \caF(\phi)\circ\lambda_i &= \caF(\phi)\circ\pi_i\circ\epsilon &\text{by definition of }\lambda_i\\
-            &= \caF(\phi)\circ\pi_{\dom(\phi)}\circ\epsilon &\text{by definition of }\phi\\
-            &= \pi_{\phi}\circ\phi_2\circ\epsilon &\text{by definition of }\phi_2\\
-            &= \pi_{\phi}\circ\phi_1\circ\epsilon &\text{by definition of }e\\
-            &= \pi_{\cod(\phi)}\circ\epsilon &\text{by definition of }\phi_1\\
-            &= \pi_j\circ\epsilon &\text{by definition of }\phi\\
-            &= \lambda_j &\text{by definition of }\lambda_j.
+            \caF(\phi)\circ\lambda_i &= \caF(\phi)\circ\pi_i\circ\epsilon &&\text{by definition of }\lambda_i\\
+            &= \caF(\phi)\circ\pi_{\dom(\phi)}\circ\epsilon &&\text{by definition of }\phi\\
+            &= \pi_{\phi}\circ\phi_2\circ\epsilon &&\text{by definition of }\phi_2\\
+            &= \pi_{\phi}\circ\phi_1\circ\epsilon &&\text{by definition of }e\\
+            &= \pi_{\cod(\phi)}\circ\epsilon &&\text{by definition of }\phi_1\\
+            &= \pi_j\circ\epsilon &&\text{by definition of }\phi\\
+            &= \lambda_j &&\text{by definition of }\lambda_j.
         \end{align*}
     
     - Second, we show that this cone is universal. Suppose that \((N,\psi)\) is another cone over \(\caF\). Then the morphisms \(\psi_i\) induce a unique morphism \(\varepsilon:N\to\prod_{i\in\Ob(\sfI)}\caF(i)\). We claim that this map equalizes \(\phi_1\) and \(\phi_2\); i.e. \(\phi_1\circ\varepsilon = \phi_2\circ\varepsilon\). For each morphism \(\phi:i\to j\) in \(\sfI\), we have
 
         \begin{align*}
-            \pi_\phi\circ\phi_2\circ\varepsilon &= \caF(\phi)\circ\pi_{\dom(\phi)}\circ\varepsilon &\text{by definition of }\phi_2\\
-            &= \caF(\phi)\circ\psi_{\dom(\phi)} &\text{by definition of }\varepsilon\\
-            &= \psi_{\cod(\phi)} &\text{since }(N,\psi)\text{ is a cone over }\caF\\
-            &= \pi_{\cod(\phi)}\circ\varepsilon &\text{by definition of }\varepsilon\\
-            &= \pi_{\phi}\circ\phi_2\circ\varepsilon &\text{by definition of }\phi_2.
+            \pi_\phi\circ\phi_2\circ\varepsilon &= \caF(\phi)\circ\pi_{\dom(\phi)}\circ\varepsilon &&\text{by definition of }\phi_2\\
+            &= \caF(\phi)\circ\psi_{\dom(\phi)} &&\text{by definition of }\varepsilon\\
+            &= \psi_{\cod(\phi)} &&\text{since }(N,\psi)\text{ is a cone over }\caF\\
+            &= \pi_{\cod(\phi)}\circ\varepsilon &&\text{by definition of }\varepsilon\\
+            &= \pi_{\phi}\circ\phi_2\circ\varepsilon &&\text{by definition of }\phi_2.
         \end{align*}
 
         That is, two morphisms \(\phi_1\circ\varepsilon\) and \(\phi_2\circ\varepsilon\) are induced by the same family of morphisms, by the universal property of the product \(\prod_{\phi\in\Hom(\sfI)}\caF(\cod(\phi))\), and they must be the same, as claimed.
@@ -162,7 +162,25 @@ We have seen that universal object (and hence (co)limits) might not exist, depen
         Then by the universal property of the equalizer \(\epsilon\), there exists a unique morphism \(\varphi:N\to L\) such that \(\varepsilon = \epsilon\circ\varphi\). We claim that this is in fact a morphism of cones \(\varphi:(N,\psi)\to(L,\lambda)\). Indeed, for every object \(i\) of \(\sfI\), we have
 
         \begin{align*}
-            \lambda_i \circ \varphi &= \pi_i\circ\epsilon\circ\varphi &\text{by definition of }\lambda_i\\
-            &= \pi_i\circ\varepsilon &\text{by definition of }\varphi\\
-            &= \psi_i &\text{by definition of }\varepsilon.
+            \lambda_i \circ \varphi &= \pi_i\circ\epsilon\circ\varphi &&\text{by definition of }\lambda_i\\
+            &= \pi_i\circ\varepsilon &&\text{by definition of }\varphi\\
+            &= \psi_i &&\text{by definition of }\varepsilon.
         \end{align*}
+
+        To prove uniqueness of the morphism of cones \(\varphi\), suppose that \(\varphi':(N,\psi)\to(L,\lambda)\) be any other morphism of cones. Then we claim that \(\varepsilon = \epsilon\circ\varphi'\), which would complete the proof by the uniqueness in the universal property of equalizer. For all \(i\in\Ob(\sfI)\),
+
+        \begin{align*}
+            \pi_i\circ\epsilon\circ\varphi' &= \lambda_i\circ\varphi' &&\text{by definition of }\epsilon\\
+            &= \psi_i &&\text{by definition of }\varphi'\\
+            &= \pi_i\circ\varepsilon &&\text{by definition of }\varepsilon
+        \end{align*}
+
+        and the universal property of product implies the claim.
+    
+    The proof for the colimit is dual. For the sake of completeness, we give the explicit description. The natural morphisms
+
+    \begin{align*}
+        \phi_1,\phi_2:\coprod_{\phi\in\Hom(\sfI)}\caF(\dom(\phi)) \to \coprod_{i\in\Ob(\sfI)}\caF(i)
+    \end{align*}
+
+    are induced by the family of morphisms \(\iota_{\dom(\phi)}:\caF(\dom(\phi))\to\coprod_{i\in\Ob(\sfI)}\caF(i)\) and the family of morphism \(\iota_{\cod(\phi)}\circ\caF(\phi):\caF(\dom(\phi))\to\coprod_{i\in\Ob(\sfI)}\caF(i)\). Given their coequalizer \((L,\epsilon)\), the pair \((L,(\epsilon\circ\iota_i)_{i\in\Ob(\sfI)})\) forms the colimit of \(\caF\).

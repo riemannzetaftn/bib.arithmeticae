@@ -118,6 +118,12 @@ We observe the followings.
     
     Here, we are abusing notations: the notation \(\lim\caF\) (resp. \(\colim\caF\)) will stand for both the limit (resp. colimit), which is an ordered pair, and its underlying object in \(\sfC\).
 
+- Suppose that \((N,\psi)\) is any cone over \(\caF:\sfI\to\sfC\) and \(\varphi:N'\to N\) is any morphism in \(\sfC\). Then we see that the pair \((N',\psi':=(\psi_i\circ\varphi)_{i\in\Ob(\sfI)})\) is also a cone over \(\caF\), since for any \(\phi:i\to j\) in \(\sfI\), \(\caF(\phi)\circ\psi_i\circ\varphi &= \psi_j\circ\varphi\). Moreover, by definition, \(\varphi:(N',\psi')\to(N,\psi)\) is a morphism of cones over \(\caF\). Therefore, the above universal property has the following consequence: a morphism \(\varphi\) in \(\sfC\) with target \(\lim\caF\) is uniquely determined by the compositions \(\pi_i\circ\varphi\) (i.e. if \(\pi_i\circ\varphi = \pi_i\circ\varphi'\) for all \(i\in\Ob(\sfI)\), then \(\varphi = \varphi'\)), since the domain of \(\varphi\) with the compositions \(\pi_i\circ\varphi\) automatically form a cone.
+
+    Dually, a morphism \(\varphi\) in \(\sfC\) with source \(\colim\caF\) is uniquely determined by the precompositions \(\varphi\circ\iota_i\), since the codomain of \(\varphi\) with the precompositions automatically form a co-cone over \(\caF\).
+
+    We shall refer to this principle as the universal property of (co)limit, or the uniqueness part of the universal property.
+
 - The limits and colimits are also unique up to unique isomorphism, but one needs to make sure in which sense the morphism is unique. Having said this, we shall speak of 'the' limit and colimit.
 - Being limits or colimits is again equivalent to being universal object or morphisms in a sense.
 
