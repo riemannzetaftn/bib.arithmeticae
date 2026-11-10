@@ -129,6 +129,8 @@ We have seen that universal object (and hence (co)limits) might not exist, depen
     - Suppose that the products \(\prod_{i\in\Ob(\sfI)}\caF(i)\) and \(\prod_{\phi\in\Hom(\sfI)}\caF(\cod(\phi))\) exist. Then there are two natural morphisms from the former to the latter, and if their equalizer exists, it forms the limit of \(\caF\).
     - Suppose that the coproducts \(\coprod_{i\in\Ob(\sfI)}\caF(i)\) and \(\coprod_{\phi\in\Hom(\sfI)}\caF(\dom(\phi))\) exist. Then there are two natural morphisms from the latter to the former, and if their coequalizer exists, it forms the colimit of \(\caF\).
 
+Note that this theorem does not only provide existence of limits and colimits, but computes it using simpler (co)limits of (co)products and (co)equalizers. Thus if we know how to compute (co)products and (co)equalizers, then we can compute (co)limits.
+
 !!! proof
 
     We first consider the limits. Given a morphism \(\phi\) of \(\sfI\), there is a family of morphisms \(\pi_{\cod(\phi)}:\prod_{i\in\Ob(\sfI)}\caF(i)\to\caF(\cod(\phi))\) in \(\sfC\). This family induces a unique morphism
