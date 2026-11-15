@@ -230,7 +230,8 @@ window.MathJax = {
       pre: "{\\rm pre}",
       Spec: "{\\rm Spec}",
       V: "{\\rm V}",
-      D: "{\\rm D}"
+      D: "{\\rm D}",
+      char: "{\\rm char}"
     },
   },
   options: {
