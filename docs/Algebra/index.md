@@ -1,5 +1,5 @@
 ---
 title: Algebra
-weight = 2
+weight: 2
 ---
 

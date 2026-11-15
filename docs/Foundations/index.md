@@ -1,6 +1,6 @@
 ---
 title: Foundations
-weight = 1
+weight: 1
 ---
 
 In this category of subjects, we deal with foundations of other mathematical studies. We shall deal with 
