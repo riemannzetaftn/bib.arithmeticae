@@ -37,7 +37,7 @@ Let us check well-definedness. The extension \(F(X)\) consists of rational funct
     Let \(\alpha\) be an element of \(K\). TFAE:
 
     - \(\alpha\) is algebraic over \(F\).
-    - The extension \(K(\alpha)/K\) is finite.
+    - The extension \(F(\alpha)/F\) is finite.
     - \(\alpha\) is contained in some finite subextension \(E/F\) of \(K/F\).
 
 
