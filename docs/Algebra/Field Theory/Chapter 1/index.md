@@ -1,4 +1,6 @@
-# Chapter 1. Basics on Fields
+# Chapter 1. Fields and their Extensions
+
+<!-- In this chapter, we deal with the general properties of fields and their morphisms. -->
 
 Recall that a field is a commutative ring \(F\) with \(1\neq 0\), where all nonzero elements have multiplicative inverse. We list some elementary facts on fields.
 

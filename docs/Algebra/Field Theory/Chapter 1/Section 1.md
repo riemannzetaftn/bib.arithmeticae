@@ -1,5 +1,18 @@
 # Section 1. Finite and Algebraic Extensions
 
+<!-- Recall that a field \(F\) is a commutative ring with \(1\neq 0\), whose every nonzero element is invertible (w.r.t multiplication). We have the following basic observations.
+
+- If \(I\) is a nonzero ideal of \(F\), let \(a\in I\setminus\{0\}\). Then for any \(b\in F\), \(b = (ba^{-1})a\in ba^{-1}I\subset I\), so that \(I = F\). Thus we see that only ideals of \(F\) are \((0)\) and \((1)\).
+- Therefore, if \(\varphi:F\to K\) is a morphism of fields (a unital ring homomorphism between the fields), then the ideal \(\varphi^{-1}((0))\) of \(F\) do not contain \(1\), hence must be \((0)\). That is, \(\varphi\) is injective, and we can identify it with the inclusion of a subfield up to an isomorphism.
+
+!!! definition "Field Extension"
+
+    When \(F\) is a subfield of a field \(K\), we say that \(K\) is a *(field) extension* of \(F\). Similarly, we say that \(K\) is a field over \(F\), or \(K/F\) is an extension of fields.
+
+!!! warning
+
+    Note that a field extension is a data of two fields and a fixed inclusion between them. -->
+
 Note that any field extension \(K/F\) is an \(F\)-algebra and hence an \(F\)-vector space. Throughout this section, let \(K/F\) be a field extension.
 
 !!! definition "Degree and Finite Extension"
@@ -18,7 +31,7 @@ Note that the degree is always positive, since \(F\) is a subspace of \(K\). We 
 
     First, every element of \(L\) is a finitely supported sum \(\sum_{j}b_j\beta_j\) where \(b_j\in K\), and each \(b_j\) is a finitely supported sum \(\sum_{i}a_{ij}\alpha_i\) where \(a_{ij}\in F\). Thus every element of \(L\) is a finitely supported sum \(\sum_{i,j}a_{ij}\alpha_{i}\beta_j\). If a finitely supported sum \(\sum_{i,j}a_{ij}\alpha_i\beta_j\) is zero, then as \((\beta_j)_{j\in J}\) is \(K\)-linearly independent, we have \(\sum_ia_{ij}\alpha_i = 0\) for all \(j\in J\). Since \((\alpha_i)_{i\in I}\) is \(F\)-linearly independent we have \(a_{ij} = 0\) for all \(i,j\). Thus the claim is proved.
 
-    Since the degree is always positive, the second claim follows.
+    Since the degree is always positive, the second claim follows. -->
 
 The finite extensions are closely related to algebraic extensions.
 
@@ -43,9 +56,6 @@ Let us check well-definedness.
     - The extension \(F(\alpha)/F\) is finite.
     - \(\alpha\) is contained in some finite subextension \(E/F\) of \(K/F\).
 
+<!-- !!! proof
 
-<!--
-!!! proof
-
-    Suppose that \(\alpha\) is algebraic, and let \(f\) be a nonzero polynomial with \(f(\alpha) = 0\). We can reduce to the case where \(f\) is monic. Since the 
--->
+    Suppose that \(\alpha\) is algebraic, and let \(f\) be a nonzero polynomial with \(f(\alpha) = 0\). We can reduce to the case where \(f\) is monic. Since the -->
