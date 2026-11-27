@@ -1,6 +1,8 @@
 # Chapter 1. Fields and their Extensions
 
-<!-- In this chapter, we deal with the general properties of fields and their morphisms. -->
+In this chapter, we deal with the general properties of fields and their morphisms.
+
+<!--
 
 Recall that a field is a commutative ring \(F\) with \(1\neq 0\), where all nonzero elements have multiplicative inverse. We list some elementary facts on fields.
 
@@ -10,3 +12,5 @@ Recall that a field is a commutative ring \(F\) with \(1\neq 0\), where all nonz
 - If \(\char(F) = 0\), then there is unique morphism \(\bbQ\to F\) by the universal property of field of fraction. If \(\char(F) = p\), then there is unique morphism \(\bbF_p\to F\) by the universal property of quotient ring. These are initial elements of the full subcategories \(\Field_0,\Field_p\) of fixed characteristic, and called the *prime subfields*.
 
 There are various sorts of field extensions, and we shall discover their properties in this chapter.
+
+-->
