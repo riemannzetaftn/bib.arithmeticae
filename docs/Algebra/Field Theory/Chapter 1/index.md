@@ -1,16 +1,3 @@
 # Chapter 1. Fields and their Extensions
 
 In this chapter, we deal with the general properties of fields and their morphisms.
-
-<!--
-
-Recall that a field is a commutative ring \(F\) with \(1\neq 0\), where all nonzero elements have multiplicative inverse. We list some elementary facts on fields.
-
-- Every nonzero ideal contains a nonzero element \(a\), so that \(1 = a^{-1}a\) is in the ideal, and only ideals of a field are \((0)\) and \((1)\).
-- A morphism of fields is always injective; since \(1\) maps to \(1\), the preimage of the ideal \((0)\) is \((0)\). Given a morphism of fields \(F\to K\), we also say that \(K\) is an *extension* of / over \(F\), or \(F\) is a *subfield* of \(K\). If \(L/K\) is another extension, we also say that \(K/F\) is a *subextension* of \(L/F\).
-- The kernel of the universal morphism \(\bbZ\to F\) is the preimage of \((0)\), hence a prime ideal of \(\bbZ\). Its unique non-negative generator (either \(0\) or a prime number \(p\)) is called the *characteristic* of \(F\) (this holds generally for integral domains), and denoted by \(\char(F)\). A morphism of fields, since is injective, preserves the characteristic; i.e. there is no morphism of fields when the characteristics are different.
-- If \(\char(F) = 0\), then there is unique morphism \(\bbQ\to F\) by the universal property of field of fraction. If \(\char(F) = p\), then there is unique morphism \(\bbF_p\to F\) by the universal property of quotient ring. These are initial elements of the full subcategories \(\Field_0,\Field_p\) of fixed characteristic, and called the *prime subfields*.
-
-There are various sorts of field extensions, and we shall discover their properties in this chapter.
-
--->
