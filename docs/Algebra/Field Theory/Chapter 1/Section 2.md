@@ -51,7 +51,7 @@ The above definition reads to the following description of simple extensions.
 
 !!! remark
     
-    Finding inverse of a polynomial in \(\alpha\) in \(K\) can be done by Euclidean algorithm with the minimal polynomial \(m_{\alpha,F}\); if \(f\notin(m_{\alpha,F})\), then their gcd is \(1\), and finding \(g,h\in F[x]\) with \(fg + hm_{\alpha,F} = 1\) gives the inverse \(g\) of \(f\) modulo \(m_{\alpha,F}\).
+    For algebraic \(\alpha\), finding an inverse of a polynomial in \(\alpha\) in \(K\) can be done by Euclidean algorithm with the minimal polynomial \(m_{\alpha,F}\); if \(f\notin(m_{\alpha,F})\), then their gcd is \(1\), and finding \(g,h\in F[x]\) with \(fg + hm_{\alpha,F} = 1\) gives the inverse \(g\) of \(f\) modulo \(m_{\alpha,F}\).
 
 !!! corollary
 
