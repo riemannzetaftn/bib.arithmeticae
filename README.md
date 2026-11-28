@@ -68,6 +68,22 @@ Use admonitions (or collapsible `???` blocks) with one of the types `definition`
  
 All environments share one counter, numbered by chapter (e.g. *Definition 1.3*), continuing across sections of the same chapter.
  
+### Choosing an environment
+ 
+Whether a fact is numbered depends on how it is used later, not on how elementary it is.
+ 
+| Role | Criterion | Form |
+|---|---|---|
+| Background | Checked once, then used silently everywhere (e.g. field morphisms are injective) | Plain prose / bullet observation, ending with the convention it justifies; optionally an [unnumbered anchor](#unnumbered-anchors) |
+| Tool | Invoked at specific points in later proofs | `proposition`, `lemma`, `corollary` |
+| Goal | The result a section or chapter is aiming at | `theorem` (one or two per chapter) |
+ 
+- Checks that a definition is well-defined stay as unnumbered prose right after the definition.
+- **Proposition** is the default for a standalone fact; **lemma** is a step split off mainly to prove something else; **corollary** follows from the result just before it with no new idea.
+- Several small facts that are used together go into one environment as numbered items, cited as e.g. *Proposition 1.4 (2)*.
+- `example` is for concrete instances, not for general statements that need a proof.
+- A claim that needs an argument should not hide in a bullet without one.
+ 
 ### Cross-references
  
 An empty link to an id is filled in with the environment's number:
@@ -76,6 +92,26 @@ An empty link to an id is filled in with the environment's number:
 See [](#def-category).
 See [](<Section 1.md#ex-category>).
 ````
+ 
+Paths containing spaces must be wrapped in `<...>`.
+ 
+### Unnumbered anchors
+ 
+An observation outside a theorem environment can also be given an id, so that it can be linked without being numbered. Put `{ #id }` on the line right after the last sentence of the paragraph or bullet, with no blank line in between:
+ 
+````markdown
+- In general, we only have divisibility: ... \(m_{\alpha,E}\mid m_{\alpha,F}\).
+    { #obs-minimal-poly-base-change }
+````
+ 
+Such an anchor has no number, so an **empty link to it renders as nothing** (`number_theorems.py` warns about it in the build log). Always write the link text yourself:
+ 
+````markdown
+by the [observation above](#obs-minimal-poly-base-change), ...
+since [\(m_{\alpha,E}\mid m_{\alpha,F}\)](<../Chapter 1/Section 2.md#obs-minimal-poly-base-change>), ...
+````
+ 
+Use the prefix `obs-` for such anchors, to tell them apart from numbered ones (`def-`, `ex-`, `rmk-`, ...).
  
 ### Citations
  
