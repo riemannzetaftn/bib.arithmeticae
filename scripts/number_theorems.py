@@ -4,7 +4,7 @@
 docs/javascripts/theorems.js가 방문자 브라우저에서 하던 일을 빌드 시점에 한 번만 한다.
   - 제목:  "Functor"            → "Definition 1.3 (Functor)"
   - 앵커:  본문 첫 문단/항목의 id → 박스(div/details)로 이동
-  - 링크:  빈 링크 [](Section 1.md#id) → "Definition 1.1"  (같은 페이지/다른 페이지 모두)
+  - 링크:  빈 링크 [](Section-1.md#id) → "Definition 1.1"  (같은 페이지/다른 페이지 모두)
 
 번호 규칙 (theorems.js와 동일)
   - .../Chapter N/Section M/ 페이지는 접두어 N, 같은 챕터의 앞 섹션(챕터 index 포함)에서 이어서 셈

@@ -90,7 +90,7 @@ An empty link to an id is filled in with the environment's number:
  
 ````markdown
 See [](#def-category).
-See [](<Section 1.md#ex-category>).
+See [](<Section-1.md#ex-category>).
 ````
  
 Paths containing spaces must be wrapped in `<...>`.
@@ -108,7 +108,7 @@ Such an anchor has no number, so an **empty link to it renders as nothing** (`nu
  
 ````markdown
 by the [observation above](#obs-minimal-poly-base-change), ...
-since [\(m_{\alpha,E}\mid m_{\alpha,F}\)](<../Chapter 1/Section 2.md#obs-minimal-poly-base-change>), ...
+since [\(m_{\alpha,E}\mid m_{\alpha,F}\)](<../Chapter-1/Section-2.md#obs-minimal-poly-base-change>), ...
 ````
  
 Use the prefix `obs-` for such anchors, to tell them apart from numbered ones (`def-`, `ex-`, `rmk-`, ...).
