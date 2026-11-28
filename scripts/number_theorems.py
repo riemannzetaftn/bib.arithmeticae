@@ -35,7 +35,7 @@ SHARED_COUNTER = True
 SELECTOR = ", ".join(f".admonition.{t}, details.{t}" for t in KINDS)
 ANCHOR_SEL = ":scope > [id], :scope > :is(ul, ol) > li[id], :scope > :is(ul, ol) > li > p[id]"
 TITLE_SEL = ":scope > .admonition-title, :scope > summary"
-LOCATION = re.compile(r"^(.*/Chapter\s*(\d+))(?:/Section\s*(\d+))?/?(?:index\.html)?$", re.I)
+LOCATION = re.compile(r"^(.*/Chapter[\s-]*(\d+))(?:/Section[\s-]*(\d+))?/?(?:index\.html)?$", re.I)
 H1_PREFIX = re.compile(r"^\s*(?:Chapter|Section|§)\s*(\d+(?:\.\d+)*)", re.I)
 
 

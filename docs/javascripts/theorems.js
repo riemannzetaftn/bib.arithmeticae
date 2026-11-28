@@ -107,7 +107,7 @@
   // ".../Category Theory/Chapter 1/"           → { ..., section: 0 }  (챕터 인덱스)
   function parseLocation(pathname) {
     const path = decodeURIComponent(pathname);
-    const m = path.match(/^(.*\/Chapter\s*(\d+))(?:\/Section\s*(\d+))?\/?(?:index\.html)?$/i);
+    const m = path.match(/^(.*\/Chapter[\s-]*(\d+))(?:\/Section[\s-]*(\d+))?\/?(?:index\.html)?$/i);
     if (!m) return null;
     return { base: m[1], chapter: m[2], section: m[3] === undefined ? 0 : Number(m[3]) };
   }

@@ -103,7 +103,7 @@ jobs:
       - name: Append last-updated dates
         run: |
           git ls-files 'docs/*.md' 'docs/**/*.md' | while IFS= read -r f; do
-            d=$(git log -1 --format=%cs -- "$f")
+            d=$(git log -1 --format=%cs --follow --diff-filter=AM -- "$f")
             printf '\n\n---\n\n<small>Last updated: %s</small>\n' "$d" >> "$f"
           done
 

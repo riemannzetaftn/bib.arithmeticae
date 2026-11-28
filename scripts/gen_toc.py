@@ -27,8 +27,8 @@ DOCS = ROOT / "docs"
 HEADING = "## Contents { #contents }"
 MARKER = re.compile(r"^[ \t]*<!--\s*contents\s*-->[ \t]*$", re.M | re.I)
 
-CHAPTER_DIR = re.compile(r"^chapter\s+(\d+)$", re.I)
-SECTION_FILE = re.compile(r"^section\s+(\d+)$", re.I)
+CHAPTER_DIR = re.compile(r"^chapter[\s-]+(\d+)$", re.I)
+SECTION_FILE = re.compile(r"^section[\s-]+(\d+)$", re.I)
 
 FRONT_MATTER = re.compile(r"\A---[ \t]*\n.*?\n---[ \t]*(?:\n|\Z)", re.S)
 H1 = re.compile(r"^#[ \t]+(.+?)[ \t]*#*[ \t]*$", re.M)

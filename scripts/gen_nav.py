@@ -34,12 +34,28 @@ def read_weight(md: Path) -> float:
             return float(m.group(1))
     return NO_WEIGHT
 
-LABEL = re.compile(r"^(chapter|section)\s+\d+(?:\.\d+)*$", re.I)
+LABEL = re.compile(r"^(chapter|section)[\s-]+(\d+(?:\.\d+)*)$", re.I)
+TITLE = re.compile(r"^title\s*:\s*['\"]?(.+?)['\"]?\s*$", re.M)
+
+
+def display_name(directory: Path) -> str:
+    """사이드바에 보일 폴더 이름: 'Chapter 1' 형태 > index.md의 title > 하이픈을 공백으로."""
+    m = LABEL.match(directory.name)
+    if m:
+        return f"{m.group(1).capitalize()} {m.group(2)}"
+    index = directory / "index.md"
+    if index.exists():
+        fm = FRONT_MATTER.match(index.read_text(encoding="utf-8-sig"))
+        t = fm and TITLE.search(fm.group(1))
+        if t:
+            return t.group(1)
+    return directory.name.replace("-", " ")
 
 def nav_entry(md: Path, rel: str):
     """Chapter n / Section n 이름이면 {라벨: 경로}, 아니면 경로 그대로."""
     name = md.parent.name if is_index(md) else md.stem
-    return {name: rel} if LABEL.match(name) else rel
+    m = LABEL.match(name)
+    return {f"{m.group(1).capitalize()} {m.group(2)}": rel} if m else rel
 
 def is_index(path: Path) -> bool:
     return path.name.lower() in ("index.md", "readme.md")
@@ -56,7 +72,7 @@ def collect(directory: Path):
         if child.is_dir():
             entries, weight = collect(child)
             if entries:
-                items.append((weight, child.name.lower(), {child.name: entries}))
+                items.append((weight, child.name.lower(), {display_name(child): entries}))
         elif child.suffix.lower() == ".md":
             rel = child.relative_to(DOCS).as_posix()
             if is_index(child):
